@@ -1,1 +1,6 @@
-site_name: My Docs
+site_name: Bge_Wiki
+
+theme:
+  name: material
+  markdown_extensions:
+    - attr_list
