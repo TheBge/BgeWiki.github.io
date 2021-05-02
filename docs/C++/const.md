@@ -79,3 +79,10 @@ int _tmain(int argc, _TCHAR* argv[])
 报错原因：因为const对象在调用成员函数时会隐含的把实参把中*this修改成const class * const this，以导致非const成员函数在接收时还是使用了class *const this接收，结果就是把const的指针赋给非const的指针
 
 修正方法：以前错误只需在对象的成员函数后面加上const即可
+
+
+
+#### Reference
+
+https://www.cnblogs.com/cthon/p/9166715.html
+
