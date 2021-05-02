@@ -1,0 +1,1298 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Bing">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>从零开始的计算机网络 - Bge_Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#37" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Bge_Wiki" class="md-header-nav__button md-logo" aria-label="Bge_Wiki">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Bge_Wiki
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              从零开始的计算机网络
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bge_Wiki" class="md-nav__button md-logo" aria-label="Bge_Wiki">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Bge_Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CallBack/" class="md-nav__link">
+        CallBack
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode/" class="md-nav__link">
+        LeetCode
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%82%E5%B8%B8%E4%BF%9D%E6%8A%A4/" class="md-nav__link">
+        异常保护
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        数据结构与算法
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" class="md-nav__link">
+        智能指针
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BC%AB%E8%B0%88-C-%E7%9A%84%E5%90%84%E7%A7%8D%E6%A3%80%E6%9F%A5/" class="md-nav__link">
+        漫谈 C++ 的各种检查
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        现代操作系统
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%87%8E%E6%8C%87%E9%92%88%E8%A3%B8%E6%8C%87%E9%92%88%E6%9E%90%E6%9E%84/" class="md-nav__link">
+        野指针/裸指针/析构
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%94%99%E9%A2%98%E6%9C%AC/" class="md-nav__link">
+        错题本
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E7%BB%8F/" class="md-nav__link">
+        面经
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" >
+      
+      <label class="md-nav__link" for="nav-13">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="nav-13">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84C%2B%2B%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        从零开始的C++ 语言基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="md-nav__link">
+        内存对齐
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14" >
+      
+      <label class="md-nav__link" for="nav-14">
+        操作系统
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="操作系统" data-md-level="1">
+        <label class="md-nav__title" for="nav-14">
+          <span class="md-nav__icon md-icon"></span>
+          操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84OS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        从零开始的OS知识总结
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        从零开始的操作系统
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3%E9%98%BB%E5%A1%9E%E9%9D%9E%E9%98%BB%E5%A1%9E%E4%B8%8E%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5/" class="md-nav__link">
+        怎么理解阻塞非阻塞与同步异步
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15" checked>
+      
+      <label class="md-nav__link" for="nav-15">
+        计算机网络
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="计算机网络" data-md-level="1">
+        <label class="md-nav__title" for="nav-15">
+          <span class="md-nav__icon md-icon"></span>
+          计算机网络
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          从零开始的计算机网络
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        从零开始的计算机网络
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#37" class="md-nav__link">
+    3.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37_1" class="md-nav__link">
+    3.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38" class="md-nav__link">
+    3.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310" class="md-nav__link">
+    3.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-ip" class="md-nav__link">
+    4.4 IP数据报的发送和转发过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-pass" class="md-nav__link">
+    4.5 静态路由配置及其可能产生的路由环路问题 （pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#461-pass" class="md-nav__link">
+    4.6.1 路由选择协议概述（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#462-rippass" class="md-nav__link">
+    4.6.2 路由信息协议RIP的基本工作原理（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#463-ospfpass" class="md-nav__link">
+    4.6.3 开发最短路径优先OSPF的基本工作原理（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#464-bgppass" class="md-nav__link">
+    4.6.4 边界网关协议BGP的基本工作原理（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-ipv4" class="md-nav__link">
+    4.7 IPv4数据报的首部格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-icmp" class="md-nav__link">
+    4.8 网际控制报文协议ICMP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-vpnnat" class="md-nav__link">
+    4.9 虚拟专用网VPN与网络地址NAT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 运输层概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 运输层端口号、复用与分用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-udptcp" class="md-nav__link">
+    5.3 UDP/TCP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-tcp" class="md-nav__link">
+    5.4 TCP的流量控制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-tcp" class="md-nav__link">
+    5.5 TCP的拥塞控制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-tcp-pass" class="md-nav__link">
+    5.6 TCP超时重传时间的选择 （pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-tcp" class="md-nav__link">
+    5.7 TCP可靠传输的实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-tcptcp" class="md-nav__link">
+    5.8 TCP运输连接管理—TCP连接建立
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-tcptcp" class="md-nav__link">
+    5.9 TCP的运输连接管理——TCP的连接释放
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-tcp" class="md-nav__link">
+    5.9 TCP报文段的首部格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-csp2p" class="md-nav__link">
+    6.2 客户/服务器方式（C/S）和对等方式（P2P）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2ppeer-to-peer" class="md-nav__link">
+    P2P（Peer to Peer）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-phcp" class="md-nav__link">
+    6.3 动态主机配置协议（PHCP）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-dnsdomain-name-system" class="md-nav__link">
+    6.4 域名系统DNS（Domain Name System）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-ftp" class="md-nav__link">
+    6.5 文件传送协议FTP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-pass" class="md-nav__link">
+    6.6 电子邮件（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67-www" class="md-nav__link">
+    6.7 万维网WWW
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%BD%91%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        从零开始的计网知识总结
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16" >
+      
+      <label class="md-nav__link" for="nav-16">
+        设计模式与重构
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="设计模式与重构" data-md-level="1">
+        <label class="md-nav__title" for="nav-16">
+          <span class="md-nav__icon md-icon"></span>
+          设计模式与重构
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E9%87%8D%E6%9E%84/Refactor/" class="md-nav__link">
+        Refactor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E9%87%8D%E6%9E%84/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
+        设计模式
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#37" class="md-nav__link">
+    3.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37_1" class="md-nav__link">
+    3.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38" class="md-nav__link">
+    3.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310" class="md-nav__link">
+    3.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-ip" class="md-nav__link">
+    4.4 IP数据报的发送和转发过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-pass" class="md-nav__link">
+    4.5 静态路由配置及其可能产生的路由环路问题 （pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#461-pass" class="md-nav__link">
+    4.6.1 路由选择协议概述（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#462-rippass" class="md-nav__link">
+    4.6.2 路由信息协议RIP的基本工作原理（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#463-ospfpass" class="md-nav__link">
+    4.6.3 开发最短路径优先OSPF的基本工作原理（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#464-bgppass" class="md-nav__link">
+    4.6.4 边界网关协议BGP的基本工作原理（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-ipv4" class="md-nav__link">
+    4.7 IPv4数据报的首部格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-icmp" class="md-nav__link">
+    4.8 网际控制报文协议ICMP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-vpnnat" class="md-nav__link">
+    4.9 虚拟专用网VPN与网络地址NAT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 运输层概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 运输层端口号、复用与分用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-udptcp" class="md-nav__link">
+    5.3 UDP/TCP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-tcp" class="md-nav__link">
+    5.4 TCP的流量控制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-tcp" class="md-nav__link">
+    5.5 TCP的拥塞控制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-tcp-pass" class="md-nav__link">
+    5.6 TCP超时重传时间的选择 （pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-tcp" class="md-nav__link">
+    5.7 TCP可靠传输的实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-tcptcp" class="md-nav__link">
+    5.8 TCP运输连接管理—TCP连接建立
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-tcptcp" class="md-nav__link">
+    5.9 TCP的运输连接管理——TCP的连接释放
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-tcp" class="md-nav__link">
+    5.9 TCP报文段的首部格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-csp2p" class="md-nav__link">
+    6.2 客户/服务器方式（C/S）和对等方式（P2P）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2ppeer-to-peer" class="md-nav__link">
+    P2P（Peer to Peer）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-phcp" class="md-nav__link">
+    6.3 动态主机配置协议（PHCP）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-dnsdomain-name-system" class="md-nav__link">
+    6.4 域名系统DNS（Domain Name System）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-ftp" class="md-nav__link">
+    6.5 文件传送协议FTP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-pass" class="md-nav__link">
+    6.6 电子邮件（pass）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67-www" class="md-nav__link">
+    6.7 万维网WWW
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>从零开始的计算机网络</h1>
+                
+                <ul>
+<li>计算鸡网络
+categories: []
+date: 2021-03-07 14:07:00</li>
+</ul>
+<hr />
+<h5 id="37">3.7</h5>
+<p>MAC地址 
+又称硬件地址，物理地址，但不属于物理层，属于数据链路层。 
+例：XX-XX-XX-XX-XX-XX  </p>
+<h5 id="37_1">3.7</h5>
+<p>IP地址 
+是因特网上主机与路由器使用的地址，用于标识：1 网络编号 2 同一网络上的不同主机。 
+数据包转发过程种IP地址与MAC地址的变化：1 源IP地址和目的IP地址不变；2 源MAC地址和目的MAC地址逐个链路改变。  </p>
+<h5 id="38">3.8</h5>
+<p>地址解析协议ARP  </p>
+<h5 id="310">3.10</h5>
+<p>生成树协议STP 
+在增加冗余链路提高网络可靠性的同时避免网络环路带来的问题。 
+不论交换机之间采用怎样的物理连接，交换机都能自动计算并构建一个逻辑上没有环路的网络。其逻辑拓扑结构必须是树形的。  </p>
+<h5 id="44-ip">4.4 IP数据报的发送和转发过程</h5>
+<p>源主机如何知道目的主机是否与自己在同一个网络中？</p>
+<p>比较网络地址</p>
+<p><img alt="image-20210424111740316" src="../images/image-20210424111740316.png" /></p>
+<p><img alt="image-20210424113128698" src="../images/image-20210424113128698.png" /></p>
+<h5 id="45-pass">4.5 静态路由配置及其可能产生的路由环路问题 （pass）</h5>
+<h5 id="461-pass">4.6.1 路由选择协议概述（pass）</h5>
+<p>静态路由选择</p>
+<p>动态路由选择</p>
+<p>因特网采用分层次的路由选择协议</p>
+<p><img alt="image-20210424120306172" src="../images/image-20210424120306172.png" /></p>
+<h5 id="462-rippass">4.6.2 路由信息协议RIP的基本工作原理（pass）</h5>
+<p>RIP认为好的路由就是距离短的路由，也就是所通过路由器最少的路由。</p>
+<h5 id="463-ospfpass">4.6.3 开发最短路径优先OSPF的基本工作原理（pass）</h5>
+<h5 id="464-bgppass">4.6.4 边界网关协议BGP的基本工作原理（pass）</h5>
+<p><img alt="image-20210424201217919" src="../images/image-20210424201217919.png" /></p>
+<p><img alt="image-20210424202054681" src="../images/image-20210424202054681.png" /></p>
+<h5 id="47-ipv4">4.7 IPv4数据报的首部格式</h5>
+<p><img alt="image-20210424204834994" src="../images/image-20210424204834994.png" /></p>
+<p>首部检验和：</p>
+<p>IP层本身不提供可靠传送服务。IPv6中不再计算首部校验和。</p>
+<h5 id="48-icmp">4.8 网际控制报文协议ICMP</h5>
+<ul>
+<li>为了更有效转发IP数据报和提高交付的机会。</li>
+<li>主机或路由器使用ICMP来发送差错报告报文和询问报文。</li>
+<li>ICMP报文被封装在IP数据报中发送。</li>
+</ul>
+<p><img alt="image-20210424212803821" src="../images/image-20210424212803821.png" /></p>
+<h5 id="49-vpnnat">4.9 虚拟专用网VPN与网络地址NAT</h5>
+<p><strong>Virtual Private Network</strong></p>
+<p><img alt="image-20210424220023193" src="C:/Users/BINGCHEN/AppData/Roaming/Typora/typora-user-images/image-20210424220023193.png" /></p>
+<p><strong>网络地址转换NAT Network Address Translation</strong></p>
+<p>为了减缓IPv4地址空间耗尽的速度，1994年提出了一种网络地址转换NAT的方法再次缓解了IPv4地址空间即将耗尽的问题。</p>
+<p><strong>NAT</strong>能使大量使用内部专用地址的专用网络用户共享<strong>少量外部全球地址</strong>来访问因特网上的主机和资源。</p>
+<p><strong>NAPT</strong></p>
+<p><img alt="image-20210424220750781" src="../images/image-20210424220750781.png" /></p>
+<h5 id="51">5.1 运输层概述</h5>
+<p>物理层、数据链路层和网络层共同解决了将主机通过异构网络互联起来的问题。</p>
+<p>实际上在计网中通信的真正实体使位于通信两端主机中的进程。</p>
+<p>运输层协议又称端到端协议。</p>
+<p><img alt="image-20210427211458155" src="../images/image-20210427211458155.png" /></p>
+<h5 id="52">5.2 运输层端口号、复用与分用</h5>
+<p>进程标识符PID，不同OS不同。</p>
+<p>在浏览器中输入网站enter后发生了什么？</p>
+<h5 id="53-udptcp">5.3 UDP/TCP</h5>
+<p><img alt="image-20210427212710154" src="../images/image-20210427212710154.png" /></p>
+<p><img alt="image-20210427213245005" src="../images/image-20210427213245005.png" /></p>
+<h5 id="54-tcp">5.4 TCP的流量控制</h5>
+<ul>
+<li>发送方的发送速率不要太快，要让接收方来得及接收。</li>
+<li>利用<strong>滑动窗口</strong>机制可以方便的在TCP连结上实现对发送方的流量控制。</li>
+</ul>
+<p><img alt="image-20210427214542043" src="../images/image-20210427214542043.png" /></p>
+<h5 id="55-tcp">5.5 TCP的拥塞控制</h5>
+<p><img alt="image-20210428214125176" src="../images/image-20210428214125176.png" /></p>
+<p><strong>TCP拥塞控制算法</strong></p>
+<ul>
+<li>慢开始 slow start</li>
+<li>拥塞避免 congestion avoidance</li>
+<li>快重传 fast retransmit</li>
+<li>快恢复 fast recovery</li>
+</ul>
+<p><img alt="image-20210428220656316" src="../images/image-20210428220656316.png" /></p>
+<h5 id="56-tcp-pass">5.6 TCP超时重传时间的选择 （pass）</h5>
+<h5 id="57-tcp">5.7 TCP可靠传输的实现</h5>
+<p>TCP基于以字节为单位的滑动窗口来实现可靠传输。</p>
+<h5 id="58-tcptcp">5.8 TCP运输连接管理—TCP连接建立</h5>
+<p><img alt="image-20210429151444654" src="../images/image-20210429151444654.png" /></p>
+<p>解决问题：</p>
+<ul>
+<li>TCP双方能确知对方的存在</li>
+<li>能够协调一些参数</li>
+<li>能对运输实体资源进行分配</li>
+</ul>
+<p>采用三报文握手而不是两报文握手来建立TCP连接，是为了防止已失效的连接请求报文段突然又传送到了TCP服务器进程导致的错误。</p>
+<p><img alt="image-20210429153230498" src="../images/image-20210429153230498.png" /></p>
+<h5 id="59-tcptcp">5.9 TCP的运输连接管理——TCP的连接释放</h5>
+<p><img alt="image-20210429172247352" src="../images/image-20210429172247352.png" /></p>
+<p>时间等待状态是否有必要？</p>
+<p>TCP服务器进程会反复重传TCP连接释放报文，并一直处于确认状态不会关闭。</p>
+<p><img alt="image-20210429172525291" src="../images/image-20210429172525291.png" /></p>
+<p>2倍MSL是时间可以使本次连接持续时间内所产生的所有报文段都从网络中消失。下一个新连接中不会出现旧报文。</p>
+<h5 id="59-tcp">5.9 TCP报文段的首部格式</h5>
+<p><img alt="image-20210429172932580" src="../images/image-20210429172932580.png" /></p>
+<p><img alt="image-20210429173753245" src="../images/image-20210429173753245.png" /></p>
+<p>6.1 应用层概述</p>
+<p><img alt="image-20210429210707130" src="../images/image-20210429210707130.png" /></p>
+<p><img alt="image-20210429210838247" src="../images/image-20210429210838247.png" /></p>
+<h5 id="62-csp2p">6.2 客户/服务器方式（C/S）和对等方式（P2P）</h5>
+<p><strong>C/S（Client/Server）</strong></p>
+<ul>
+<li>客户和服务器是两个应用进程</li>
+<li>方式描述的是服务和被服务的关系</li>
+<li>客户是服务请求方，服务器是服务提供方</li>
+<li>服务器总是运行状态，等待客户的服务请求。服务器具有固定的端口号（HTTP服务的默认端口号是80），运行服务器的主机也具有固定的IP地址。</li>
+</ul>
+<p>例：www万维网、电子邮件</p>
+<p>基于C/S的应用服务通常是<strong>服务集中型</strong>，应用服务集中在网络中比客户计算机少得多的服务计算机上。</p>
+<h5 id="p2ppeer-to-peer">P2P（Peer to Peer）</h5>
+<p>P2P方式中，没有固定的服务请求者和服务提供者。各应用进程是对等的，称为对等方。对等方相互之间直接通信，每个对等方既是服务的请求者，又是服务的提供者。</p>
+<p>例：P2P文件共享、即时通讯、P2P流媒体、分布式存储等。</p>
+<p>基于P2P的应用是<strong>服务分散型</strong>的，服务不是集中在少数几个服务器计算机中，而是分散在大量对等计算机中，这些计算机不为服务提供商所有。</p>
+<h5 id="63-phcp">6.3 动态主机配置协议（PHCP）</h5>
+<p><img alt="image-20210429224018483" src="../images/image-20210417134921118.png" /></p>
+<h5 id="64-dnsdomain-name-system">6.4 域名系统DNS（Domain Name System）</h5>
+<p><img alt="image-20210501142426697" src="../images/image-20210501142426697.png" /></p>
+<p>当在浏览器输入域名时，用户主机会首先在自己的DNS高速缓存中查找该域名所对应的IP地址，找不到再询问DNS服务器。</p>
+<p><img alt="image-20210501142850308" src="../images/image-20210501142850308.png" /></p>
+<p>（我TM直接泪目。。。）</p>
+<p><img alt="image-20210501144537818" src="../images/image-20210501144537818.png" /></p>
+<h5 id="65-ftp">6.5 文件传送协议FTP</h5>
+<p>FTP客户和服务器之间要建立两个并行的连接：</p>
+<p>一个是控制连接，在整个会话期间一直保持打开，用于传输FTP相关控制命令。</p>
+<p>另一个是数据连接，用于文件传输，在每次文件传输时才建立，传输结束就关闭。</p>
+<p>默认FTP使用TCP 21端口进行控制连接，TCP 20端口进行数据连接。</p>
+<p><img alt="image-20210501145551923" src="../images/image-20210501145551923.png" /></p>
+<h5 id="66-pass">6.6 电子邮件（pass）</h5>
+<h5 id="67-www">6.7 万维网WWW</h5>
+<p><img alt="image-20210501154018739" src="../images/image-20210501154018739.png" /></p>
+<ul>
+<li>HTTP1.0采用非持续连接方式</li>
+<li>HTTP1.1采用持续连接方式</li>
+</ul>
+<p><strong>使用cookie在服务器上记录用户信息：</strong></p>
+<ul>
+<li>早期万维网应用比较简单，仅仅是用户查看在不同服务器上的静态文档。因此HTTP被设计成一种无状态的协议，简化服务器设计。</li>
+<li>现在用户可以通过万维网实现各自复杂的应用，如网上购物、电子商务等，需要万维网能够识别用户。</li>
+</ul>
+<p><img alt="image-20210501154821150" src="../images/image-20210501154821150.png" /></p>
+<p><img alt="image-20210501155541191" src="../images/image-20210501155541191.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3%E9%98%BB%E5%A1%9E%E9%9D%9E%E9%98%BB%E5%A1%9E%E4%B8%8E%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                怎么理解阻塞非阻塞与同步异步
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%BD%91%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                从零开始的计网知识总结
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
