@@ -9,19 +9,19 @@
       
       
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
-        <title>侯捷C++2.0新特性 - Bge_Wiki</title>
+        <title>侯捷C++STL体系结构与内核分析 - Bge_Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
         
       
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#oopobject-oriented-programming-vs-gpgeneric-programing" class="md-skip">
           Skip to content
         </a>
       
@@ -71,7 +71,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Bge_Wiki" class="md-header-nav__button md-logo" aria-label="Bge_Wiki">
+    <a href="../../.." title="Bge_Wiki" class="md-header-nav__button md-logo" aria-label="Bge_Wiki">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              侯捷C++2.0新特性
+              侯捷C++STL体系结构与内核分析
             
           </span>
         </div>
@@ -151,7 +151,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Bge_Wiki" class="md-nav__button md-logo" aria-label="Bge_Wiki">
+    <a href="../../.." title="Bge_Wiki" class="md-nav__button md-logo" aria-label="Bge_Wiki">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -170,7 +170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Welcome to MkDocs
       </a>
     </li>
@@ -209,7 +209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Type-Traits/" class="md-nav__link">
+      <a href="../../Type-Traits/" class="md-nav__link">
         Type Traits
       </a>
     </li>
@@ -221,7 +221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Utils/" class="md-nav__link">
+      <a href="../../Utils/" class="md-nav__link">
         Utils
       </a>
     </li>
@@ -233,7 +233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../class%E4%B9%8B%E9%97%B4%E7%9A%84%E5%87%A0%E7%A7%8D%E5%85%B3%E7%B3%BB/" class="md-nav__link">
+      <a href="../../class%E4%B9%8B%E9%97%B4%E7%9A%84%E5%87%A0%E7%A7%8D%E5%85%B3%E7%B3%BB/" class="md-nav__link">
         Class之间的几种关系
       </a>
     </li>
@@ -245,7 +245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../const/" class="md-nav__link">
+      <a href="../../const/" class="md-nav__link">
         Const
       </a>
     </li>
@@ -257,8 +257,188 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84C%2B%2B%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../struct/" class="md-nav__link">
+        Struct
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84C%2B%2B%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="md-nav__link">
         从零开始的C++问题总结
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="md-nav__link">
+        内存对齐
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8C%BF%E5%90%8D%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/" class="md-nav__link">
+        匿名命名空间
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8C%87%E9%92%88/" class="md-nav__link">
+        嵌入式指针
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB%E5%92%8C%E4%B8%8D%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB/" class="md-nav__link">
+        带指针的类和不带指针的类
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%82%E5%B8%B8%E4%BF%9D%E6%8A%A4/" class="md-nav__link">
+        异常保护
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" class="md-nav__link">
+        智能指针
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E8%83%BD%E5%90%A6%E5%A3%B0%E6%98%8E%E4%B8%BA%E8%99%9A%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        构造函数和析构函数能否声明为虚函数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        枚举类型
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%90%86%E8%A7%A3%E5%A4%9A%E6%80%81/" class="md-nav__link">
+        理解多态
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
+        类型转换
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%87%8E%E6%8C%87%E9%92%88%E8%A3%B8%E6%8C%87%E9%92%88%E6%9E%90%E6%9E%84/" class="md-nav__link">
+        野指针裸指针析构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18" checked>
+      
+      <label class="md-nav__link" for="nav-2-18">
+        网课总结
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网课总结" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-18">
+          <span class="md-nav__icon md-icon"></span>
+          网课总结
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BE%AF%E6%8D%B7C%2B%2B2.0%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        侯捷C++2.0新特性
       </a>
     </li>
   
@@ -276,12 +456,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          侯捷C++2.0新特性
+          侯捷C++STL体系结构与内核分析
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        侯捷C++2.0新特性
+        侯捷C++STL体系结构与内核分析
       </a>
       
         
@@ -296,140 +476,58 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#oopobject-oriented-programming-vs-gpgeneric-programing" class="md-nav__link">
+    OOP(object-oriented programming) vs GP(Generic Programing)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    阅读C++标准库，基础
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl" class="md-nav__link">
+    STL 六大部件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    语言
+    容器
   </a>
-  
-    <nav class="md-nav" aria-label="语言">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#variadic-templates" class="md-nav__link">
-    Variadic Templates
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nullptrauto" class="md-nav__link">
-    nullptr/auto
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uniform-initialization" class="md-nav__link">
-    Uniform Initialization
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explicit" class="md-nav__link">
-    explicit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#range-based-for" class="md-nav__link">
-    range based for
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete-default" class="md-nav__link">
-    =delete =default
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alias-template" class="md-nav__link">
-    Alias Template
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#template-template-parameter" class="md-nav__link">
-    Template Template parameter
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#type-aliasnoexceptoverridefinal" class="md-nav__link">
-    Type Alias/noexcept/override/final
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decltype" class="md-nav__link">
-    decltype
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lambdas" class="md-nav__link">
-    Lambdas
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variadic-templates_1" class="md-nav__link">
-    Variadic Templates
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    标准库
-  </a>
-  
-    <nav class="md-nav" aria-label="标准库">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rvalue-references" class="md-nav__link">
-    右值引用 Rvalue references
+    迭代器
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#perfect-forwarding" class="md-nav__link">
-    Perfect Forwarding
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    分配器
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#array" class="md-nav__link">
-    容器array
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    仿函数
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#hashtable" class="md-nav__link">
-    容器hashtable
+      
+        <li class="md-nav__item">
+  <a href="#adapter" class="md-nav__link">
+    适配器Adapter
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -446,18 +544,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E4%BE%AF%E6%8D%B7C%2B%2BSTL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%86%85%E6%A0%B8%E5%88%86%E6%9E%90/" class="md-nav__link">
-        侯捷C++STL体系结构与内核分析
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../%E4%BE%AF%E6%8D%B7C%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
         侯捷C++面向对象
       </a>
@@ -465,146 +551,8 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="md-nav__link">
-        内存对齐
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E5%8C%BF%E5%90%8D%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/" class="md-nav__link">
-        匿名命名空间
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8C%87%E9%92%88/" class="md-nav__link">
-        嵌入式指针
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB%E5%92%8C%E4%B8%8D%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB/" class="md-nav__link">
-        带指针的类和不带指针的类
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E5%BC%82%E5%B8%B8%E4%BF%9D%E6%8A%A4/" class="md-nav__link">
-        异常保护
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" class="md-nav__link">
-        智能指针
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E8%83%BD%E5%90%A6%E5%A3%B0%E6%98%8E%E4%B8%BA%E8%99%9A%E5%87%BD%E6%95%B0/" class="md-nav__link">
-        构造函数和析构函数能否声明为虚函数
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
-        枚举类型
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E7%90%86%E8%A7%A3%E5%A4%9A%E6%80%81/" class="md-nav__link">
-        理解多态
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="md-nav__link">
-        类型转换
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E7%BB%93%E6%9E%84%E4%BD%93/" class="md-nav__link">
-        结构体
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E9%87%8E%E6%8C%87%E9%92%88%E8%A3%B8%E6%8C%87%E9%92%88%E6%9E%90%E6%9E%84/" class="md-nav__link">
-        野指针裸指针析构
-      </a>
+        </ul>
+      </nav>
     </li>
   
 
@@ -645,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/LeetCode/" class="md-nav__link">
+      <a href="../../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/LeetCode/" class="md-nav__link">
         LeetCode
       </a>
     </li>
@@ -657,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/%E9%94%99%E9%A2%98%E6%9C%AC/" class="md-nav__link">
+      <a href="../../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/%E9%94%99%E9%A2%98%E6%9C%AC/" class="md-nav__link">
         错题本
       </a>
     </li>
@@ -700,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%8A%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" class="md-nav__link">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%8A%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" class="md-nav__link">
         《现代操作系统》
       </a>
     </li>
@@ -712,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%93%88%E5%B7%A5%E5%A4%A7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BD%91%E8%AF%BE/" class="md-nav__link">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%93%88%E5%B7%A5%E5%A4%A7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BD%91%E8%AF%BE/" class="md-nav__link">
         哈工大操作系统网课
       </a>
     </li>
@@ -746,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84OS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4%E4%B8%8E%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4/" class="md-nav__link">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84OS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4%E4%B8%8E%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4/" class="md-nav__link">
         内核空间与用户空间
       </a>
     </li>
@@ -758,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84OS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3%E9%98%BB%E5%A1%9E%E9%9D%9E%E9%98%BB%E5%A1%9E%E4%B8%8E%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5/" class="md-nav__link">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84OS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3%E9%98%BB%E5%A1%9E%E9%9D%9E%E9%98%BB%E5%A1%9E%E4%B8%8E%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5/" class="md-nav__link">
         怎么理解阻塞非阻塞与同步异步
       </a>
     </li>
@@ -807,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/emplace_back/" class="md-nav__link">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/emplace_back/" class="md-nav__link">
         Emplace back
       </a>
     </li>
@@ -819,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         数据结构
       </a>
     </li>
@@ -831,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="md-nav__link">
         数据结构与算法
       </a>
     </li>
@@ -874,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%9D%82%E8%B4%A7%E9%93%BA/Git/" class="md-nav__link">
+      <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/Git/" class="md-nav__link">
         Git
       </a>
     </li>
@@ -917,7 +865,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%A7%8B%E6%8B%9B%E5%86%B2%E5%88%BA/%E9%9D%A2%E7%BB%8F/" class="md-nav__link">
+      <a href="../../../%E7%A7%8B%E6%8B%9B%E5%86%B2%E5%88%BA/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+        学习路线
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%A7%8B%E6%8B%9B%E5%86%B2%E5%88%BA/%E9%9D%A2%E7%BB%8F/" class="md-nav__link">
         面经
       </a>
     </li>
@@ -929,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%A7%8B%E6%8B%9B%E5%86%B2%E5%88%BA/%E9%9D%A2%E7%BB%8F%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../../%E7%A7%8B%E6%8B%9B%E5%86%B2%E5%88%BA/%E9%9D%A2%E7%BB%8F%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="md-nav__link">
         面经问题总结
       </a>
     </li>
@@ -972,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%B9%96%E7%A7%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BD%91%E8%AF%BE/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%B9%96%E7%A7%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BD%91%E8%AF%BE/" class="md-nav__link">
         湖科计算机网络网课
       </a>
     </li>
@@ -1006,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%BD%91%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%BD%91%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%BD%91%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%BD%91%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="md-nav__link">
         从零开始的计网知识总结
       </a>
     </li>
@@ -1055,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/CallBack/" class="md-nav__link">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/CallBack/" class="md-nav__link">
         CallBack
       </a>
     </li>
@@ -1067,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/Refactor/" class="md-nav__link">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/Refactor/" class="md-nav__link">
         Refactor
       </a>
     </li>
@@ -1079,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
         设计模式
       </a>
     </li>
@@ -1115,140 +1075,58 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#oopobject-oriented-programming-vs-gpgeneric-programing" class="md-nav__link">
+    OOP(object-oriented programming) vs GP(Generic Programing)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    阅读C++标准库，基础
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl" class="md-nav__link">
+    STL 六大部件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    语言
+    容器
   </a>
-  
-    <nav class="md-nav" aria-label="语言">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#variadic-templates" class="md-nav__link">
-    Variadic Templates
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nullptrauto" class="md-nav__link">
-    nullptr/auto
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uniform-initialization" class="md-nav__link">
-    Uniform Initialization
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explicit" class="md-nav__link">
-    explicit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#range-based-for" class="md-nav__link">
-    range based for
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete-default" class="md-nav__link">
-    =delete =default
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alias-template" class="md-nav__link">
-    Alias Template
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#template-template-parameter" class="md-nav__link">
-    Template Template parameter
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#type-aliasnoexceptoverridefinal" class="md-nav__link">
-    Type Alias/noexcept/override/final
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decltype" class="md-nav__link">
-    decltype
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lambdas" class="md-nav__link">
-    Lambdas
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variadic-templates_1" class="md-nav__link">
-    Variadic Templates
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    标准库
-  </a>
-  
-    <nav class="md-nav" aria-label="标准库">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rvalue-references" class="md-nav__link">
-    右值引用 Rvalue references
+    迭代器
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#perfect-forwarding" class="md-nav__link">
-    Perfect Forwarding
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    分配器
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#array" class="md-nav__link">
-    容器array
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    仿函数
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#hashtable" class="md-nav__link">
-    容器hashtable
+      
+        <li class="md-nav__item">
+  <a href="#adapter" class="md-nav__link">
+    适配器Adapter
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1265,124 +1143,95 @@
               
                 
                 
-                  <h1>侯捷C++2.0新特性</h1>
+                  <h1>侯捷C++STL体系结构与内核分析</h1>
                 
-                <p>1.语言<br />
-2.标准库  </p>
-<h3 id="_1">语言</h3>
-<h5 id="variadic-templates">Variadic Templates</h5>
-<h5 id="nullptrauto">nullptr/auto</h5>
-<h5 id="uniform-initialization">Uniform Initialization</h5>
-<p>在C++11之前，初始化可能发生在小括号 大括号 复制符号。<br />
-现在全部都可以使用大括号。 
-编译器看到{...},就做出一个initializer_list<T>,关联到一个array<T, n>。调用函数（如ctor）时array内的元素被分解逐一传给函数  </p>
-<h5 id="explicit">explicit</h5>
-<p><img alt="upload successful" src="../../img/pasted-14.png" /> </p>
-<pre><code>Complex c1(12, 5);
-Complex c2 = c1 + 5;
-</code></pre>
-<p>左边编译器会隐式调用构造函数，变成复数加复数。右边会报错。  </p>
-<pre><code>#include &lt;iostream&gt;
-#include &lt;initializer_list&gt;
-using namespace std;
-
-class P
+                <h4 id="oopobject-oriented-programming-vs-gpgeneric-programing">OOP(object-oriented programming) vs GP(Generic Programing)</h4>
+<p>OOP将datas与methods关联在一起 
+GP将datas与methods分开 
+使用<strong>GP</strong>：
+1 Containers/Algorithms团队各司其职，以Iterator沟通 
+2 Algorithms通过Iterators确定操作范围，通过Iterators取用Containers元素 
+<img alt="upload successful" src="../img/pasted-11.png" /></p>
+<h4 id="c">阅读C++标准库，基础</h4>
+<p>1 Operator Overloading 操作符重载 
+2 Templates 模板 
+类模板/函数模板/成员模板 
+模板特化/偏特化</p>
+<h4 id="stl">STL 六大部件</h4>
+<p>容器（Containiers） 
+分配器（Allocators） 
+算法（Alogrithms） 
+迭代器（Iterators） 
+适配器（Adapters） 
+仿函数（Functors） 
+<img alt="upload successful" src="../img/pasted-8.png" />  </p>
+<h4 id="_1">容器</h4>
+<p>Sequance Containers： 
+Array 
+Vector 
+Deque 
+List 
+Forward List  </p>
+<p>Associative Containers： 
+Set/MultiSet 
+Map/Multimap 
+<img alt="upload successful" src="../img/pasted-9.png" />  </p>
+<p>Unordered Containers： 
+Unordered Set/MultiSet 
+Unordered Map/Multimap 
+用hash table实现的
+<img alt="upload successful" src="../img/pasted-10.png" /> </p>
+<p><img alt="upload successful" src="../img/pasted-12.png" /></p>
+<p><strong>1 list</strong> 
+环状链表，在list的尾端有一空白节点，用以符合STL的前闭后开区间特点。 有iterator。
+<strong>2 vector</strong> 
+data有3个指针 strat finish end_of_storage（注意标准库的版本），二倍成长的容器。连续空间。有iterator。 
+<strong>3 array</strong> 
+没有ctor，没有dtor。有iterator。 
+<strong>4 forwrad_list</strong> 
+线状单项串列 
+<strong>5 deque</strong> 
+分段连续，双向进出。deque iterator模拟了连续空间。 
+<strong>6 stack</strong> 先进先出 <strong>queue</strong> 先进先出 
+deque作为底层容器，不允许遍历，也不提供iterator。 
+stack和queue都可以选择list或者deque作为底层容器。stack可选vector做底层结构，queue不可选vector做底层结构，都不可选set或map 
+<strong>7 rb_tree</strong> 
+红黑树，是平衡二元搜寻树常使用的一种，平衡二元搜寻树的特征：排列规则有利于search和inset，并保持适度平衡-无节点过深。 
+提供遍历操作和iterator，按正常规则++ite遍历，便能获得排序状态。 
+为set和map作其底层支持。
+<strong>8 set/multiset</strong> 
+以红黑树作为底层结构，因此元素自动排序，排序依据是key，而set/和multiset的value和key合一。 
+无法使用iterator改变元素值，set/multiset的iterator是底部红黑树的const iterator，禁止了user对元素的赋值。 
+<strong>9 map/multimap</strong> 
+以红黑树为底层结构，元素自动排序，排序的依据是key。提供遍历操作以及iterator，按正常规则++ite遍历可得到排序状态。 
+无法使用iterator改变元素的key，但是可以改变元素的data，因此map/multimap内部自动将user制定的key_type设定为const,如此来禁止user对元素的key赋值。</p>
+<pre><code class="language-c++">template&lt;class Key, class T, ...&gt;
+class map
 {
-public:
-    P(int a, int b)
-    {
-        cout &lt;&lt; &quot;P(int a, int b)&quot; &lt;&lt; endl;
-    }
-
-    //P(initializer_list&lt;int&gt;input)
-    //{
-    //    cout &lt;&lt; &quot;initializer_list&lt;int&gt;input&quot; &lt;&lt; endl;
-    //}
-
-    explicit P(int a, int b, int c)
-    {
-        cout &lt;&lt; &quot;int a, int b, int c&quot; &lt;&lt; endl;
-    }
-};
-
-void fp(const P&amp; input)
-{
+    typedef pair&lt;const Key, T&gt; value_type;
+    typedef rb_tree&lt;key_type, value_type, ...&gt; rep_type;
+    rep_type t;
+    ...
 }
-
-int main()
-{
-    // ctors
-    cout &lt;&lt; &quot;ctors&quot; &lt;&lt; endl;
-    P p1(77, 5); // P(int a, int b)
-    P p2{ 77, 5 }; // P(initializer_list&lt;int&gt;input) 
-    P p3{ 77, 5, 42 }; // P(initializer_list&lt;int&gt;input) 
-    P p4 = { 77, 5 }; // P(initializer_list&lt;int&gt;input) 
-    P p5 = { 77, 5, 42 }; // P(initializer_list&lt;int&gt;input),如果删了initializer_list的构造函数
-                        //，这句就会报错, error: converting to ‘P’ from initializer
-                        //list would use explicit constructor ‘P::P(int, int, int)’
-    P p6(77, 5, 42); // explicit P (int a, int b, int c) 
-    P p7{ 77, 5, 42, 500 };// P(initializer_list&lt;int&gt;input) 
-    P p8 = { 77, 5, 42, 500 };// P(initializer_list&lt;int&gt;input) 
-    P p9{ 10 };// P(initializer_list&lt;int&gt;input) 
-
-    // call function
-    cout &lt;&lt; &quot;call function&quot; &lt;&lt; endl;
-    fp({ 47, 11 });        // P(initializer_list&lt;int&gt;input)
-    fp({ 47, 11, 3 });    // P(initializer_list&lt;int&gt;input)
-    fp(P{ 47, 11 });       // P(initializer_list&lt;int&gt;input)
-    fp(P{ 47, 11, 3 });    // P(initializer_list&lt;int&gt;input)
-
-    return 0;
-}
 </code></pre>
-<p>注释掉initializer_list的构造函数
-<img alt="upload successful" src="../../img/pasted-15.png" />  </p>
-<h5 id="range-based-for">range based for</h5>
-<p>这个就见的很多了，注意for中也许有隐式的转换。  </p>
-<h5 id="delete-default">=delete =default</h5>
-<h5 id="alias-template">Alias Template</h5>
-<p>别名  </p>
-<pre><code>template &lt;typename T&gt;  
-using Vec = std::vector&lt;T, MyAlloc&lt;T&gt;&gt;;
-
-Vec&lt;int&gt; coll; //使用
+<p><strong>10 hashtable</strong> 
+有一个buckets vector，每一个bucket都是一个链表，可以使用hashtable iterator改变元素的data，但不能改变key 
+元素个数超过buckets数时进行rehashing，新的buckets数是翻倍后最近邻的素数。</p>
+<h4 id="_2">迭代器</h4>
+<p>Iterator要遵循的原则。必须有能力回答Algorithms的提问，设计了五种特殊的typedef。 
+<img alt="upload successful" src="../img/pasted-13.png" /></p>
+<p>Iterator Traits 用于分离class iterator和non-class iterators。（模板的特化） 
+声明一个无法被赋值的变量没有意义，所以即使是const iterator的value_type也不应该加上const，iterator若是const int*, 那value_type是int而不是const int。  </p>
+<h4 id="_3">分配器</h4>
+<p>example：  </p>
+<pre><code class="language-c++">template&lt;typename T, typename _Alloc = std::allocator&lt;T&gt;&gt;
+class vector:protected _Vector_base&lt;T, _Alloc&gt;
 </code></pre>
-<p>这个也使用的非常多，把容器包装一下，容器默认的是Alloc，通过这样去使用合适的分配器。  </p>
-<h5 id="template-template-parameter">Template Template parameter</h5>
-<h5 id="type-aliasnoexceptoverridefinal">Type Alias/noexcept/override/final</h5>
-<p><strong>Type Alias</strong><br />
-类型的别名  
-//typedef void(<em>func)(int, int);<br />
-using func = void(</em>)(int, int);  </p>
-<h5 id="decltype">decltype</h5>
-<pre><code>map&lt;string, float&gt; coll;
-decltype(coll)::value_type elem; //map&lt;string, float&gt;::value_type elem;
-</code></pre>
-<p>by using the new decltype keyword, you can let the compiler find out the type of an expression. This is the realization of the often requested typeof feature.<br />
-application: 1.declare return types 2.use it in metaprogramming 3.pass the type of a lambda  </p>
-<h5 id="lambdas">Lambdas</h5>
-<h5 id="variadic-templates_1">Variadic Templates</h5>
-<p>”一个和一包“
-模板里变化的是模板参数，参数个数，参数类型，关键字”...“  
-递归调用，处理的都是参数。使用function templates  
-递归继承，处理的是类型。使用class templates  
-例：tuple  </p>
-<h3 id="_2">标准库</h3>
-<h5 id="rvalue-references">右值引用 Rvalue references</h5>
-<p>解决不必要的copy<br />
-Lvalue：可以出现在=左边<br />
-Rvalue：只能出现在=右边  </p>
-<pre><code class="language-c++">int a = 1;
-int b = 2;
-a = b; //ok
-b = a; //ok
-a = a + b; //ok
-
-a + b = 3; //error
-</code></pre>
-<h5 id="perfect-forwarding">Perfect Forwarding</h5>
-<h5 id="array">容器array</h5>
-<h5 id="hashtable">容器hashtable</h5>
+<h4 id="_4">仿函数</h4>
+<p>为算法服务，必须重载（）  </p>
+<h4 id="adapter">适配器Adapter</h4>
+<p>仿函数适配器
+？bind函数  绑定成员函数时，为什么要加上&amp;</p>
                 
               
               
@@ -1401,7 +1250,7 @@ a + b = 3; //error
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84C%2B%2B%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../%E4%BE%AF%E6%8D%B7C%2B%2B2.0%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1410,19 +1259,19 @@ a + b = 3; //error
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                从零开始的C++问题总结
+                侯捷C++2.0新特性
               </div>
             </div>
           </a>
         
         
-          <a href="../%E4%BE%AF%E6%8D%B7C%2B%2BSTL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%86%85%E6%A0%B8%E5%88%86%E6%9E%90/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E4%BE%AF%E6%8D%B7C%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                侯捷C++STL体系结构与内核分析
+                侯捷C++面向对象
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -1449,15 +1298,15 @@ a + b = 3; //error
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
-      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
+          base: "../../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
