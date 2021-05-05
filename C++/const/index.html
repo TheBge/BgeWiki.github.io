@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#constconst" class="md-skip">
+        <a href="#cconst" class="md-skip">
           Skip to content
         </a>
       
@@ -272,6 +272,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cconst" class="md-nav__link">
+    C++中的const
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#constconst" class="md-nav__link">
     顶层const与底层const？
   </a>
@@ -303,6 +310,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static/" class="md-nav__link">
+        Static
+      </a>
     </li>
   
 
@@ -471,14 +490,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-19" type="checkbox" id="nav-2-19" >
       
-      <label class="md-nav__link" for="nav-2-18">
+      <label class="md-nav__link" for="nav-2-19">
         网课总结
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="网课总结" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-18">
+        <label class="md-nav__title" for="nav-2-19">
           <span class="md-nav__icon md-icon"></span>
           网课总结
         </label>
@@ -641,18 +660,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        多进程多线程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" >
       
-      <label class="md-nav__link" for="nav-4-3">
+      <label class="md-nav__link" for="nav-4-4">
         从零开始的OS知识总结
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="从零开始的OS知识总结" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-3">
+        <label class="md-nav__title" for="nav-4-4">
           <span class="md-nav__icon md-icon"></span>
           从零开始的OS知识总结
         </label>
@@ -1045,6 +1076,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cconst" class="md-nav__link">
+    C++中的const
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#constconst" class="md-nav__link">
     顶层const与底层const？
   </a>
@@ -1087,16 +1125,50 @@
                 
                   <h1>Const</h1>
                 
-                <h4 id="constconst"><strong>顶层const与底层const？</strong></h4>
+                <h4 id="cconst">C++中的const</h4>
+<p><strong><font color='red'>非类成员的const</font></strong></p>
+<p>①const变量默认是内部连接的，因此在不同的编译单元中可以有同名的const 变量定义。</p>
+<p>②编译时常量，因此可以像#define一样使用，而且因为上面一点，可以在头文件中定义const变量，包含的不同的cpp文件（编译单元）中使用而不引起命名冲突。</p>
+<p>③编译器默认不为const变量分配内存，除非：1. 使用 extern 申明， 2：程序中有引用const 变量的地址。 </p>
+<p>④c++中临时对象/内置变量默认具有const属性。</p>
+<p><strong><font color='red'>类中的const</font></strong></p>
+<p>①与c语言中的const一样，只是运行时常量，不能作为数组维数使用，即不能取代#define。</p>
+<p>在类中使用下面两种方式取代#define：</p>
+<p>1：static const... </p>
+<p>2 : enum{....}//enum 不占存储空间。</p>
+<p>②<strong>类中的const 变量占用存储空间</strong>。</p>
+<p>③<strong><font color='red'>类中的const成员变量需要在构造函数初始化列表中初始化</font></strong>。</p>
+<pre><code class="language-c++">class CExample
+{
+public:
+    CExample():m_a(1),m_b(2){/*m_a = 1; compile error*/}
+    CExample(const CExample&amp;c):m_a(1){/*m_a = 1; compile error*/}
+    ~CExample(){}
+private:
+    const int m_a;
+    int m_b;
+};
+</code></pre>
+<p>类中的const成员变量都要放在初始化列表中初始化。</p>
+<p>④<strong>const 对象</strong>：在该对象生命周期内，<strong>必须保证没有任何成员变量被改变</strong>。<strong>const对象只能调用const成员函数</strong>。</p>
+<p>⑤<strong>const成员函数</strong>： void fun() const ... 不仅<strong>能被const对象调用，也能被非const对象调用</strong>，因此，如果确认一个任何成员函数不改变任何成员变量，应该习惯性将该函数定义成const类型。</p>
+<p><strong>const和#define的区别</strong></p>
+<p><strong>const分配内存的时机，是编译器编译期间，与#define相同</strong> </p>
+<p>C++中的const常量类似于宏定义#define</p>
+<p><em>const int c=5  等价于 #define c 5</em></p>
+<p>1) 编译器处理方式不同 <strong>define宏是在预处理阶段展开。 const常量是编译运行阶段使用。</strong></p>
+<p>2) 类型和安全检查不同 <strong>define宏没有类型，不做任何类型检查</strong>，仅仅是展开。 <strong>const常量有具体的类型，在编译阶段会执行类型检查</strong>。</p>
+<p><strong>注意：尽量以const替换#define</strong></p>
+<h4 id="constconst"><strong>顶层const与底层const？</strong></h4>
 <p><strong>指向常量的指针：</strong></p>
-<p>不能改变指向的内容。const放在类型名前后都可以，const int 和 int const是等价的。声明指向常量的指针也就是底层const。</p>
+<p>不能改变指向的内容。const放在类型名前后都可以，const int 和 int const是等价的。声明指向常量的指针也就是<strong>底层const</strong>。</p>
 <p>但是指向常量的指针不代表指向的内容一定是常量，只是不能改变指向的内容。</p>
 <pre><code class="language-c++">int num = 1;
 int const *p_num = &amp;num;
 const int* p_num = &amp;num;
 </code></pre>
 <p><strong>指针常量：</strong></p>
-<p>指针本身是常量，<strong>声明时必须初始化</strong>，存储的地址不能改变。声明时const必须放在指针符号*后面。声明常量指针就是顶层const。</p>
+<p>指针本身是常量，<strong>声明时必须初始化</strong>，存储的地址不能改变。声明时const必须放在指针符号<em>后面。声明常量指针就是</em><em>顶层const</em>*。</p>
 <pre><code class="language-c++">int num = 1;
 int *const p_num = &amp;num; //顶层const
 </code></pre>
@@ -1112,6 +1184,12 @@ const int *const p =&amp;x; //指针是const p，指向cosnt int类型的x
 <p><strong>普通形参</strong>加不加const限定符对实参没有影响，<strong>引用形参和指针形参</strong>前面没有const限定符时，实参必须是非const的，而前面有const限定符时对实参也没有什么影响。</p>
 <p>原因在于实参的传递方式不同，函数中的形参是普通形参的时，函数只是操纵的实参的副本，而无法去修改实参，实参会想，你形参反正改变不了我的值，那么你有没有const还有什么意义吗？引用形参和指针形参就下不同了，函数是对实参直接操纵，没有const的形参时实参的值是可以改变的。</p>
 <h4 id="const_1"><strong>const成员函数</strong></h4>
+<p>在类的成员函数后面加上const，表明这个函数不会对这个类对象的数据成员作任何改变。</p>
+<p>设计类时的一个原则，<font color='red'>对不改变数据成员的成员函数都要在后面加上const</font>。</p>
+<p>所以 const 关键字对成员函数的行为作了更加明确的限定：</p>
+<p>（1）有 const 修饰的成员函数（指 const 放在函数参数表的后面，而不是在函数前面或者参数表内），只能读取数据成员，不能改变数据成员；没有 const 修饰的成员函数，对数据成员则是可读可写的。
+（2）除此之外，在类的成员函数后面加 const 还有什么好处呢？那就是常量（即 const）对象可以调用 const 成员函数，而不能调用非const修饰的函数。</p>
+<p><font color='red'>注意：</font><font color='red'>两个成员函数如果只是常量性不同，是可以被重载的，由类对象的常量性决定调用哪一个函数。</font></p>
 <pre><code class="language-c++">class A
 {
     public:
@@ -1141,6 +1219,15 @@ int _tmain(int argc, _TCHAR* argv[])
 <p>当使用const对象调用非const成员函数时编译会报错：error C2662: 'A::Fun' : cannot convert 'this' pointer from 'const A' to 'A &amp;'</p>
 <p>报错原因：因为const对象在调用成员函数时会隐含的把实参把中<em>this修改成const class * const this，以导致非const成员函数在接收时还是使用了class </em>const this接收，结果就是把const的指针赋给非const的指针</p>
 <p>修正方法：以前错误只需在对象的成员函数后面加上const即可</p>
+<p>> <strong>类中的const成员变量都要放在初始化列表之中进行</strong>
+　　&gt; const数据成员
+　　&gt; 引用数据成员
+　　&gt; 对象数据成员（内置类）</p>
+<p><strong>const成员函数</strong>
+　　&gt; void print() const =&gt; const 类名 * const this
+　　&gt; 在其内部是不能修改数据成员
+　　&gt; 也不能调用非const成员函数
+　　&gt; const对象只能调用const成员函数,必须要提供一个const版本的成员函数</p>
 <h4 id="reference">Reference</h4>
 <p>https://www.cnblogs.com/cthon/p/9166715.html</p>
                 
@@ -1176,13 +1263,13 @@ int _tmain(int argc, _TCHAR* argv[])
           </a>
         
         
-          <a href="../struct/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../static/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Struct
+                Static
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

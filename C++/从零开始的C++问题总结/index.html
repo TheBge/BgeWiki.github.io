@@ -257,6 +257,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../static/" class="md-nav__link">
+        Static
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../struct/" class="md-nav__link">
         Struct
       </a>
@@ -305,13 +317,6 @@
         <li class="md-nav__item">
   <a href="#dynamic_cast" class="md-nav__link">
     Dynamic_cast
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#static" class="md-nav__link">
-    Static
   </a>
   
 </li>
@@ -471,14 +476,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-19" type="checkbox" id="nav-2-19" >
       
-      <label class="md-nav__link" for="nav-2-18">
+      <label class="md-nav__link" for="nav-2-19">
         网课总结
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="网课总结" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-18">
+        <label class="md-nav__title" for="nav-2-19">
           <span class="md-nav__icon md-icon"></span>
           网课总结
         </label>
@@ -641,18 +646,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        多进程多线程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" >
       
-      <label class="md-nav__link" for="nav-4-3">
+      <label class="md-nav__link" for="nav-4-4">
         从零开始的OS知识总结
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="从零开始的OS知识总结" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-3">
+        <label class="md-nav__title" for="nav-4-4">
           <span class="md-nav__icon md-icon"></span>
           从零开始的OS知识总结
         </label>
@@ -1059,13 +1076,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#static" class="md-nav__link">
-    Static
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#this" class="md-nav__link">
     this
   </a>
@@ -1119,17 +1129,6 @@ class 可以使用模板，而 struct 不能。  </p>
 <h3 id="dynamic_cast">Dynamic_cast</h3>
 <p>一般认为子类对象大小&gt;=父类对象大小。因为子类可以扩展父类，可以增加成员变量。如果一个子类增加了成员变量，那么它的对象的内存空间会大于父类对象。这时一个实际指向父类的指针，如果被强制转化为子类对象指针，当使用这个指针时可能会导致越界访问非法内存。相反，为何子类指针可以转换为父类指针？因为父类指针需要的，子类对象都有，不会出现非法内存访问。</p>
 <p>这就是dynamic_cast不一定成功的原因。如果一个实际指向子类对象的指针被转换成了父类指针，然后再用dynamic_cast转换回来，一定能成功，而一个实际指向父类对象的指针，被dynamic_cast转换为子类指针，一定会失败。</p>
-<h3 id="static">Static</h3>
-<p>类的静态成员是所有对象共享的，一开始就分配了，以后固定而不会再分配空间。</p>
-<p>静态函数不允许调用类的普通变量，只能访问类的静态变量</p>
-<p>全局变量、静态全局变量、静态局部变量——内存的全局数据区，局部变量——栈区</p>
-<ul>
-<li>全局变量在整个工程文件中都有效</li>
-<li>静态全局变量只在定义它的文件有效</li>
-<li>静态局部变量只在定义它的函数内有效，只分配一次内存，函数返回后变量不会消失。</li>
-<li>全局变量和静态变量如果没有手动初始化，则编译器初始化为0，局部变量不知道</li>
-</ul>
-<p>staic成员变量在类外初始化，因为静态成员属于整个类，而不属于某个对象，如果在类内初始化，会导致每个对象都包含该静态成员，这就矛盾了。</p>
 <h3 id="this">this</h3>
 <ul>
 <li>this指针的一般形式为（假如类类型是A，当然与类类型相关）：A * const ，也就是说this指针是一个常量指针（指针的地址值为常量）</li>
