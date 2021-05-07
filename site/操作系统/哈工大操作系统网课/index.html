@@ -768,6 +768,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#p26-io" class="md-nav__link">
+    P26 IO与显示器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p27" class="md-nav__link">
+    P27 键盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p28" class="md-nav__link">
+    P28 生磁盘的使用
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1355,6 +1376,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#p26-io" class="md-nav__link">
+    P26 IO与显示器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p27" class="md-nav__link">
+    P27 键盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p28" class="md-nav__link">
+    P28 生磁盘的使用
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1574,6 +1616,46 @@
 <p><img alt="image-20210505210418544" src="../../img/image-20210505210418544.png" /></p>
 <p>二次机会算法，是1时清0，循环一次后仍然是0则淘汰。</p>
 <p><img alt="image-20210505211903947" src="../../img/image-20210505211903947.png" /></p>
+<h3 id="p26-io">P26 IO与显示器</h3>
+<p><img alt="image-20210507160926508" src="../../img/image-20210507160926508.png" /></p>
+<p>给外设对应的控制器写内容，然后控制器控制外设。</p>
+<p><img alt="image-20210507162048995" src="../../img/image-20210507162048995.png" /></p>
+<p><strong><font color='red'>向设备控制器的寄存器直接写不就行了？</font></strong></p>
+<p>需要查寄存器地址、内容的格式和语义...操作系统要给用户和提供一个简单视图——文件视图这样方便。</p>
+<p><img alt="image-20210507162619131" src="../../img/image-20210507162619131.png" /></p>
+<p><img alt="image-20210507162800966" src="../../img/image-20210507162800966.png" /></p>
+<p><img alt="image-20210507165044038" src="../../img/image-20210507165044038.png" /></p>
+<h3 id="p27">P27 键盘</h3>
+<p>如何使用键盘？</p>
+<p>使用者：敲键盘、看到结果</p>
+<p>操作系统：“等着”敲键盘、敲了就中断</p>
+<p><img alt="image-20210507171358630" src="../../img/image-20210507171358630.png" /></p>
+<p>inb、outb</p>
+<p><img alt="image-20210507172200246" src="../../img/image-20210507172200246.png" /></p>
+<h3 id="p28">P28 生磁盘的使用</h3>
+<p>让磁盘用起来</p>
+<p><img alt="image-20210507203431214" src="../../img/image-20210507203431214.png" /></p>
+<ul>
+<li>磁盘的访问单位是扇区</li>
+<li>扇区大小：512字节</li>
+<li>扇区的大小是传输时间和碎片浪费的折衷</li>
+</ul>
+<p><img alt="image-20210507203934954" src="../../img/image-20210507203934954.png" /></p>
+<p>简化抽象</p>
+<p><img alt="image-20210507204223962" src="../../img/image-20210507204223962.png" /></p>
+<p>操作系统希望上层用户使用下层更加简单高效</p>
+<p>扇区越大访问速度越快，于是用空间换时间</p>
+<p><img alt="image-20210507210317161" src="../../img/image-20210507210317161.png" /></p>
+<p><strong>FCFS磁盘调度算法</strong></p>
+<p>谁先来先调度</p>
+<p><strong>SSTF磁盘调度</strong></p>
+<p>Shortest-seek-time</p>
+<p>短寻道优先</p>
+<p><strong>SCAN磁盘调度</strong></p>
+<p>SSTF+中途不回折：每个请求都有处理机会</p>
+<p>C-SCAN磁盘调度（电梯算法）</p>
+<p>SCAN+直接移到另一端：两端的请求都能很快处理</p>
+<p><img alt="image-20210507215123502" src="../../img/image-20210507215123502.png" /></p>
                 
               
               
