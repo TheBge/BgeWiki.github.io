@@ -768,6 +768,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#p26-io" class="md-nav__link">
+    P26 IO与显示器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p27" class="md-nav__link">
+    P27 键盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p28" class="md-nav__link">
+    P28 生磁盘的使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p29" class="md-nav__link">
+    P29 从生磁盘到文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p31" class="md-nav__link">
+    P31 目录与文件系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p32" class="md-nav__link">
+    P32 目录解析代码实现
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1355,6 +1397,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#p26-io" class="md-nav__link">
+    P26 IO与显示器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p27" class="md-nav__link">
+    P27 键盘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p28" class="md-nav__link">
+    P28 生磁盘的使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p29" class="md-nav__link">
+    P29 从生磁盘到文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p31" class="md-nav__link">
+    P31 目录与文件系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p32" class="md-nav__link">
+    P32 目录解析代码实现
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1574,6 +1658,81 @@
 <p><img alt="image-20210505210418544" src="../../img/image-20210505210418544.png" /></p>
 <p>二次机会算法，是1时清0，循环一次后仍然是0则淘汰。</p>
 <p><img alt="image-20210505211903947" src="../../img/image-20210505211903947.png" /></p>
+<h3 id="p26-io">P26 IO与显示器</h3>
+<p><img alt="image-20210507160926508" src="../../img/image-20210507160926508.png" /></p>
+<p>给外设对应的控制器写内容，然后控制器控制外设。</p>
+<p><img alt="image-20210507162048995" src="../../img/image-20210507162048995.png" /></p>
+<p><strong><font color='red'>向设备控制器的寄存器直接写不就行了？</font></strong></p>
+<p>需要查寄存器地址、内容的格式和语义...操作系统要给用户和提供一个简单视图——文件视图这样方便。</p>
+<p><img alt="image-20210507162619131" src="../../img/image-20210507162619131.png" /></p>
+<p><img alt="image-20210507162800966" src="../../img/image-20210507162800966.png" /></p>
+<p><img alt="image-20210507165044038" src="../../img/image-20210507165044038.png" /></p>
+<h3 id="p27">P27 键盘</h3>
+<p>如何使用键盘？</p>
+<p>使用者：敲键盘、看到结果</p>
+<p>操作系统：“等着”敲键盘、敲了就中断</p>
+<p><img alt="image-20210507171358630" src="../../img/image-20210507171358630.png" /></p>
+<p>inb、outb</p>
+<p><img alt="image-20210507172200246" src="../../img/image-20210507172200246.png" /></p>
+<h3 id="p28">P28 生磁盘的使用</h3>
+<p>让磁盘用起来</p>
+<p><img alt="image-20210507203431214" src="../../img/image-20210507203431214.png" /></p>
+<ul>
+<li>磁盘的访问单位是扇区</li>
+<li>扇区大小：512字节</li>
+<li>扇区的大小是传输时间和碎片浪费的折衷</li>
+</ul>
+<p><img alt="image-20210507203934954" src="../../img/image-20210507203934954.png" /></p>
+<p>简化抽象</p>
+<p><img alt="image-20210507204223962" src="../../img/image-20210507204223962.png" /></p>
+<p>操作系统希望上层用户使用下层更加简单高效</p>
+<p>扇区越大访问速度越快，于是用空间换时间</p>
+<p><img alt="image-20210507210317161" src="../../img/image-20210507210317161.png" /></p>
+<p><strong>FCFS磁盘调度算法</strong></p>
+<p>谁先来先调度</p>
+<p><strong>SSTF磁盘调度</strong></p>
+<p>Shortest-seek-time</p>
+<p>短寻道优先</p>
+<p><strong>SCAN磁盘调度</strong></p>
+<p>SSTF+中途不回折：每个请求都有处理机会</p>
+<p>C-SCAN磁盘调度<strong>（电梯算法）</strong></p>
+<p>SCAN+直接移到另一端：两端的请求都能很快处理</p>
+<p><img alt="image-20210507215123502" src="../../img/image-20210507215123502.png" /></p>
+<h3 id="p29">P29 从生磁盘到文件</h3>
+<p>从文件怎么得到盘块号</p>
+<p><strong><font color='red'>为什么引入文件？</font></strong></p>
+<p><img alt="image-20210509154845211" src="../../img/image-20210509154845211.png" /></p>
+<p><img alt="image-20210509155902817" src="../../img/image-20210509155902817.png" /></p>
+<p>File control block</p>
+<p>连续结构类似数组，在面对连续增删改时表现不佳</p>
+<p><img alt="image-20210509160926432" src="../../img/image-20210509160926432.png" /></p>
+<p>适合动态增长，存取起来慢</p>
+<p><img alt="image-20210509161516756" src="../../img/image-20210509161516756.png" /></p>
+<p>Index，既适合增长，读写也不慢</p>
+<p><img alt="image-20210509162053496" src="../../img/image-20210509162053496.png" /></p>
+<p>P30 文件使用磁盘的实现</p>
+<p><img alt="image-20210509162826397" src="../../img/image-20210509162826397.png" /></p>
+<p><img alt="image-20210509163048543" src="../../img/image-20210509163048543.png" /></p>
+<p><img alt="image-20210509165218507" src="../../img/image-20210509165218507.png" /></p>
+<h3 id="p31">P31 目录与文件系统</h3>
+<p><img alt="image-20210509170406645" src="../../img/image-20210509170406645.png" /></p>
+<p><img alt="image-20210509171228864" src="../../img/image-20210509171228864.png" /></p>
+<p>如何根据路径名找到文件的FCB</p>
+<p><img alt="image-20210509173621167" src="../../img/image-20210509173621167.png" /></p>
+<p><strong>要使整个系统能自举，还需要其他信息</strong></p>
+<ul>
+<li>inode位图：那些inode空闲，哪些被占用</li>
+<li>盘块位图：哪些盘块使空闲的，硬盘大小不同这个位图大小也不同</li>
+<li>空闲位图</li>
+<li>超级快</li>
+</ul>
+<p><img alt="image-20210509173936324" src="../../img/image-20210509173936324.png" /></p>
+<h3 id="p32">P32 目录解析代码实现</h3>
+<p><img alt="image-20210509174805469" src="../../img/image-20210509174805469.png" /></p>
+<ul>
+<li><strong>读取inode——iget</strong></li>
+<li><strong>开始目录解析——find_entry</strong></li>
+</ul>
                 
               
               
