@@ -2,9 +2,49 @@
 
 #### 剑指53 - I. 在排序数组中查找数字 I
 
-排序中的搜索问题，首先考虑二分
+**排序中的搜索问题，首先考虑二分**
 
 
+
+#### 剑指 Offer 53 - II. 0～n-1中缺失的数字
+
+“**考点主要还是二分法，题目每个条件都是有用的。所有题都拿来遍历，offer也就遍历到别人那里去了**”
+
+根据题意，数组可以按照以下规则划分为两部分。
+
+- 左子数组： nums[i] = inums[i]=i ;
+- 右子数组： nums[i]  != nums[i] ;
+
+缺失的数字等于 “右子数组的首位元素” 对应的索引；因此考虑使用二分法查找 “右子数组的首位元素”
+
+```c++
+class Solution 
+{
+    public:
+        int missingNumber(vector<int>& nums) 
+        {
+            if(nums.size() == 0)
+            {
+                return -1;
+            }
+
+            int left = 0, right = nums.size() - 1;
+            while(left <= right)
+            {
+                int mid = (left + right)/2;
+                if(nums[mid] != mid)
+                {
+                    right = mid - 1;
+                }
+                else
+                {
+                    left = mid + 1;
+                }
+            }
+            return left;
+        }
+};
+```
 
 
 

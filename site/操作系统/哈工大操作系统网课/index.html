@@ -789,6 +789,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#p29" class="md-nav__link">
+    P29 从生磁盘到文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p31" class="md-nav__link">
+    P31 目录与文件系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p32" class="md-nav__link">
+    P32 目录解析代码实现
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1397,6 +1418,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#p29" class="md-nav__link">
+    P29 从生磁盘到文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p31" class="md-nav__link">
+    P31 目录与文件系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p32" class="md-nav__link">
+    P32 目录解析代码实现
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1653,9 +1695,44 @@
 <p>短寻道优先</p>
 <p><strong>SCAN磁盘调度</strong></p>
 <p>SSTF+中途不回折：每个请求都有处理机会</p>
-<p>C-SCAN磁盘调度（电梯算法）</p>
+<p>C-SCAN磁盘调度<strong>（电梯算法）</strong></p>
 <p>SCAN+直接移到另一端：两端的请求都能很快处理</p>
 <p><img alt="image-20210507215123502" src="../../img/image-20210507215123502.png" /></p>
+<h3 id="p29">P29 从生磁盘到文件</h3>
+<p>从文件怎么得到盘块号</p>
+<p><strong><font color='red'>为什么引入文件？</font></strong></p>
+<p><img alt="image-20210509154845211" src="../../img/image-20210509154845211.png" /></p>
+<p><img alt="image-20210509155902817" src="../../img/image-20210509155902817.png" /></p>
+<p>File control block</p>
+<p>连续结构类似数组，在面对连续增删改时表现不佳</p>
+<p><img alt="image-20210509160926432" src="../../img/image-20210509160926432.png" /></p>
+<p>适合动态增长，存取起来慢</p>
+<p><img alt="image-20210509161516756" src="../../img/image-20210509161516756.png" /></p>
+<p>Index，既适合增长，读写也不慢</p>
+<p><img alt="image-20210509162053496" src="../../img/image-20210509162053496.png" /></p>
+<p>P30 文件使用磁盘的实现</p>
+<p><img alt="image-20210509162826397" src="../../img/image-20210509162826397.png" /></p>
+<p><img alt="image-20210509163048543" src="../../img/image-20210509163048543.png" /></p>
+<p><img alt="image-20210509165218507" src="../../img/image-20210509165218507.png" /></p>
+<h3 id="p31">P31 目录与文件系统</h3>
+<p><img alt="image-20210509170406645" src="../../img/image-20210509170406645.png" /></p>
+<p><img alt="image-20210509171228864" src="../../img/image-20210509171228864.png" /></p>
+<p>如何根据路径名找到文件的FCB</p>
+<p><img alt="image-20210509173621167" src="../../img/image-20210509173621167.png" /></p>
+<p><strong>要使整个系统能自举，还需要其他信息</strong></p>
+<ul>
+<li>inode位图：那些inode空闲，哪些被占用</li>
+<li>盘块位图：哪些盘块使空闲的，硬盘大小不同这个位图大小也不同</li>
+<li>空闲位图</li>
+<li>超级快</li>
+</ul>
+<p><img alt="image-20210509173936324" src="../../img/image-20210509173936324.png" /></p>
+<h3 id="p32">P32 目录解析代码实现</h3>
+<p><img alt="image-20210509174805469" src="../../img/image-20210509174805469.png" /></p>
+<ul>
+<li><strong>读取inode——iget</strong></li>
+<li><strong>开始目录解析——find_entry</strong></li>
+</ul>
                 
               
               
