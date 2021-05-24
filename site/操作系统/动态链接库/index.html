@@ -14,7 +14,7 @@
     
     
       
-        <title>多进程多线程 - Bge_Wiki</title>
+        <title>动态链接库 - Bge_Wiki</title>
       
     
     
@@ -57,11 +57,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -90,7 +85,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              多进程多线程
+              动态链接库
             
           </span>
         </div>
@@ -585,11 +580,18 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         动态链接库
       </a>
+      
     </li>
   
 
@@ -609,52 +611,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          多进程多线程
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
         多进程多线程
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    线程和进程有什么区别？
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1075,58 +1036,19 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    线程和进程有什么区别？
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>多进程多线程</h1>
+                  <h1>动态链接库</h1>
                 
-                <h3 id="_1">线程和进程有什么区别？</h3>
-<p>进程（process）是操作系统为正在运行的程序提供的抽象。</p>
-<p>线程（thread）是操作系统能够进行运算调度的最小单位。被包含在进程中，是进程的实际运作单位。</p>
-<p>有了线程技术，我们就可以在一个进程中创建多个线程，让它们在<strong>“同一时刻”</strong>分别去做不同的工作了。这些线程共享同一块内存，线程之间可以共享对象、资源，如果有冲突或需要协同，还可以随时沟通以解决冲突或保持同步。</p>
-<p><font color='red'>缺点：</font>在一个进程内，不管你创建了多少线程，它们总是被限定在一颗CPU内，或者多核CPU的一个核内。这意味着，多线程在宏观上是并行的，在微观上则是分时切换串行的，多线程编程无法充分发挥多核计算资源的优势。这也是使用多线程做任务并行处理时，线程数量超过一定数值后，线程越多速度反倒越慢的原因。</p>
-<p>多进程技术正好弥补了多线程编程的不足，我们可以在每一颗CPU上，或者多核CPU的每一个核上启动一个进程，如果有必要，还可以在每个进程内再创建适量的线程，最大限度地使用计算资源解决问题。因为不在同一块内存区域内，和线程相比，进程间的资源共享、通信、同步等，都要麻烦得多，受到的限制也更多。</p>
-<h3 id="reference">Reference</h3>
-<p>https://www.zhihu.com/question/25532384</p>
+                <p>链接可以在编译时由静态编译器来完成，也可以在加载时和运行时由动态链接器来完成。</p>
+<p>链接器处理称为目标文件的二进制文件，它有3钟不同的形式：<strong>可重定位的</strong>、<strong>可执行的</strong>和<strong>可共享的</strong>。</p>
+<p>可重定位的目标文件由静态链接器合并成一个可执行的目标文件，它可以加载到内存中并执行。</p>
+<p>共享目标文件（共享库）是运行时由动态链接器链接和加载的，或者隐含地在调用程序被加载和开始执行时，或者根据需要在程序调用dlopen函数时。</p>
+<p>链接器的两个主要任务是<strong>符号解析</strong>和<strong>重定位</strong>，符号解析将目标文件中的每个全局符号都绑定到一个唯一的定义，而重定位确定每个符号的最终内存地址，并修改对哪些目标的引用。</p>
                 
               
               
@@ -1145,7 +1067,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../%E5%93%88%E5%B7%A5%E5%A4%A7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BD%91%E8%AF%BE/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../%E3%80%8A%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1154,19 +1076,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                哈工大操作系统网课
+                《现代操作系统》
               </div>
             </div>
           </a>
         
         
-          <a href="../%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E5%93%88%E5%B7%A5%E5%A4%A7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BD%91%E8%AF%BE/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                深入理解计算机系统
+                哈工大操作系统网课
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

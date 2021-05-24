@@ -14,7 +14,7 @@
     
     
       
-        <title>多进程多线程 - Bge_Wiki</title>
+        <title>深入理解计算机系统 - Bge_Wiki</title>
       
     
     
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              多进程多线程
+              深入理解计算机系统
             
           </span>
         </div>
@@ -609,6 +609,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        多进程多线程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -618,12 +630,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          多进程多线程
+          深入理解计算机系统
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        多进程多线程
+        深入理解计算机系统
       </a>
       
         
@@ -639,15 +651,76 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    线程和进程有什么区别？
+    进程控制
+  </a>
+  
+    <nav class="md-nav" aria-label="进程控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pid" class="md-nav__link">
+    获取进程pid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    创建和终止进程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    回收子进程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    让进程休眠
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    加载并运行程序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    信号
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#_7" class="md-nav__link">
+    虚拟地址
   </a>
+  
+    <nav class="md-nav" aria-label="虚拟地址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    动态内存分配
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -655,18 +728,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
-        深入理解计算机系统
-      </a>
     </li>
   
 
@@ -1092,15 +1153,76 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    线程和进程有什么区别？
+    进程控制
+  </a>
+  
+    <nav class="md-nav" aria-label="进程控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pid" class="md-nav__link">
+    获取进程pid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    创建和终止进程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    回收子进程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    让进程休眠
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    加载并运行程序
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    信号
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#_7" class="md-nav__link">
+    虚拟地址
   </a>
+  
+    <nav class="md-nav" aria-label="虚拟地址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    动态内存分配
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1117,16 +1239,76 @@
               
                 
                 
-                  <h1>多进程多线程</h1>
+                  <h1>深入理解计算机系统</h1>
                 
-                <h3 id="_1">线程和进程有什么区别？</h3>
-<p>进程（process）是操作系统为正在运行的程序提供的抽象。</p>
-<p>线程（thread）是操作系统能够进行运算调度的最小单位。被包含在进程中，是进程的实际运作单位。</p>
-<p>有了线程技术，我们就可以在一个进程中创建多个线程，让它们在<strong>“同一时刻”</strong>分别去做不同的工作了。这些线程共享同一块内存，线程之间可以共享对象、资源，如果有冲突或需要协同，还可以随时沟通以解决冲突或保持同步。</p>
-<p><font color='red'>缺点：</font>在一个进程内，不管你创建了多少线程，它们总是被限定在一颗CPU内，或者多核CPU的一个核内。这意味着，多线程在宏观上是并行的，在微观上则是分时切换串行的，多线程编程无法充分发挥多核计算资源的优势。这也是使用多线程做任务并行处理时，线程数量超过一定数值后，线程越多速度反倒越慢的原因。</p>
-<p>多进程技术正好弥补了多线程编程的不足，我们可以在每一颗CPU上，或者多核CPU的每一个核上启动一个进程，如果有必要，还可以在每个进程内再创建适量的线程，最大限度地使用计算资源解决问题。因为不在同一块内存区域内，和线程相比，进程间的资源共享、通信、同步等，都要麻烦得多，受到的限制也更多。</p>
-<h3 id="reference">Reference</h3>
-<p>https://www.zhihu.com/question/25532384</p>
+                <h3 id="_1">进程控制</h3>
+<h4 id="pid">获取进程pid</h4>
+<p>每个进程都有一个唯一的正数（非零）进程ID（PID）。</p>
+<p>getpid，getppid返回一个pid_t的整数值。</p>
+<h4 id="_2">创建和终止进程</h4>
+<p>新创建的子进程几乎但不完全和父进程相同。</p>
+<p>fork函数只调用一次但是返回两次。在父进程中返回子进程的pid，在子进程中返回0.</p>
+<p>父进程和子进程是并发运行的独立进程。不同的系统上交替执行的顺序可能不同。</p>
+<h4 id="_3">回收子进程</h4>
+<p>一个终止了但是还未被回收的进程称为<strong>僵死进程</strong>。</p>
+<h4 id="_4">让进程休眠</h4>
+<p>sleep函数将一个进程挂起一段指定的时间</p>
+<p>pause，该函数让调用函数休眠，直到该进程收到一个信号。</p>
+<h4 id="_5">加载并运行程序</h4>
+<p>execve函数在当前进程的上下文中加载并运行一个新程序。</p>
+<hr />
+<p><strong>程序和进程的区别</strong></p>
+<p>程序是一堆代码和数据；程序可以作为目标文件存在于磁盘上，或者作为段存在于地址空间中。</p>
+<p>进程是执行中程序的一个具体的实例；程序总是运行在某个进程的上下文中。</p>
+<p>fork在新的子进程中运行相同的程序。</p>
+<p>execve函数在当前进程的上下文中加载并运行一个新的程序。它会覆盖当前进程的地址空间，但并没有创建一个新进程。</p>
+<hr />
+<h3 id="_6">信号</h3>
+<p>一个信号就是一条小消息，它通知进程系统中发生了一个某种类型的事件。</p>
+<p>每种信号类型都对应于某种系统事件，底层的硬件异常是由内核异常处理程序处理的，正常情况下对用户进程而言是不可见的。</p>
+<h3 id="_7">虚拟地址</h3>
+<p>CPU通过生成一个虚拟地址来访问主存，这个虚拟地址在被送到内存之前先转换成适当的物理地址（地址翻译）。</p>
+<p>CPU芯片上的内存管理单元（MMU），利用存放在主存中的查询表来动态翻译虚拟地址，表的内容由操作系统管理。</p>
+<h4 id="_8"><font color='red'>动态内存分配</font></h4>
+<p>动态内存分配器维护着一个进程的虚拟内存区域，称为堆。</p>
+<p><strong>malloc和free</strong></p>
+<p>C标准库提供了malloc的显示分配器，程序通过调用malloc函数来从堆中分配内存块。</p>
+<p>malloc返回一个指针，指向大小为至少size字节的内存块，这个块会为可能包含在这个块中的任何数据对象类型做对齐。在32位模式中，malloc返回的块的地址总是8的倍数，在64位模式中，该地址总是16的倍数。</p>
+<p><strong>为什么要使用动态内存分配？</strong></p>
+<p>程序使用动态内存分配的最重要的原因是直到程序实际运行时，才知道某些数据结构的大小。</p>
+<pre><code class="language-c++">#include &lt;csapp.h&gt;
+
+int main()
+{
+    int* array, i ,n;
+    scanf(&quot;%d&quot;, &amp;n);
+    array = (int*)Malloc(n* sizeof(int));
+    for(int i = 0; i &lt; n; ++i)
+    {
+        scanf(&quot;%d&quot;, &amp;array[i]);
+    }
+    free(array);
+    exit(0);
+}
+</code></pre>
+<p><strong>C程序中常见的内存有关的错误</strong></p>
+<p>1.<font color='red'>简接引用坏指针</font></p>
+<p>例如scanf，正确的使用是传递给scanf一个格式串和变量的地址。</p>
+<p>scanf("%d", &amp;val);</p>
+<p>而不是，</p>
+<p>scanf("%d", val);</p>
+<p>2.<font color='red'>读取未初始化的内存</font></p>
+<p>3.<font color='red'>栈缓冲区溢出</font></p>
+<p>4.<font color='red'>假设指向对象的指针和它们指向的对象是相同大小的</font></p>
+<p>5.<font color='red'>错位错误</font></p>
+<p>6.<font color='red'>引用指针，而不是它所指的对象</font></p>
+<p><img alt="image-20210523174718700" src="../../img/image-20210523174718700.png" /></p>
+<p>——和*优先级相同，从右向左结合，减少了指针自己的值</p>
+<p>7.<font color='red'>误解指针运算</font></p>
+<p>8.<font color='red'>引用不存在的变量</font></p>
+<p><img alt="image-20210523175134341" src="../../img/image-20210523175134341.png" /></p>
+<p>9.<font color='red'>引用空闲堆块中的数据</font></p>
+<p>10.<font color='red'>内存泄漏</font></p>
                 
               
               
@@ -1145,7 +1327,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../%E5%93%88%E5%B7%A5%E5%A4%A7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BD%91%E8%AF%BE/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1154,19 +1336,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                哈工大操作系统网课
+                多进程多线程
               </div>
             </div>
           </a>
         
         
-          <a href="../%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84OS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4%E4%B8%8E%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                深入理解计算机系统
+                内核空间与用户空间
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
