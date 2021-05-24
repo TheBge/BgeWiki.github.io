@@ -585,6 +585,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/" class="md-nav__link">
+        动态链接库
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%93%88%E5%B7%A5%E5%A4%A7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BD%91%E8%AF%BE/" class="md-nav__link">
         哈工大操作系统网课
       </a>
@@ -608,18 +620,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        深入理解计算机系统
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6" >
       
-      <label class="md-nav__link" for="nav-4-4">
+      <label class="md-nav__link" for="nav-4-6">
         从零开始的OS知识总结
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="从零开始的OS知识总结" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-4">
+        <label class="md-nav__title" for="nav-4-6">
           <span class="md-nav__icon md-icon"></span>
           从零开始的OS知识总结
         </label>
@@ -856,7 +880,21 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    语言基础
+    什么是面向对象
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    虚函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defineconst" class="md-nav__link">
+    #define和const
   </a>
   
 </li>
@@ -1000,6 +1038,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/MVC%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        MVC框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/Refactor/" class="md-nav__link">
         Refactor
       </a>
@@ -1049,7 +1099,21 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    语言基础
+    什么是面向对象
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    虚函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defineconst" class="md-nav__link">
+    #define和const
   </a>
   
 </li>
@@ -1069,14 +1133,23 @@
                 
                   <h1>面经问题总结</h1>
                 
-                <h4 id="_1">语言基础</h4>
-<p>虚函数 
-1.在有继承关系的父子类中，构建和析构一个子类对象时，父子构造函数和析构函数的执行顺序分别是怎样的？ 
-2.在有继承关系的类体系中，父类的构造函数和析构函数一定要申明为 virtual 吗？如果不申明为 virtual 会怎样？
-3.什么是 C++ 多态？C++ 多态的实现原理是什么？
-4.什么是虚函数？虚函数的实现原理是什么？
-5.什么是虚表？虚表的内存结构布局如何？虚表的第一项（或第二项）是什么？
-菱形继承（类D同时继承B和C，B和C又继承自A）体系下，虚表在各个类中的布局如何？如果类B和类C同时有一个成员变了m，m如何在D对象的内存地址上分布的？是否会相互覆盖？</p>
+                <h3 id="_1">什么是面向对象</h3>
+<p><strong>面向过程（Procedure Oriented 简称PO ：如C语言）：</strong></p>
+<p>从名字可以看出它是注重过程的。当解决一个问题的时候，面向过程会把事情拆分成： 一个个函数和数据（用于方法的参数） 。然后按照一定的顺序，执行完这些<strong>方法</strong>（每个方法看作一个过程），等方法执行完了，事情就搞定了。</p>
+<p><strong>面向对象（Object Oriented简称OO ：如C++，JAVA等语言）：</strong></p>
+<p>看名字它是注重对象的。当解决一个问题的时候，面向对象会把事物抽象成对象的概念，就是说这个问题里面有哪些对象，然后给对象赋一些属性和方法，然后让每个对象去执行自己的方法，问题得到解决。</p>
+<h3 id="_2">虚函数</h3>
+<p>1.在有继承关系的父子类中，构建和析构一个子类对象时，父子构造函数和析构函数的执行顺序分别是怎样的？ </p>
+<p>2.在有继承关系的类体系中，父类的构造函数和析构函数一定要申明为 virtual 吗？如果不申明为 virtual 会怎样？</p>
+<p>3.什么是 C++ 多态？C++ 多态的实现原理是什么？</p>
+<p>4.什么是虚函数？虚函数的实现原理是什么？</p>
+<p>5.什么是虚表？虚表的内存结构布局如何？虚表的第一项（或第二项）是什么？</p>
+<p>6.菱形继承（类D同时继承B和C，B和C又继承自A）体系下，虚表在各个类中的布局如何？如果类B和类C同时有一个成员变了m，m如何在D对象的内存地址上分布的？是否会相互覆盖？</p>
+<h3 id="defineconst">#define和const</h3>
+<p>（1）就起作用的阶段而言： #define是在编译的预处理阶段起作用，而const是在 编译、运行的时候起作用。</p>
+<p>（2）就起作用的方式而言： #define只是简单的字符串替换，没有类型检查。而const有对应的数据类型，是要进行判断的，可以避免一些低级的错误。 </p>
+<p>（3）就存储方式而言：#define只是进行展开，有多少地方使用，就替换多少次，它定义的宏常量在内存中有若干个备份；const定义的只读变量在程序运行过程中只有一份备份。</p>
+<p>（4）从代码调试的方便程度而言： const常量可以进行调试的，define是不能进行调试的，因为在预编译阶段就已经替换掉了。</p>
                 
               
               
