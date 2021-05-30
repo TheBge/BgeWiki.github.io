@@ -14,7 +14,7 @@
     
     
       
-        <title>Type Traits - Bge_Wiki</title>
+        <title>《Effective Modern C++》 - Bge_Wiki</title>
       
     
     
@@ -57,6 +57,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#4" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Type Traits
+              《Effective Modern C++》
             
           </span>
         </div>
@@ -202,18 +207,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Type-Traits/" class="md-nav__link">
         Type Traits
       </a>
-      
     </li>
   
 
@@ -281,11 +279,86 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../%E3%80%8AEffective%20Modern%20C%2B%2B%E3%80%8B/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          《Effective Modern C++》
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         《Effective Modern C++》
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    第4章 智能指针
+  </a>
+  
+    <nav class="md-nav" aria-label="第4章 智能指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#18stdunique_ptr" class="md-nav__link">
+    条款18：使用std::unique_ptr管理具备专属所有权的资源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19stdshared_ptr" class="md-nav__link">
+    条款19：使用std::shared_ptr管理具备共享所有权的资源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20stdshared_ptrweak_ptr" class="md-nav__link">
+    条款20：对于类似std::shared_ptr但有可能空悬的指针使用weak_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21stdmake_uniquestdmake_sharednew" class="md-nav__link">
+    条款21：优选选用std::make_unique和std::make_shared，而非直接使用new
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22pimpl" class="md-nav__link">
+    条款22：使用Pimpl习惯用法时，将特殊成员函数的定义放到实现文件中
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1048,107 +1121,120 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    第4章 智能指针
+  </a>
+  
+    <nav class="md-nav" aria-label="第4章 智能指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#18stdunique_ptr" class="md-nav__link">
+    条款18：使用std::unique_ptr管理具备专属所有权的资源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19stdshared_ptr" class="md-nav__link">
+    条款19：使用std::shared_ptr管理具备共享所有权的资源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20stdshared_ptrweak_ptr" class="md-nav__link">
+    条款20：对于类似std::shared_ptr但有可能空悬的指针使用weak_ptr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21stdmake_uniquestdmake_sharednew" class="md-nav__link">
+    条款21：优选选用std::make_unique和std::make_shared，而非直接使用new
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22pimpl" class="md-nav__link">
+    条款22：使用Pimpl习惯用法时，将特殊成员函数的定义放到实现文件中
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Type Traits</h1>
+                  <h1>《Effective Modern C++》</h1>
                 
-                <p>萃取机
-具体的来说，traits就是通过定义一些结构体或类，并利用模板类特化和偏特化的能力，给类型赋予一些特性，这些特性根据类型的不同而异。在程序设计中可以使用这些traits来判断一个类型的一些特性，引发C++的函数重载机制，实现同一种操作因类型不同而异的效果。</p>
-<p>cplusplus： 
-<type_traits> 
-This header defines a series of classes to obtain type information on compile-time.
-The header contains:
-Helper classes: Standard classes to assist in creating compile-time constants.
-Type traits: Classes to obtain characteristics of types in the form of compile-time constant values.
-Type transformations: Classes to obtain new types by applying specific transformations to existing types.</p>
-<p>感觉就是用traits来问到各种各样的type  </p>
-<p>例：
-现在定义一个type_traits可以获得类型的如下属性：
-1.是否存在non-trivial default constructor
-2.是否存在non-trivial copy constructor 
-3.是否存在non-trivial assignment operator
-4.是否存在non-trivial destructor</p>
-<pre><code class="language-c">struct __true_type {
-};
-struct __false_type {
-};
-
-template &lt;class _Tp&gt;
-struct __type_traits {
-
-   typedef __false_type    has_trivial_default_constructor;
-   typedef __false_type    has_trivial_copy_constructor;
-   typedef __false_type    has_trivial_assignment_operator;
-   typedef __false_type    has_trivial_destructor;
-};
-</code></pre>
-<pre><code class="language-c++">template &lt;&gt;
-struct __type_traits&lt;int&gt; {
-   typedef __true_type    has_trivial_default_constructor;
-   typedef __true_type    has_trivial_copy_constructor;
-   typedef __true_type    has_trivial_assignment_operator;
-   typedef __true_type    has_trivial_destructor;
-};
-
-template &lt;&gt;
-struct __type_traits&lt;char&gt; {
-   typedef __true_type    has_trivial_default_constructor;
-   typedef __true_type    has_trivial_copy_constructor;
-   typedef __true_type    has_trivial_assignment_operator;
-   typedef __true_type    has_trivial_destructor;
-};
-</code></pre>
-<p>偏特化版本 </p>
-<pre><code class="language-c++">template &lt;class _Tp&gt;
-struct __type_traits&lt;_Tp*&gt; {
-   typedef __true_type    has_trivial_default_constructor;
-   typedef __true_type    has_trivial_copy_constructor;
-   typedef __true_type    has_trivial_assignment_operator;
-   typedef __true_type    has_trivial_destructor;
-   typedef __true_type    is_POD_type;
-};
-</code></pre>
-<p>特化版本，比如自定义类型  </p>
-<pre><code class="language-c++">struct __type_traits&lt;Shape&gt; {
-   typedef __false_type    has_trivial_default_constructor;
-   typedef __true_type    has_trivial_copy_constructor;
-   typedef __true_type    has_trivial_assignment_operator;
-   typedef __true_type    has_trivial_destructor;
-   typedef __true_type    is_POD_type;
-};
-</code></pre>
-<p>假设现在用个模板函数fun需要根据类型T是否有non-trivial constructor来进行不同的操作，可以这样来实现：  </p>
-<pre><code class="language-c++">template&lt;class T&gt;
-void fun()
-{
-     typedef typename __type_traits&lt;T&gt;::has_trivial_constructor _Trivial_constructor
-    __fun(_Trivial_constructor()); // 根据得到的_Trivial_constructor来调用相应的函数
-}
-
-// 两个重载的函数
-void _fun(_true_type)
-{
-    cout&lt;&lt;&quot;fun(_true_type)called&quot;&lt;&lt;endl;
-}
-void _fun(_false_type)
-{
-    cout&lt;&lt;&quot;fun(_false_type) called&quot;&lt;&lt;endl;
-}
-
-//测试代码
-
-int main()
-{
-    fun&lt;char&gt;();
-    fun&lt;int&gt;();
-    fun&lt;char *&gt;();
-    fun&lt;double&gt;();
-}
-</code></pre>
+                <h3 id="4">第4章 智能指针</h3>
+<h4 id="18stdunique_ptr">条款18：使用std::unique_ptr管理具备专属所有权的资源</h4>
+<p><strong><font color='red'>要点</font></strong></p>
+<ul>
+<li>std::unique_ptr是小巧、高速的、具备只移型别的智能指针，对托管资源实施专属所有权语义。</li>
+<li>默认的，资源析构采用delete运算符来实现，但可以指定自定义删除器。具有状态的删除器和采用函数指针实现的删除器会增加unique_ptr型别的对象的尺寸。</li>
+<li>将std::unique_ptr容易转换成shared_ptr。</li>
+</ul>
+<h4 id="19stdshared_ptr">条款19：使用std::shared_ptr管理具备共享所有权的资源</h4>
+<p><strong><font color='red'>要点</font></strong></p>
+<ul>
+<li>shared_ptr提供了方便的手段，实现了任意资源在共享所有权语义下进行生命周期管理的垃圾回收。</li>
+<li>与unique_ptr相比，shared_ptr的尺寸通常是裸指针尺寸的两倍，它还会带来控制块的开销，并要求原子化的引用计数操作。</li>
+<li>默认的资源析构通过delete运算符进行，但同时也支持用户自定义删除器。删除器的型别对shared_ptr的型别没有影响。</li>
+<li>避免使用裸指针型别的变量来创建shared_ptr。</li>
+</ul>
+<h4 id="20stdshared_ptrweak_ptr">条款20：对于类似std::shared_ptr但有可能空悬的指针使用weak_ptr</h4>
+<p><strong><font color='red'>要点</font></strong></p>
+<ul>
+<li>使用weak_ptr来代替可能空悬的shared_ptr。</li>
+<li>weak_ptr可能的用武之地包括缓存，观察者列表，以及避免shared_ptr指针环路。</li>
+</ul>
+<h4 id="21stdmake_uniquestdmake_sharednew">条款21：优选选用std::make_unique和std::make_shared，而非直接使用new</h4>
+<p>要点</p>
+<ul>
+<li>相比直接使用new表达式，make系列函数消除了重复代码、改进了异常安全性，并且对于make_shared和std::allcoated_shared而言，生成的目标代码会尺寸更小、速度更快。</li>
+<li>不适于使用make系列函数的场景包括：需要使用定制删除器，以及期望直接传递大括号初始化。</li>
+</ul>
+<h4 id="22pimpl">条款22：使用Pimpl习惯用法时，将特殊成员函数的定义放到实现文件中</h4>
+<p>Pimpl（point to implementation）把某类的数据成员用一个指涉到某实现类（或结构体）的指针替代，然后把原来放在主类中的数据成员放置到实现类中，并通过指针间接访问这些数据成员。</p>
+<p><strong><font color='red'>要点</font></strong></p>
+<ul>
+<li>Pimpl惯用法通过降低类的客户和类实现者之间的依赖性，减少了构建遍数。</li>
+<li>对于采用unique_ptr来实现的pImpl指针，须在类的头文件中声明特种成员函数，但在实现文件中实现它们。即使默认函数实现有着正确的行为，也必须这样做。</li>
+<li>上述建议只适用于unique_ptr，但不适用shared_ptr。</li>
+</ul>
                 
               
               
@@ -1167,7 +1253,7 @@ int main()
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../struct/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1176,19 +1262,19 @@ int main()
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Welcome to MkDocs
+                Struct
               </div>
             </div>
           </a>
         
         
-          <a href="../Utils/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84C%2B%2B%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Utils
+                从零开始的C++问题总结
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
