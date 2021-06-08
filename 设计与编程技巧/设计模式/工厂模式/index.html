@@ -1265,19 +1265,25 @@
     简单工厂模式
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="简单工厂模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     工厂模式
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     抽象工厂
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1341,19 +1347,25 @@
     简单工厂模式
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="简单工厂模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     工厂模式
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     抽象工厂
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1372,7 +1384,23 @@
                 
                   <h1>工厂模式</h1>
                 
-                <h4 id="_1">简单工厂模式</h4>
+                <h3 id="_1">简单工厂模式</h3>
+<p>Simple工厂模式描述了一个类，该类有一个创建方法，该方法有一个很大的条件，该条件<strong>根据方法参数</strong>选择要实例化的产品类，然后返回。</p>
+<p>人们通常会将简单工厂与一般工厂或一种创造性设计模式混淆。在大多数情况下，简单工厂是引入工厂方法或抽象工厂模式的中间步骤。</p>
+<p>一个简单的工厂通常由一个类中的一个方法表示。随着时间的推移，这个方法可能会变得太大，因此您可能决定将该方法的部分提取到子类中。一旦您多次这样做，您可能会发现整个事情变成了经典的工厂方法模式。</p>
+<p>顺便说一下，如果你声明一个简单的工厂抽象，它不会神奇地变成抽象工厂模式。</p>
+<pre><code class="language-java">class UserFactory {
+    public static function create($type) {
+        switch ($type) {
+            case 'user': return new User();
+            case 'customer': return new Customer();
+            case 'admin': return new Admin();
+            default:
+                throw new Exception('Wrong user type passed.');
+        }
+    }
+}
+</code></pre>
 <p>工厂类：创建指定具体实例对象的接口</p>
 <p>抽象产品类：具体产品类的父类或接口</p>
 <p>具体产品类：工厂类创建的对象是具体产品类的实例</p>
@@ -1496,6 +1524,9 @@ public:
 }
 </code></pre>
 <h4 id="_2">工厂模式</h4>
+<p>工厂方法是一种创建(Creational)设计模式，它解决了创建产品对象而不指定其具体类的问题。</p>
+<p>Factory方法定义了一个方法，该方法应该用于创建对象，而不是直接调用构造函数(new操作符)。子类可以重写此方法来更改将要创建的对象的类。</p>
+<p>例：</p>
 <p>情景：为了生产某种鞋子，需要为不同牌子的鞋开设独立的生产线。</p>
 <p>抽象工厂类：提供创建具体产品类的接口</p>
 <p>具体工厂类：继承抽象工厂，实现创建具体产品对象</p>
