@@ -39,7 +39,9 @@ MVC、MTV、[MVP](https://baike.baidu.com/item/MVP/3714550)、CBD、[ORM](https:
 ![image-20210514182228203](../img/image-20210514182228203.png)
 
 ​		**模型（Model）**：封装的是数据源和所有基于对这些数据的操作。在一个组件中，Model往往表示组件的状态和操作状态的方法。
+
 ​		**视图（View）**：封装的是对数据源Model的一种显示。一个模型可以由多个视图，而一个视图理论上也可以同不同的模型关联起来。
+
 ​		**控制器（Control）**：封装的是外界作用于模型的操作。通常，这些操作会转发到模型上，并调用模型中相应的一个或者多个方法。一般Controller在Model和View之间起到了沟通的作用，处理用户在View上的输入，并转发给Model。这样Model和View两者之间可以做到松散耦合，甚至可以彼此不知道对方，而由Controller连接起这两个部分。
 
 在设计模式中，MVC实际上是一个比较高层的模式，它由多个更基本的设计模式组合而成，**<font color='red'>Model-View的关系实际上是Observer模式，模型的状态和试图的显示相互响应，而View-Controller则是由Strategy模式所描述的，View用一个特定的Controller的实例来实现一个特定的响应策略，更换不同的Controller，可以改变View对用户输入的响应。而其它的一些设计模式也很容易组合到这个体系中。比如，通过Composite模式，可以将多个View嵌套组合起来；通过FactoryMethod模式来指定View的Controller，等等</font>**。在GOF书的 Introduction中，有一小节是“Design Patterns in Smalltalk MVC”即介绍在MVC模式里用到的设计模式。它大概向我们传达了这样的信息：合成模式+策略模式+观察者模式约等于MVC模式（当然MVC模式要多一些 东西）。
