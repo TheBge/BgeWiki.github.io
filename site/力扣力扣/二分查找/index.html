@@ -57,6 +57,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#34" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -581,9 +586,43 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          二分查找
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         二分查找
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    34. 在排序数组中查找元素的第一个和最后一个位置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1234,6 +1273,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E7%A7%8B%E6%8B%9B%E5%86%B2%E5%88%BA/%E5%AE%B9%E5%99%A8%E5%92%8C%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        容器和算法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E7%A7%8B%E6%8B%9B%E5%86%B2%E5%88%BA/%E9%9D%A2%E7%BB%8F/" class="md-nav__link">
         面经
       </a>
@@ -1576,6 +1627,42 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    34. 在排序数组中查找元素的第一个和最后一个位置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -1590,8 +1677,123 @@
 <li>要求时间复杂度低于O(n)，或者直接要求时间复杂度为<strong>O(log n)</strong></li>
 </ul>
 <p><img alt="image-20210615224851969" src="../../img/image-20210615224851969.png" /></p>
-                
-                  
+<p><strong>标准二分查找</strong></p>
+<pre><code class="language-c++">int BinarySerach(vector&lt;int&gt; nums, int target)
+{
+    int left = 0;
+    int right = nums.size() -1;
+
+    while(left &lt;= right)
+    {
+        int mid = left + (right - left)/2;
+        if(nums[mid] == target)
+        {
+            return mid;
+        }
+        if(nums[mid] &lt; target)
+        {
+            left = mid + 1；
+        }
+        if(nums[mid] &gt; target)
+        {
+            right = mid -1;
+        }
+    }
+    return left;
+}
+</code></pre>
+<ul>
+<li>
+<p>循环条件中包含了 <code>left == right</code>的情况，则我们必须在每次循环中改变 <code>left</code> 和 <code>right</code>的指向，以防止进入死循环</p>
+</li>
+<li>
+<p>循环终止的条件包括：</p>
+</li>
+<li>
+<ul>
+<li>找到了目标值</li>
+</ul>
+</li>
+<li><code>left &gt; right</code> （这种情况发生于当left, mid, right指向同一个数时，这个数还不是目标值，则整个查找结束。）</li>
+</ul>
+<h3 id="34"><a href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/">34. 在排序数组中查找元素的第一个和最后一个位置</a></h3>
+<p><strong>当搜索左边界时：</strong>找到 targettarget 时不要立即返回，而是缩小 "搜索区间" 的上界 highhigh，在区间 [low, mid - 1][low,mid−1] 中继续搜索，即不断向左收缩，达到锁定左侧边界的目的。</p>
+<p>当返回时需要判断 lowlow 越界的情况：若 low &gt;= nums.lengthlow&gt;=nums.length 或 nums[low] != targetnums[low]!=target 时，说明没有找到目标值 targettarget 返回 -1−1；否则，返回 lowlow。</p>
+<p><strong>当搜索右边界时：</strong>找到 targettarget 时不要立即返回，而是增大 "搜索区间" 的下界 lowlow，在区间 [mid + 1, high][mid+1,high] 中继续搜索，即不断向右收缩，达到锁定右侧边界的目的。</p>
+<p>当返回时需要判断 highhigh 越界的情况：若 high &lt; 0high&lt;0 或 nums[high] != targetnums[high]!=target 时，说明没有找到目标值 targettarget 返回 -1−1；否则，返回 highhigh。</p>
+<p><strong>第 1 部分：查找 target 出现的第 1 个位置</strong></p>
+<p>二分查找的基本用法是在一个有序数组里查找目标元素，具体是看区间中间元素的值 nums[mid] 与 target 的大小关系。</p>
+<ul>
+<li>如果等于，就可以直接返回；</li>
+<li>如果严格大于，就往右边查找；</li>
+<li>如果严格小于，就往左边查找。</li>
+</ul>
+<p>就这 3 种情况，先判断等于，然后再判断大于还是小于，符合人们正常的思维。</p>
+<ul>
+<li>如果当前看到的元素 恰好等于 target，那么当前元素有可能是 target 出现的第 1 个位置，由于我们要找第 1 个位置，此时我们应该向左边继续查找；</li>
+<li>如果当前看到的元素 严格大于 target，那么当前元素一定不是要找的 target 出现的第 1 个位置，第 1 个位置肯定出现在 mid 的 左边 ，因此就需要在 [left, mid] 区间里继续查找；</li>
+<li>如果当前看到的元素 严格小于 target，那么当前元素一定不是要找的 target 出现的第 1 个位置，第 1 个位置肯定出现在 mid 的 右边 ，因此就需要在 [mid + 1, right] 区间里继续查找。</li>
+</ul>
+<p><strong>第 2 部分：查找 target 出现的最后 1 个位置</strong></p>
+<pre><code class="language-c++">class Solution 
+{
+    public:
+        vector&lt;int&gt; searchRange(vector&lt;int&gt;&amp; nums, int target) 
+        {
+            vector&lt;int&gt; range = {-1 , -1};
+            if(nums.size() == 0)
+            {
+                return range;
+            }
+
+            //找最后一个小于target的值
+            int left = 0, right = nums.size()-1;
+            int lastLessThanTarget = 0;
+            while(left &lt;= right)
+            {
+                int mid = left + (right - left)/2;
+                if(nums[mid] &lt; target)
+                {
+                    left = mid + 1;
+                }
+                else
+                {
+                    right = mid - 1; //最后一次left = right = mid 循环的时候
+                                     // right - 1了所以指向target前一个
+                }
+            }
+            firstIndex = right + 1;
+
+            //找第一个大于target的值
+            left = 0;
+            right = nums.size()-1;
+            int firstLargeThanTarget = 0;
+            while(left &lt;= right)
+            {
+                int mid = left + (right - left)/2;
+                if(nums[mid] &lt;= target)
+                {
+                    left = mid + 1;
+                }
+                else
+                {
+                    right = mid - 1; // 同样是最后一次循环 left = right = mid的时候
+                                     // right - 1 指向了前一个
+                }
+            }
+            lastIndex = right;
+
+            if(firstIndex &lt;= lastIndex &amp;&amp; lastIndex &lt; nums.size()
+            &amp;&amp; nums[firstIndex] == target &amp;&amp; nums[lastIndex] == target)
+            return vector&lt;int&gt; {firstIndex, lastIndex};
+
+            return range;
+        }
+};
+</code></pre>
+<h3 id="reference">Reference</h3>
+<p>https://zhuanlan.zhihu.com/p/72545170</p>
+<p>https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/solution/da-jia-bu-yao-kan-labuladong-de-jie-fa-fei-chang-2/</p>
                 
               
               
