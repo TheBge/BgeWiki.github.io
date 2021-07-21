@@ -22,8 +22,6 @@ MVC、MTV、[MVP](https://baike.baidu.com/item/MVP/3714550)、CBD、[ORM](https:
 
 简而言之：框架是大智慧，用来对软件设计进行分工；设计模式是小技巧，对具体问题提出解决方案，以提高代码复用率，降低耦合度。
 
-
-
 一个框架里可能有多个设计模式，但是一个设计模式不能够统称为框架。
 
 
@@ -34,8 +32,6 @@ MVC、MTV、[MVP](https://baike.baidu.com/item/MVP/3714550)、CBD、[ORM](https:
 - **View（视图）** - 视图代表模型包含的数据的可视化。
 - **Controller（控制器）** - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。
 
-
-
 ![image-20210514182228203](../img/image-20210514182228203.png)
 
 ​		**模型（Model）**：封装的是数据源和所有基于对这些数据的操作。在一个组件中，Model往往表示组件的状态和操作状态的方法。
@@ -44,6 +40,6 @@ MVC、MTV、[MVP](https://baike.baidu.com/item/MVP/3714550)、CBD、[ORM](https:
 
 ​		**控制器（Control）**：封装的是外界作用于模型的操作。通常，这些操作会转发到模型上，并调用模型中相应的一个或者多个方法。一般Controller在Model和View之间起到了沟通的作用，处理用户在View上的输入，并转发给Model。这样Model和View两者之间可以做到松散耦合，甚至可以彼此不知道对方，而由Controller连接起这两个部分。
 
-在设计模式中，MVC实际上是一个比较高层的模式，它由多个更基本的设计模式组合而成，**<font color='red'>Model-View的关系实际上是Observer模式，模型的状态和视图的显示相互响应，而View-Controller则是由Strategy模式所描述的，View用一个特定的Controller的实例来实现一个特定的响应策略，更换不同的Controller，可以改变View对用户输入的响应。而其它的一些设计模式也很容易组合到这个体系中。比如，通过Composite模式，可以将多个View嵌套组合起来；通过FactoryMethod模式来指定View的Controller，等等</font>**。在GOF书的 Introduction中，有一小节是“Design Patterns in Smalltalk MVC”即介绍在MVC模式里用到的设计模式。它大概向我们传达了这样的信息：合成模式+策略模式+观察者模式约等于MVC模式（当然MVC模式要多一些 东西）。
+​		在设计模式中，MVC实际上是一个比较高层的模式，它由多个更基本的设计模式组合而成，**<font color='red'>Model-View的关系实际上是Observer模式，模型的状态和视图的显示相互响应，而View-Controller则是由Strategy模式所描述的，View用一个特定的Controller的实例来实现一个特定的响应策略，更换不同的Controller，可以改变View对用户输入的响应。而其它的一些设计模式也很容易组合到这个体系中。比如，通过Composite模式，可以将多个View嵌套组合起来；通过FactoryMethod模式来指定View的Controller，等等</font>**。在GOF书的 Introduction中，有一小节是“Design Patterns in Smalltalk MVC”即介绍在MVC模式里用到的设计模式。它大概向我们传达了这样的信息：合成模式+策略模式+观察者模式约等于MVC模式（当然MVC模式要多一些 东西）。
 
 **优点：**使用MVC的好处，一方面，分离数据和其表示，使得添加或者删除一个用户视图变得很容易，甚至可以在程序执行时动态的进行。Model和View能够单独的开发，增加了程序了可维护性，可扩展性，并使测试变得更为容易。另一方面，将控制逻辑和表现界面分离，允许程序能够在运行时根据工作流、用户习惯或者模型状态来动态选择不同的用户界面。因此，MVC模式广泛用于Web程序、GUI程序的架构。
