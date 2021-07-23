@@ -49,6 +49,7 @@
 ### Proxy in C++
 
 ​		**代理是一种结构设计模式，它提供一个对象，作为客户使用的实际服务对象的替代品。代理接收客户端请求，完成一些工作(访问控制、缓存等)，然后将请求传递给服务对象。**
+
 ​		代理对象具有与服务相同的接口，这使得它在传递给客户端时可以与实际对象互换。（里氏替换原则）
 
 ```c++
@@ -164,10 +165,6 @@ Proxy: Checking access prior to firing a real request.
 RealSubject: Handling request.
 Proxy: Logging the time of request.
 ```
-
-
-
-
 
 
 
