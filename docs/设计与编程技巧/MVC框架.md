@@ -43,3 +43,4 @@ MVC、MTV、[MVP](https://baike.baidu.com/item/MVP/3714550)、CBD、[ORM](https:
 ​		在设计模式中，MVC实际上是一个比较高层的模式，它由多个更基本的设计模式组合而成，**<font color='red'>Model-View的关系实际上是Observer模式，模型的状态和视图的显示相互响应，而View-Controller则是由Strategy模式所描述的，View用一个特定的Controller的实例来实现一个特定的响应策略，更换不同的Controller，可以改变View对用户输入的响应。而其它的一些设计模式也很容易组合到这个体系中。比如，通过Composite模式，可以将多个View嵌套组合起来；通过FactoryMethod模式来指定View的Controller，等等</font>**。在GOF书的 Introduction中，有一小节是“Design Patterns in Smalltalk MVC”即介绍在MVC模式里用到的设计模式。它大概向我们传达了这样的信息：合成模式+策略模式+观察者模式约等于MVC模式（当然MVC模式要多一些 东西）。
 
 **优点：**使用MVC的好处，一方面，分离数据和其表示，使得添加或者删除一个用户视图变得很容易，甚至可以在程序执行时动态的进行。Model和View能够单独的开发，增加了程序了可维护性，可扩展性，并使测试变得更为容易。另一方面，将控制逻辑和表现界面分离，允许程序能够在运行时根据工作流、用户习惯或者模型状态来动态选择不同的用户界面。因此，MVC模式广泛用于Web程序、GUI程序的架构。
+
