@@ -1,7 +1,9 @@
 萃取机
+
 具体的来说，traits就是通过定义一些结构体或类，并利用模板类特化和偏特化的能力，给类型赋予一些特性，这些特性根据类型的不同而异。在程序设计中可以使用这些traits来判断一个类型的一些特性，引发C++的函数重载机制，实现同一种操作因类型不同而异的效果。
 
 cplusplus： 
+
 <type_traits> 
 This header defines a series of classes to obtain type information on compile-time.
 The header contains:
