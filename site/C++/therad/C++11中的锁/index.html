@@ -14,7 +14,7 @@
     
     
       
-        <title>从零开始的计网知识总结 - Bge_Wiki</title>
+        <title>C++11中的锁 - Bge_Wiki</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ip" class="md-skip">
+        <a href="#mutex" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              从零开始的计网知识总结
+              C++11中的锁
             
           </span>
         </div>
@@ -183,12 +183,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
       <label class="md-nav__link" for="nav-2">
         C++
@@ -207,19 +209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/C%2B%2B11%E4%B8%AD%E7%9A%84%E9%94%81/" class="md-nav__link">
-        C++11中的锁
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../C%2B%2B/RAII/" class="md-nav__link">
+      <a href="../../RAII/" class="md-nav__link">
         RAII
       </a>
     </li>
@@ -231,7 +221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/STL%E7%9A%84%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/" class="md-nav__link">
+      <a href="../../STL%E7%9A%84%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/" class="md-nav__link">
         STL的内存优化
       </a>
     </li>
@@ -243,7 +233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/Type-Traits/" class="md-nav__link">
+      <a href="../../Type-Traits/" class="md-nav__link">
         Type Traits
       </a>
     </li>
@@ -255,19 +245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/class%E4%B9%8B%E9%97%B4%E7%9A%84%E5%87%A0%E7%A7%8D%E5%85%B3%E7%B3%BB/" class="md-nav__link">
-        Class之间的几种关系
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E3%80%8AEffective%20Modern%20C%2B%2B%E3%80%8B/" class="md-nav__link">
+      <a href="../../%E3%80%8AEffective%20Modern%20C%2B%2B%E3%80%8B/" class="md-nav__link">
         《Effective Modern C++》
       </a>
     </li>
@@ -279,7 +257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%80%BC%E8%AF%AD%E4%B9%89/" class="md-nav__link">
+      <a href="../../%E5%80%BC%E8%AF%AD%E4%B9%89/" class="md-nav__link">
         值语义
       </a>
     </li>
@@ -291,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="md-nav__link">
+      <a href="../../%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="md-nav__link">
         内存对齐
       </a>
     </li>
@@ -303,7 +281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%86%85%E5%AD%98%E6%B1%A0/" class="md-nav__link">
+      <a href="../../%E5%86%85%E5%AD%98%E6%B1%A0/" class="md-nav__link">
         内存池
       </a>
     </li>
@@ -315,7 +293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%8C%BF%E5%90%8D%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/" class="md-nav__link">
+      <a href="../../%E5%8C%BF%E5%90%8D%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/" class="md-nav__link">
         匿名命名空间
       </a>
     </li>
@@ -327,19 +305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%AE%8C%E7%BE%8E%E8%BD%AC%E5%8F%91/" class="md-nav__link">
-        完美转发
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8C%87%E9%92%88/" class="md-nav__link">
+      <a href="../../%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8C%87%E9%92%88/" class="md-nav__link">
         嵌入式指针
       </a>
     </li>
@@ -351,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="md-nav__link">
+      <a href="../../%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="md-nav__link">
         左值右值移动语义
       </a>
     </li>
@@ -363,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB%E5%92%8C%E4%B8%8D%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB/" class="md-nav__link">
+      <a href="../../%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB%E5%92%8C%E4%B8%8D%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB/" class="md-nav__link">
         带指针的类和不带指针的类
       </a>
     </li>
@@ -375,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%BC%82%E5%B8%B8%E4%BF%9D%E6%8A%A4/" class="md-nav__link">
+      <a href="../../%E5%BC%82%E5%B8%B8%E4%BF%9D%E6%8A%A4/" class="md-nav__link">
         异常保护
       </a>
     </li>
@@ -387,8 +353,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E6%A8%A1%E6%9D%BF%E7%BC%96%E8%AF%91/" class="md-nav__link">
-        模板编译
+      <a href="../../%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+        模板
       </a>
     </li>
   
@@ -399,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E7%90%86%E8%A7%A3%E5%A4%9A%E6%80%81/" class="md-nav__link">
+      <a href="../../%E7%90%86%E8%A7%A3%E5%A4%9A%E6%80%81/" class="md-nav__link">
         理解多态
       </a>
     </li>
@@ -411,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8/" class="md-nav__link">
+      <a href="../../%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8/" class="md-nav__link">
         虚函数表
       </a>
     </li>
@@ -423,19 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E9%87%8E%E6%8C%87%E9%92%88%E8%A3%B8%E6%8C%87%E9%92%88%E6%9E%90%E6%9E%84/" class="md-nav__link">
-        野指针裸指针析构
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E9%9D%99%E6%80%81%E5%BA%93%E5%92%8C%E5%8A%A8%E6%80%81%E5%BA%93/" class="md-nav__link">
+      <a href="../../%E9%9D%99%E6%80%81%E5%BA%93%E5%92%8C%E5%8A%A8%E6%80%81%E5%BA%93/" class="md-nav__link">
         静态库和动态库
       </a>
     </li>
@@ -445,19 +399,21 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-21" type="checkbox" id="nav-2-21" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-17" type="checkbox" id="nav-2-17" checked>
       
-      <label class="md-nav__link" for="nav-2-21">
+      <label class="md-nav__link" for="nav-2-17">
         Therad
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Therad" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-21">
+        <label class="md-nav__title" for="nav-2-17">
           <span class="md-nav__icon md-icon"></span>
           Therad
         </label>
@@ -467,9 +423,76 @@
             
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          C++11中的锁
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        C++11中的锁
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mutex" class="md-nav__link">
+    互斥锁（Mutex）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    条件锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    自旋锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    读写锁
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/therad/join%20detach/" class="md-nav__link">
+      <a href="../join%20detach/" class="md-nav__link">
         C++11多线程join()和detach()的理解
       </a>
     </li>
@@ -481,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/therad/%E9%94%81/" class="md-nav__link">
+      <a href="../%E9%94%81/" class="md-nav__link">
         锁
       </a>
     </li>
@@ -502,14 +525,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-22" type="checkbox" id="nav-2-22" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18" >
       
-      <label class="md-nav__link" for="nav-2-22">
+      <label class="md-nav__link" for="nav-2-18">
         基础
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="基础" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-22">
+        <label class="md-nav__title" for="nav-2-18">
           <span class="md-nav__icon md-icon"></span>
           基础
         </label>
@@ -521,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/C%2B%2B11/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/C%2B%2B11/" class="md-nav__link">
         C++11
       </a>
     </li>
@@ -533,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/cast/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/cast/" class="md-nav__link">
         Cast
       </a>
     </li>
@@ -545,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/const/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/const/" class="md-nav__link">
         Const
       </a>
     </li>
@@ -557,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/enum/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/enum/" class="md-nav__link">
         Enum
       </a>
     </li>
@@ -569,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/function%20bind/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/function%20bind/" class="md-nav__link">
         Function bind
       </a>
     </li>
@@ -581,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/static/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/static/" class="md-nav__link">
         Static
       </a>
     </li>
@@ -593,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/struct/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/struct/" class="md-nav__link">
         Struct
       </a>
     </li>
@@ -605,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/type_index/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/type_index/" class="md-nav__link">
         Type index
       </a>
     </li>
@@ -617,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/volatile/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/volatile/" class="md-nav__link">
         Volatile
       </a>
     </li>
@@ -629,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E4%BA%94%E5%A4%A7%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/%E4%BA%94%E5%A4%A7%E5%87%BD%E6%95%B0/" class="md-nav__link">
         五大函数
       </a>
     </li>
@@ -641,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E4%BB%BF%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/%E4%BB%BF%E5%87%BD%E6%95%B0/" class="md-nav__link">
         仿函数
       </a>
     </li>
@@ -656,14 +679,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-22-12" type="checkbox" id="nav-2-22-12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18-12" type="checkbox" id="nav-2-18-12" >
       
-      <label class="md-nav__link" for="nav-2-22-12">
+      <label class="md-nav__link" for="nav-2-18-12">
         智能指针
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="智能指针" data-md-level="3">
-        <label class="md-nav__title" for="nav-2-22-12">
+        <label class="md-nav__title" for="nav-2-18-12">
           <span class="md-nav__icon md-icon"></span>
           智能指针
         </label>
@@ -675,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/auto_ptr/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/auto_ptr/" class="md-nav__link">
         Auto ptr
       </a>
     </li>
@@ -687,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/shared_ptr/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/shared_ptr/" class="md-nav__link">
         Shared ptr
       </a>
     </li>
@@ -699,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/unique_ptr/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/unique_ptr/" class="md-nav__link">
         Unique ptr
       </a>
     </li>
@@ -711,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/weak_ptr/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/weak_ptr/" class="md-nav__link">
         Weak ptr
       </a>
     </li>
@@ -723,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" class="md-nav__link">
         智能指针
       </a>
     </li>
@@ -750,14 +773,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-23" type="checkbox" id="nav-2-23" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-19" type="checkbox" id="nav-2-19" >
       
-      <label class="md-nav__link" for="nav-2-23">
+      <label class="md-nav__link" for="nav-2-19">
         网课总结
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="网课总结" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-23">
+        <label class="md-nav__title" for="nav-2-19">
           <span class="md-nav__icon md-icon"></span>
           网课总结
         </label>
@@ -769,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E7%BD%91%E8%AF%BE%E6%80%BB%E7%BB%93/%E4%BE%AF%E6%8D%B7C%2B%2B2.0%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
+      <a href="../../%E7%BD%91%E8%AF%BE%E6%80%BB%E7%BB%93/%E4%BE%AF%E6%8D%B7C%2B%2B2.0%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
         侯捷C++2.0新特性
       </a>
     </li>
@@ -781,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E7%BD%91%E8%AF%BE%E6%80%BB%E7%BB%93/%E4%BE%AF%E6%8D%B7C%2B%2BSTL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%86%85%E6%A0%B8%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../../%E7%BD%91%E8%AF%BE%E6%80%BB%E7%BB%93/%E4%BE%AF%E6%8D%B7C%2B%2BSTL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%86%85%E6%A0%B8%E5%88%86%E6%9E%90/" class="md-nav__link">
         侯捷C++STL体系结构与内核分析
       </a>
     </li>
@@ -793,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E7%BD%91%E8%AF%BE%E6%80%BB%E7%BB%93/%E4%BE%AF%E6%8D%B7C%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
+      <a href="../../%E7%BD%91%E8%AF%BE%E6%80%BB%E7%BB%93/%E4%BE%AF%E6%8D%B7C%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
         侯捷C++面向对象
       </a>
     </li>
@@ -1005,18 +1028,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4%E4%B8%8E%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4/" class="md-nav__link">
-        内核空间与用户空间
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/" class="md-nav__link">
         动态链接库
       </a>
@@ -1128,14 +1139,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15" >
       
-      <label class="md-nav__link" for="nav-4-16">
+      <label class="md-nav__link" for="nav-4-15">
         进程线程
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="进程线程" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-16">
+        <label class="md-nav__title" for="nav-4-15">
           <span class="md-nav__icon md-icon"></span>
           进程线程
         </label>
@@ -1495,30 +1506,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/121/" class="md-nav__link">
-        121
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/ActorSystem/" class="md-nav__link">
-        ActorSystem
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/Git/" class="md-nav__link">
         Git
       </a>
@@ -1542,42 +1529,18 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" class="md-nav__link">
-        单元测试
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/%E5%A0%86%E6%8E%92%E5%BA%8F/" class="md-nav__link">
-        堆排序
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-7" type="checkbox" id="nav-6-7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3" >
       
-      <label class="md-nav__link" for="nav-6-7">
+      <label class="md-nav__link" for="nav-6-3">
         敏捷
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="敏捷" data-md-level="2">
-        <label class="md-nav__title" for="nav-6-7">
+        <label class="md-nav__title" for="nav-6-3">
           <span class="md-nav__icon md-icon"></span>
           敏捷
         </label>
@@ -2153,14 +2116,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
       
       <label class="md-nav__link" for="nav-8">
         计算机网络
@@ -2179,7 +2140,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../HTTP%E5%92%8CHTTPS/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTPS%E5%AE%89%E5%85%A8%E6%80%A7/" class="md-nav__link">
+        HTTPS安全性
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%E5%92%8CHTTPS/" class="md-nav__link">
         HTTP和HTTPS
       </a>
     </li>
@@ -2191,7 +2164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Socket/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Socket/" class="md-nav__link">
         Socket
       </a>
     </li>
@@ -2203,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB/" class="md-nav__link">
         TCP和UDP的区别
       </a>
     </li>
@@ -2215,7 +2188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TCP%E7%B2%98%E5%8C%85%E5%92%8C%E6%8B%86%E5%8C%85/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E7%B2%98%E5%8C%85%E5%92%8C%E6%8B%86%E5%8C%85/" class="md-nav__link">
         TCP粘包和拆包
       </a>
     </li>
@@ -2227,7 +2200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../select%E3%80%81poll%E3%80%81epoll/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/select%E3%80%81poll%E3%80%81epoll/" class="md-nav__link">
         Select、poll、epoll
       </a>
     </li>
@@ -2239,7 +2212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/" class="md-nav__link">
         三次握手和四次挥手
       </a>
     </li>
@@ -2251,7 +2224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%88%90/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%88%90/" class="md-nav__link">
         从输入URL到页面加载显示完成
       </a>
     </li>
@@ -2263,7 +2236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/" class="md-nav__link">
         对称加密与非对称加密
       </a>
     </li>
@@ -2275,92 +2248,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%B9%96%E7%A7%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BD%91%E8%AF%BE/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%B9%96%E7%A7%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BD%91%E8%AF%BE/" class="md-nav__link">
         湖科计算机网络网课
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-10" type="checkbox" id="nav-8-10" checked>
-      
-      <label class="md-nav__link" for="nav-8-10">
-        从零开始的计网知识总结
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="从零开始的计网知识总结" data-md-level="2">
-        <label class="md-nav__title" for="nav-8-10">
-          <span class="md-nav__icon md-icon"></span>
-          从零开始的计网知识总结
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          从零开始的计网知识总结
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        从零开始的计网知识总结
-      </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    IP地址会重复吗？
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proxy-server" class="md-nav__link">
-    代理服务器（Proxy Server）
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -2549,15 +2439,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    IP地址会重复吗？
+  <a href="#mutex" class="md-nav__link">
+    互斥锁（Mutex）
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#proxy-server" class="md-nav__link">
-    代理服务器（Proxy Server）
+  <a href="#_1" class="md-nav__link">
+    条件锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    自旋锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    读写锁
   </a>
   
 </li>
@@ -2575,26 +2479,100 @@
               
                 
                 
-                  <h1>从零开始的计网知识总结</h1>
+                  <h1>C++11中的锁</h1>
                 
-                <h5 id="ip">IP地址会重复吗？</h5>
-<p>这是属于IP协议规定的私有地址，也就是说，在具体的支持IP协议的网络的部署时候就已经约定好了，目标地址为一下三个网段的IP报文将不会被中间节点进行转发，这些报文将不会出现在公网中。
-10.0.0.0 - 10.255.255.255 
-172.16.0.0 - 172.31.255.255<br />
-192.168.0.0 - 192.168.255.255 
-也正是有这些私有IP的存在，局域网内用户可以通过NAT等技术使用有限几个公网IP上网，这也使得原本早就应该耗尽的IPv4地址空间拖延到现在也没出现太大的问题，这也就一定程度上延缓了IPv6的部署。</p>
-<p><a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Private_IP_address">Private network</a>（连VPN再上）</p>
-<blockquote>
-<p>In the <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Internet">Internet</a> addressing architecture, a <strong>private network</strong> is a <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Computer_network">network</a> that uses private <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/IP_address">IP address</a> space, following the standards set by <a href="https://link.zhihu.com/?target=http%3A//tools.ietf.org/html/rfc1918">RFC 1918</a> for IPv4 and <a href="https://link.zhihu.com/?target=http%3A//tools.ietf.org/html/rfc4193">RFC 4193</a> for IPv6. These addresses are commonly used for home, office, and enterprise <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Local_area_network">local area networks</a> (LANs), when globally routable addresses are not mandatory, or are not available for the intended network applications. Under <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Internet_Protocol">Internet Protocol</a><a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/IPv4">IPv4</a>, private IP address spaces were originally defined in an effort to delay <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/IPv4_address_exhaustion">IPv4 address exhaustion</a>, but they are also a feature of the next generation Internet Protocol, <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/IPv6">IPv6</a>.
-These addresses are characterized as private because they are not  globally delegated, meaning they are not allocated to any specific  organization, and IP packets addressed by them cannot be transmitted  onto the public Internet. Anyone may use these addresses without  approval from a <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Regional_Internet_registry">regional Internet registry</a> (RIR). If such a private network needs to connect to the Internet, it must use either a <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Network_address_translator">network address translator</a> (NAT) gateway, or a <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Proxy_server">proxy server</a>.</p>
-</blockquote>
-<h5 id="proxy-server">代理服务器（Proxy Server）</h5>
-<p><img alt="image-20210501105601751" src="../../../img/image-20210501105601751.png" /></p>
-<p>企业可以通过代理服务器使员工只能会见公司内部的几个网站。</p>
-<p>代理服务器有很多种，http、ftp、socks，又分透明代理和不透明代理。</p>
-<p>reference：</p>
-<p>https://www.wse.me/keji/vpn-shi-shen-me-xu-ni-wang-luo-vpn-wu-xian-zhi-fang-wen-wai-wang-131408.htm</p>
-<p>https://www.cnblogs.com/tianyiliang/p/8213933.html</p>
+                <p>线程之间的锁有：<strong>互斥锁、条件锁、自旋锁、读写锁、递归锁</strong>。一般而言，锁的功能与性能成反比。不过我们一般不使用递归锁（C++标准库提供了std::recursive_mutex。</p>
+<h2 id="mutex">互斥锁（Mutex）</h2>
+<p>​       互斥锁用于控制多个线程对他们之间共享资源互斥访问的一个信号量。也就是说是为了避免多个线程在某一时刻同时操作一个共享资源。例如线程池中的有多个空闲线程和一个任务队列。任何是一个线程都要使用互斥锁互斥访问任务队列，以避免多个线程同时访问任务队列以发生错乱。</p>
+<p>​       在某一时刻，只有一个线程可以获取互斥锁，在释放互斥锁之前其他线程都不能获取该互斥锁。如果其他线程想要获取这个互斥锁，那么这个线程只能以阻塞方式进行等待。</p>
+<p><strong>头文件：&lt; mutex &gt;</strong>
+<strong>类型： std::mutex</strong>
+<strong>用法：</strong>在C++中，通过构造std::mutex的实例创建互斥元，调用成员函数lock()来锁定它，调用unlock()来解锁，不过一般不推荐这种做法，标准C++库提供了std::lock_guard类模板，实现了互斥元的<strong>RAII</strong>惯用语法。std::mutex和std::lock _ guard。都声明在&lt; mutex &gt;头文件中。</p>
+<pre><code class="language-c++">//用互斥元保护列表
+#include &lt;list&gt;
+#include &lt;mutex&gt;
+
+std::list&lt;int&gt; some_list;
+std::mutex some_mutex;
+
+void add_to_list(int new_value)
+{
+    std::lock_guard&lt;std::mutex&gt; guard(some_mutex);
+    some_list.push_back(new_value);
+}
+</code></pre>
+<h2 id="_1">条件锁</h2>
+<p>​       条件锁就是所谓的条件变量，某一个线程因为某个条件为满足时可以使用条件变量使程序处于阻塞状态。一旦条件满足以“信号量”的方式唤醒一个因为该条件而被阻塞的线程。最为常见就是在线程池中，起初没有任务时任务队列为空，此时线程池中的线程因为“任务队列为空”这个条件处于阻塞状态。一旦有任务进来，就会以信号量的方式唤醒一个线程来处理这个任务。</p>
+<p>头文件：<strong>&lt; condition_variable &gt;</strong>
+类型：<strong>std::condition_variable</strong>（只和std::mutex一起工作） 和 <strong>std::condition_variable_any</strong>（符合类似互斥元的最低标准的任何东西一起工作）。</p>
+<pre><code class="language-c++">//使用std::condition_variable等待数据
+std::mutex mut;
+std::queue&lt;data_chunk&gt; data_queue;
+std::condition_variable data_cond;
+
+void data_preparation_thread()
+{
+    while(more_data_to_prepare())
+    {
+        data_chunk const data=prepare_data();
+        std::lock_guard&lt;std::mutex&gt; lk(mut);
+        data_queue.push(data);
+        data_cond.notify_one();
+    }
+}
+
+void data_processing_thread()
+{
+    while(true)
+    {
+        std::unique_lock&lt;std::mutex&gt; lk(mut);   //这里使用unique_lock是为了后面方便解锁
+        data_cond.wait(lk,{[]return !data_queue.empty();});
+        data_chunk data=data_queue.front();
+        data_queue.pop();
+        lk.unlock();
+        process(data);
+        if(is_last_chunk(data))
+            break;
+    }
+}
+</code></pre>
+<ul>
+<li>
+<p>wait()检查条件，并在满足时返回。如果条件不满足，wait()解锁互斥元，并将该线程置于阻塞或等待状态。当来自数据准备线程中对notify_one()的调用通知条件变量时，线程从睡眠状态中苏醒（解除其阻塞），重新获得互斥元上的锁，并再次检查条件，如果条件已经满足，就从wait()返回值，互斥元仍被锁定。如果条件不满足，该线程解锁互斥元，并恢复等待。</p>
+</li>
+<li>
+<p>如果等待线程只打算等待一次，那么当条件为true时它就不会再等待这个条件变量了，条件变量未必是同步机制的最佳选择。如果等待的条件是一个特定数据块的可用性时，这尤其正确。在这个场景中，使用期值（future）更合适。使用future等待一次性事件。</p>
+</li>
+</ul>
+<h2 id="_2">自旋锁</h2>
+<p>​       假设我们有一个两个处理器core1和core2计算机，现在在这台计算机上运行的程序中有两个线程：T1和T2分别在处理器core1和core2上运行，两个线程之间共享着一个资源。</p>
+<p>​       首先我们说明互斥锁的工作原理，互斥锁是是一种<strong>sleep-waiting</strong>的锁。假设线程T1获取互斥锁并且正在core1上运行时，此时线程T2也想要获取互斥锁（pthread_mutex_lock），但是由于T1正在使用互斥锁使得T2被阻塞。当T2处于阻塞状态时，T2被放入到等待队列中去，处理器core2会去处理其他任务而不必一直等待（忙等）。也就是说处理器不会因为线程阻塞而空闲着，它去处理其他事务去了。</p>
+<p>​       而自旋锁就不同了，自旋锁是一种<strong>busy-waiting</strong>的锁。也就是说，如果T1正在使用自旋锁，而T2也去申请这个自旋锁，此时T2肯定得不到这个自旋锁。与互斥锁相反的是，此时运行T2的处理器core2会一直不断地循环检查锁是否可用（自旋锁请求），直到获取到这个自旋锁为止。</p>
+<pre><code class="language-c++">//使用std::atomic_flag的自旋锁互斥实现
+class spinlock_mutex
+{
+    std::atomic_flag flag;
+
+    public:
+        spinlock_mutex():flag(ATOMIC_FLAG_INIT) {}
+        void lock()
+        {
+            while(flag.test_and_set(std::memory_order_acquire));
+        }
+        void unlock()
+        {
+            flag.clear(std::memory_order_release);
+        }
+}
+</code></pre>
+<h2 id="_3">读写锁</h2>
+<p>​       说到读写锁我们可以借助于“读者-写者”问题进行理解。首先我们简单说下“读者-写者”问题。</p>
+<p>​       计算机中某些数据被多个进程共享，对数据库的操作有两种：一种是读操作，就是从数据库中读取数据不会修改数据库中内容；另一种就是写操作，写操作会修改数据库中存放的数据。因此可以得到我们允许在数据库上同时执行多个“读”操作，但是某一时刻只能在数据库上有一个“写”操作来更新数据。这就是一个简单的读者-写者模型。</p>
+<ul>
+<li>头文件：<strong>boost/thread/shared_mutex.cpp</strong></li>
+<li>类型：<strong>boost::shared_lock</strong></li>
+<li>用法：你可以使用boost::shared_ mutex的实例来实现同步，而不是使用std::mutex的实例。对于更新操作，std::lock_guard&lt; boost::shared _mutex&gt;和 std::unique _lock&lt; boost::shared _mutex&gt;可用于锁定，以取代相应的std::mutex特化。这确保了独占访问，就像std::mutex那样。那些不需要更新数据结构的线程能够转而使用 boost::shared _lock&lt; boost::shared _mutex&gt;来获得共享访问。这与std::unique _lock用起来正是相同的，除了多个线程在同一时间，同一boost::shared _mutex上可能会具有共享锁。唯一的限制是，如果任意一个线程拥有一个共享锁，试图获取独占锁的线程会被阻塞，知道其他线程全都撤回它们的锁。同样的，如果一个线程具有独占锁，其他线程都不能获取共享锁或独占锁，直到第一个线程撤回它的锁。</li>
+</ul>
                 
               
               
@@ -2613,7 +2591,7 @@ These addresses are characterized as private because they are not  globally dele
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../%E6%B9%96%E7%A7%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BD%91%E8%AF%BE/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../%E9%9D%99%E6%80%81%E5%BA%93%E5%92%8C%E5%8A%A8%E6%80%81%E5%BA%93/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2622,19 +2600,19 @@ These addresses are characterized as private because they are not  globally dele
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                湖科计算机网络网课
+                静态库和动态库
               </div>
             </div>
           </a>
         
         
-          <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/CallBack/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../join%20detach/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                CallBack
+                C++11多线程join()和detach()的理解
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
