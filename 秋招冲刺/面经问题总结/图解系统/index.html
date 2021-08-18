@@ -1,0 +1,4111 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>图解系统 - Bge_Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Bge_Wiki" class="md-header-nav__button md-logo" aria-label="Bge_Wiki">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Bge_Wiki
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              图解系统
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bge_Wiki" class="md-nav__button md-logo" aria-label="Bge_Wiki">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Bge_Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
+        C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C++" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/RAII/" class="md-nav__link">
+        RAII
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/STL%E7%9A%84%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        STL的内存优化
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/Type-Traits/" class="md-nav__link">
+        Type Traits
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E3%80%8AEffective%20Modern%20C%2B%2B%E3%80%8B/" class="md-nav__link">
+        《Effective Modern C++》
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%80%BC%E8%AF%AD%E4%B9%89/" class="md-nav__link">
+        值语义
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="md-nav__link">
+        内存对齐
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%86%85%E5%AD%98%E6%B1%A0/" class="md-nav__link">
+        内存池
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%8C%BF%E5%90%8D%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/" class="md-nav__link">
+        匿名命名空间
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8C%87%E9%92%88/" class="md-nav__link">
+        嵌入式指针
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/" class="md-nav__link">
+        左值右值移动语义
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB%E5%92%8C%E4%B8%8D%E5%B8%A6%E6%8C%87%E9%92%88%E7%9A%84%E7%B1%BB/" class="md-nav__link">
+        带指针的类和不带指针的类
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%BC%82%E5%B8%B8%E4%BF%9D%E6%8A%A4/" class="md-nav__link">
+        异常保护
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+        模板
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E7%90%86%E8%A7%A3%E5%A4%9A%E6%80%81/" class="md-nav__link">
+        理解多态
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8/" class="md-nav__link">
+        虚函数表
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E9%9D%99%E6%80%81%E5%BA%93%E5%92%8C%E5%8A%A8%E6%80%81%E5%BA%93/" class="md-nav__link">
+        静态库和动态库
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-17" type="checkbox" id="nav-2-17" >
+      
+      <label class="md-nav__link" for="nav-2-17">
+        Therad
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Therad" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-17">
+          <span class="md-nav__icon md-icon"></span>
+          Therad
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/therad/C%2B%2B11%E4%B8%AD%E7%9A%84%E9%94%81/" class="md-nav__link">
+        C++11中的锁
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/therad/C%2B%2B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        C++多线程基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/therad/join%20detach/" class="md-nav__link">
+        C++11多线程join()和detach()
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18" >
+      
+      <label class="md-nav__link" for="nav-2-18">
+        基础
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="基础" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-18">
+          <span class="md-nav__icon md-icon"></span>
+          基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/C%2B%2B11/" class="md-nav__link">
+        C++11
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/cast/" class="md-nav__link">
+        Cast
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/const/" class="md-nav__link">
+        Const
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/enum/" class="md-nav__link">
+        Enum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/function%20bind/" class="md-nav__link">
+        Function bind
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/static/" class="md-nav__link">
+        Static
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/struct/" class="md-nav__link">
+        Struct
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/type_index/" class="md-nav__link">
+        Type index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/volatile/" class="md-nav__link">
+        Volatile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E4%BA%94%E5%A4%A7%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        五大函数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E4%BB%BF%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        仿函数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18-12" type="checkbox" id="nav-2-18-12" >
+      
+      <label class="md-nav__link" for="nav-2-18-12">
+        智能指针
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="智能指针" data-md-level="3">
+        <label class="md-nav__title" for="nav-2-18-12">
+          <span class="md-nav__icon md-icon"></span>
+          智能指针
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/auto_ptr/" class="md-nav__link">
+        Auto ptr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/shared_ptr/" class="md-nav__link">
+        Shared ptr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/unique_ptr/" class="md-nav__link">
+        Unique ptr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/weak_ptr/" class="md-nav__link">
+        Weak ptr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/" class="md-nav__link">
+        智能指针
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-19" type="checkbox" id="nav-2-19" >
+      
+      <label class="md-nav__link" for="nav-2-19">
+        网课总结
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网课总结" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-19">
+          <span class="md-nav__icon md-icon"></span>
+          网课总结
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E7%BD%91%E8%AF%BE%E6%80%BB%E7%BB%93/%E4%BE%AF%E6%8D%B7C%2B%2B2.0%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        侯捷C++2.0新特性
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E7%BD%91%E8%AF%BE%E6%80%BB%E7%BB%93/%E4%BE%AF%E6%8D%B7C%2B%2BSTL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%86%85%E6%A0%B8%E5%88%86%E6%9E%90/" class="md-nav__link">
+        侯捷C++STL体系结构与内核分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E7%BD%91%E8%AF%BE%E6%80%BB%E7%BB%93/%E4%BE%AF%E6%8D%B7C%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="md-nav__link">
+        侯捷C++面向对象
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        力扣力扣
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="力扣力扣" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          力扣力扣
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/LeetCode/" class="md-nav__link">
+        LeetCode
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        二分查找
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+        动态规划
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="md-nav__link">
+        滑动窗口
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/%E9%94%99%E9%A2%98%E6%9C%AC/" class="md-nav__link">
+        错题本
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
+        操作系统
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="操作系统" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/IO%E5%AF%86%E9%9B%86%E5%9E%8B%E4%B8%8ECPU%E5%AF%86%E9%9B%86%E5%9E%8B/" class="md-nav__link">
+        IO密集型与CPU密集型
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/IO%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        IO模型
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%8A%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B/" class="md-nav__link">
+        《现代操作系统》
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BF%A1%E5%8F%B7%E9%87%8F%E4%B8%8E%E4%BA%92%E6%96%A5%E9%87%8F/" class="md-nav__link">
+        信号量与互斥量
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83/" class="md-nav__link">
+        内存分布
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/" class="md-nav__link">
+        动态链接库
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%93%88%E5%B7%A5%E5%A4%A7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BD%91%E8%AF%BE/" class="md-nav__link">
+        哈工大操作系统网课
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3%E9%98%BB%E5%A1%9E%E9%9D%9E%E9%98%BB%E5%A1%9E%E4%B8%8E%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5/" class="md-nav__link">
+        怎么理解阻塞非阻塞与同步异步
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6/" class="md-nav__link">
+        文件描述符
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" class="md-nav__link">
+        消息队列
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        深入理解计算机系统
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="md-nav__link">
+        线程池
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" class="md-nav__link">
+        虚拟内存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        进程间的通信方式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15" >
+      
+      <label class="md-nav__link" for="nav-4-15">
+        进程线程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="进程线程" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-15">
+          <span class="md-nav__icon md-icon"></span>
+          进程线程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B/" class="md-nav__link">
+        僵尸进程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E5%8D%8F%E7%A8%8B/" class="md-nav__link">
+        协程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="md-nav__link">
+        线程池
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/" class="md-nav__link">
+        进程同步
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        进程线程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        进程间通信方式
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
+        数据结构与算法分析
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="数据结构与算法分析" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构与算法分析
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/B%E6%A0%91/" class="md-nav__link">
+        B树
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/STL%E5%90%84%E5%AE%B9%E5%99%A8%E7%9A%84%E7%89%B9%E7%82%B9%E5%92%8C%E4%BD%9C%E7%94%A8/" class="md-nav__link">
+        STL各容器的特点和作用
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/emplace_back/" class="md-nav__link">
+        Emplace back
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/hashtable/" class="md-nav__link">
+        Hashtable
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/map%E5%92%8Cunordered_map/" class="md-nav__link">
+        Map和unordered map
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/" class="md-nav__link">
+        二叉树的遍历
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" class="md-nav__link">
+        优先队列
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E7%BA%A2%E9%BB%91%E6%A0%91/" class="md-nav__link">
+        红黑树
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10" >
+      
+      <label class="md-nav__link" for="nav-5-10">
+        排序算法
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="排序算法" data-md-level="2">
+        <label class="md-nav__title" for="nav-5-10">
+          <span class="md-nav__icon md-icon"></span>
+          排序算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        冒泡排序
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%A0%86%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        堆排序
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        希尔排序
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        归并排序
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        快速排序
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        插入排序
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+      
+      <label class="md-nav__link" for="nav-6">
+        杂货铺
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="杂货铺" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          杂货铺
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/Git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/Perforce/" class="md-nav__link">
+        Perforce
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3" >
+      
+      <label class="md-nav__link" for="nav-6-3">
+        敏捷
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="敏捷" data-md-level="2">
+        <label class="md-nav__title" for="nav-6-3">
+          <span class="md-nav__icon md-icon"></span>
+          敏捷
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/%E6%95%8F%E6%8D%B7/Scrum/" class="md-nav__link">
+        Scrum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82%E8%B4%A7%E9%93%BA/%E6%95%8F%E6%8D%B7/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        敏捷开发
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+      
+      <label class="md-nav__link" for="nav-7">
+        秋招冲刺
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="秋招冲刺" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          秋招冲刺
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+        学习路线
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-2" type="checkbox" id="nav-7-2" >
+      
+      <label class="md-nav__link" for="nav-7-2">
+        牛客
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="牛客" data-md-level="2">
+        <label class="md-nav__title" for="nav-7-2">
+          <span class="md-nav__icon md-icon"></span>
+          牛客
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/C%2B%2B%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1/" class="md-nav__link">
+        C++面试八股
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-2-2" type="checkbox" id="nav-7-2-2" >
+      
+      <label class="md-nav__link" for="nav-7-2-2">
+        基础
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="基础" data-md-level="3">
+        <label class="md-nav__title" for="nav-7-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E5%9F%BA%E7%A1%80/C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E5%9F%BA%E7%A1%80/%E5%AE%B9%E5%99%A8%E5%92%8C%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        容器和算法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E4%B8%8E%E5%BA%95%E5%B1%82/" class="md-nav__link">
+        编译与底层
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-2-3" type="checkbox" id="nav-7-2-3" >
+      
+      <label class="md-nav__link" for="nav-7-2-3">
+        操作系统
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="操作系统" data-md-level="3">
+        <label class="md-nav__title" for="nav-7-2-3">
+          <span class="md-nav__icon md-icon"></span>
+          操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%28%E4%B8%80%29/" class="md-nav__link">
+        操作系统(一)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%28%E4%B8%89%29/" class="md-nav__link">
+        操作系统(三)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%28%E4%BA%8C%29/" class="md-nav__link">
+        操作系统(二)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-2-4" type="checkbox" id="nav-7-2-4" >
+      
+      <label class="md-nav__link" for="nav-7-2-4">
+        算法与数据结构
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="算法与数据结构" data-md-level="3">
+        <label class="md-nav__title" for="nav-7-2-4">
+          <span class="md-nav__icon md-icon"></span>
+          算法与数据结构
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+        动态规划
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C/" class="md-nav__link">
+        哈希
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        排序
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        数组
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-2-5" type="checkbox" id="nav-7-2-5" >
+      
+      <label class="md-nav__link" for="nav-7-2-5">
+        计算机网络
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="计算机网络" data-md-level="3">
+        <label class="md-nav__title" for="nav-7-2-5">
+          <span class="md-nav__icon md-icon"></span>
+          计算机网络
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E8%BF%9E%E6%8E%A5/" class="md-nav__link">
+        TCP连接
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%28%E4%B8%80%29/" class="md-nav__link">
+        计算机网络(一)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%89%9B%E5%AE%A2/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%28%E4%BA%8C%29/" class="md-nav__link">
+        计算机网络(二)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3" >
+      
+      <label class="md-nav__link" for="nav-7-3">
+        面经
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="面经" data-md-level="2">
+        <label class="md-nav__title" for="nav-7-3">
+          <span class="md-nav__icon md-icon"></span>
+          面经
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E7%BB%8F/%E5%AD%97%E8%8A%82/" class="md-nav__link">
+        字节提前批后台开发-技术中台
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E7%BB%8F/%E7%B1%B3%E5%93%88%E6%B8%B8%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="md-nav__link">
+        米哈游客户端
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E7%BB%8F/%E8%85%BE%E8%AE%AF/" class="md-nav__link">
+        腾讯
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9D%A2%E7%BB%8F/%E9%9D%A2%E7%BB%8F/" class="md-nav__link">
+        面经
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-4" type="checkbox" id="nav-7-4" checked>
+      
+      <label class="md-nav__link" for="nav-7-4">
+        面经问题总结
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="面经问题总结" data-md-level="2">
+        <label class="md-nav__title" for="nav-7-4">
+          <span class="md-nav__icon md-icon"></span>
+          面经问题总结
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          图解系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        图解系统
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    硬件结构
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6432" class="md-nav__link">
+    64位相比32位的优势
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3264" class="md-nav__link">
+    软件的32位和64位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cache" class="md-nav__link">
+    CPU Cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    缓存一致性问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    浮点数不能直接运算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    操作系统结构
+  </a>
+  
+    <nav class="md-nav" aria-label="操作系统结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    内核
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    内存管理
+  </a>
+  
+    <nav class="md-nav" aria-label="内存管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    虚拟内存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    内存分段
+  </a>
+  
+    <nav class="md-nav" aria-label="内存分段">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    内存碎片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    内存交换效率低
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    内存分页
+  </a>
+  
+    <nav class="md-nav" aria-label="内存分页">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    虚拟地址和物理地址是怎么映射的
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    多级页表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    段页式内存管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux的内存管理方式
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux的内存管理方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    虚拟地址空间分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    进程与线程
+  </a>
+  
+    <nav class="md-nav" aria-label="进程与线程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    进程上下文切换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    线程！
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    进程和线程的比较
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    线程的上下文切换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    线程的实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    调度
+  </a>
+  
+    <nav class="md-nav" aria-label="调度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    01先来先服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02" class="md-nav__link">
+    02最短作业优先
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    03高响应比优先
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04" class="md-nav__link">
+    04时间片轮转
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05" class="md-nav__link">
+    05最高优先级调度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06" class="md-nav__link">
+    06多级反馈队列
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    进程间通信
+  </a>
+  
+    <nav class="md-nav" aria-label="进程间通信">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    管道
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    消息队列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    共享内存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    信号量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    信号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket" class="md-nav__link">
+    Socket
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    生产者消费者问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    死锁
+  </a>
+  
+    <nav class="md-nav" aria-label="死锁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    避免死锁发生
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    悲观锁与乐观锁
+  </a>
+  
+    <nav class="md-nav" aria-label="悲观锁与乐观锁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    互斥和自旋锁
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    读写锁
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    悲观锁和乐观锁
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    调度算法
+  </a>
+  
+    <nav class="md-nav" aria-label="调度算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    内存页面置换算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    磁盘调度算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    文件系统
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    目录项和目录是一个东西吗？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    虚拟文件系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    文件的使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    硬链接和软链接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    文件IO
+  </a>
+  
+    <nav class="md-nav" aria-label="文件IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io_1" class="md-nav__link">
+    缓冲与非缓冲IO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io_2" class="md-nav__link">
+    直接与非直接IO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-io" class="md-nav__link">
+    阻塞与非阻塞IO 同步异步IO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    网络系统
+  </a>
+  
+    <nav class="md-nav" aria-label="网络系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io-selectpollepoll" class="md-nav__link">
+    I/O多路复用 select/poll/epoll
+  </a>
+  
+    <nav class="md-nav" aria-label="I/O多路复用 select/poll/epoll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selectpoll" class="md-nav__link">
+    select/poll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epoll" class="md-nav__link">
+    epoll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    边缘触发和水平触发
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactorproactor" class="md-nav__link">
+    Reactor和Proactor
+  </a>
+  
+    <nav class="md-nav" aria-label="Reactor和Proactor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reactor" class="md-nav__link">
+    单Reactor 单进程/线程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactor_1" class="md-nav__link">
+    单Reactor 多线程/进程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactor_2" class="md-nav__link">
+    多Reactor 多进程/线程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proactor" class="md-nav__link">
+    Proactor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    Linux命令
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9B%BE%E8%A7%A3%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        图解网络
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        操作系统
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AE%97%E6%B3%95%E9%A2%98/" class="md-nav__link">
+        算法题
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        计算机网络
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        计算机网络
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="计算机网络" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          计算机网络
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTPS%E5%AE%89%E5%85%A8%E6%80%A7/" class="md-nav__link">
+        HTTPS安全性
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%E5%92%8CHTTPS/" class="md-nav__link">
+        HTTP和HTTPS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Socket/" class="md-nav__link">
+        Socket
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB/" class="md-nav__link">
+        TCP和UDP的区别
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E7%B2%98%E5%8C%85%E5%92%8C%E6%8B%86%E5%8C%85/" class="md-nav__link">
+        TCP粘包和拆包
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/select%E3%80%81poll%E3%80%81epoll/" class="md-nav__link">
+        Select、poll、epoll
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/" class="md-nav__link">
+        三次握手和四次挥手
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%88%90/" class="md-nav__link">
+        从输入URL到页面加载显示完成
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/" class="md-nav__link">
+        对称加密与非对称加密
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%B9%96%E7%A7%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BD%91%E8%AF%BE/" class="md-nav__link">
+        湖科计算机网络网课
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+      
+      <label class="md-nav__link" for="nav-9">
+        设计与编程技巧
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="设计与编程技巧" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          设计与编程技巧
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/CallBack/" class="md-nav__link">
+        CallBack
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/MVC%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        MVC框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/Refactor/" class="md-nav__link">
+        Refactor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-4" type="checkbox" id="nav-9-4" >
+      
+      <label class="md-nav__link" for="nav-9-4">
+        设计模式
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="设计模式" data-md-level="2">
+        <label class="md-nav__title" for="nav-9-4">
+          <span class="md-nav__icon md-icon"></span>
+          设计模式
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Builder/" class="md-nav__link">
+        Builder
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Factory/" class="md-nav__link">
+        Factory
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Proxy/" class="md-nav__link">
+        Proxy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Singleton/" class="md-nav__link">
+        Singleton
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
+        设计模式
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    硬件结构
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6432" class="md-nav__link">
+    64位相比32位的优势
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3264" class="md-nav__link">
+    软件的32位和64位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-cache" class="md-nav__link">
+    CPU Cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    缓存一致性问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    浮点数不能直接运算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    操作系统结构
+  </a>
+  
+    <nav class="md-nav" aria-label="操作系统结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    内核
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    内存管理
+  </a>
+  
+    <nav class="md-nav" aria-label="内存管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    虚拟内存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    内存分段
+  </a>
+  
+    <nav class="md-nav" aria-label="内存分段">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    内存碎片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    内存交换效率低
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    内存分页
+  </a>
+  
+    <nav class="md-nav" aria-label="内存分页">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    虚拟地址和物理地址是怎么映射的
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    多级页表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    段页式内存管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux的内存管理方式
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux的内存管理方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    虚拟地址空间分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    进程与线程
+  </a>
+  
+    <nav class="md-nav" aria-label="进程与线程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    进程上下文切换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    线程！
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    进程和线程的比较
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    线程的上下文切换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    线程的实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    调度
+  </a>
+  
+    <nav class="md-nav" aria-label="调度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    01先来先服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02" class="md-nav__link">
+    02最短作业优先
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    03高响应比优先
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04" class="md-nav__link">
+    04时间片轮转
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05" class="md-nav__link">
+    05最高优先级调度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06" class="md-nav__link">
+    06多级反馈队列
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    进程间通信
+  </a>
+  
+    <nav class="md-nav" aria-label="进程间通信">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    管道
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    消息队列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    共享内存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    信号量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    信号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket" class="md-nav__link">
+    Socket
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    生产者消费者问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    死锁
+  </a>
+  
+    <nav class="md-nav" aria-label="死锁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    避免死锁发生
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    悲观锁与乐观锁
+  </a>
+  
+    <nav class="md-nav" aria-label="悲观锁与乐观锁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    互斥和自旋锁
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    读写锁
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    悲观锁和乐观锁
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    调度算法
+  </a>
+  
+    <nav class="md-nav" aria-label="调度算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    内存页面置换算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    磁盘调度算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    文件系统
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    目录项和目录是一个东西吗？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    虚拟文件系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    文件的使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    硬链接和软链接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    文件IO
+  </a>
+  
+    <nav class="md-nav" aria-label="文件IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io_1" class="md-nav__link">
+    缓冲与非缓冲IO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io_2" class="md-nav__link">
+    直接与非直接IO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-io" class="md-nav__link">
+    阻塞与非阻塞IO 同步异步IO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    网络系统
+  </a>
+  
+    <nav class="md-nav" aria-label="网络系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io-selectpollepoll" class="md-nav__link">
+    I/O多路复用 select/poll/epoll
+  </a>
+  
+    <nav class="md-nav" aria-label="I/O多路复用 select/poll/epoll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selectpoll" class="md-nav__link">
+    select/poll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epoll" class="md-nav__link">
+    epoll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    边缘触发和水平触发
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactorproactor" class="md-nav__link">
+    Reactor和Proactor
+  </a>
+  
+    <nav class="md-nav" aria-label="Reactor和Proactor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reactor" class="md-nav__link">
+    单Reactor 单进程/线程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactor_1" class="md-nav__link">
+    单Reactor 多线程/进程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactor_2" class="md-nav__link">
+    多Reactor 多进程/线程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proactor" class="md-nav__link">
+    Proactor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    Linux命令
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>图解系统</h1>
+                
+                <h2 id="_1">硬件结构</h2>
+<p><img alt="image-20210815195036283" src="../../../img/image-20210815195036283.png" /></p>
+<p><strong>CPU</strong></p>
+<p>32位CPU一次可以计算4个字节。</p>
+<p>64位CPU一次可以计算8个字节。</p>
+<p><strong>总线</strong></p>
+<p><img alt="image-20210815203200068" src="../../../img/image-20210815203200068.png" /></p>
+<h3 id="6432">64位相比32位的优势</h3>
+<p><img alt="image-20210815204329725" src="../../../img/image-20210815204329725.png" /></p>
+<h3 id="3264">软件的32位和64位</h3>
+<p><img alt="image-20210815204804152" src="../../../img/image-20210815204804152.png" /></p>
+<h3 id="cpu-cache">CPU Cache</h3>
+<p><img alt="image-20210815205540128" src="../../../img/image-20210815205540128.png" /></p>
+<p>CPU Cache的数据是从内存加载过来的，写回数据的时候也只写回内存。</p>
+<h3 id="_2">缓存一致性问题</h3>
+<p>假设A和B核心同时运行两个线程，都操作共同的变量i（初始值为0）。</p>
+<p>如果A核心执行了i++操作，先把值写入到L1/L2缓存里，只有在A核心中的这个Cache Block要被替换时，数据才会写入内存。</p>
+<p>如果B核心尝试从内存中读取i变量的值，则会读到错误的值，因为A核心还没更新i的值。</p>
+<p><img alt="image-20210815212903291" src="../../../img/image-20210815212903291.png" /></p>
+<h3 id="_3">浮点数不能直接运算</h3>
+<p><strong>计算机怎么存小数的？</strong></p>
+<p><img alt="image-20210815220050992" src="../../../img/image-20210815220050992.png" /></p>
+<p>计算机存放的小数可能不是一个真实值，两个近似数相加得到的也必然是一个近似数。</p>
+<h2 id="_4">操作系统结构</h2>
+<h3 id="_5">内核</h3>
+<p>内核一般会提供四个能力：</p>
+<p>管理进程、线程，决定哪个进程、线程使用CPU，也就是进程调度的能力；</p>
+<p>管理内存，决定内存的分配和回收，内存管理的能力；</p>
+<p>管理硬件设备，为进程与硬件设备提供通信能力，硬件通信能力；</p>
+<p>提供系统调用，如果应用程序要运行更高权限运行的服务，用户程序与操作系统之间的接口；</p>
+<p><img alt="image-20210815224641661" src="../../../img/image-20210815224641661.png" /></p>
+<h2 id="_6">内存管理</h2>
+<h3 id="_7">虚拟内存</h3>
+<p><img alt="image-20210815224722824" src="../../../img/image-20210815224722824.png" /></p>
+<p>单片机是没有操作系统的，每次写完代码都要借助工具把程序烧录进去，程序才能跑起来。</p>
+<p>另外，单片机的CPU是直接操作内存的物理地址。</p>
+<p>这种情况，想要在内存中同时运行两个程序是不可能的。</p>
+<p><strong>操作系统会提供一种机制，将不同进程的虚拟地址和不同内存的物理地址映射起来。</strong></p>
+<h3 id="_8">内存分段</h3>
+<p><img alt="image-20210815230137474" src="../../../img/image-20210815230137474.png" /></p>
+<p><strong>分段有两个问题</strong></p>
+<ul>
+<li>内存碎片</li>
+<li>内存交换效率低</li>
+</ul>
+<h4 id="_9">内存碎片</h4>
+<ul>
+<li>外部内存碎片，产生了多个不连续的小物理内存，导致新的程序无法被加载</li>
+<li>内部内存碎片，程序的所有内存都被装载到了物理内存，但是这个程序有部分内存可能不是很常使用，导致了内存的浪费</li>
+</ul>
+<p>解决外部碎片的方法是<strong>内存交换</strong>。</p>
+<p>这个内存交换空间，在Linux系统里，就是Swap空间，从硬盘中划分出来的，用于内存与硬盘的空间交换。</p>
+<h4 id="_10">内存交换效率低</h4>
+<p>对于多进程的系统，用分段的方式，内存碎片很容易产生，产生了内存碎片就要重新Swap，如果内存交换的时候，交换的是一个很大的程序，整个机器都会显得卡顿。</p>
+<p>为了解决内存分段的内存碎片和内存交换效率低的问题，就出现了内存分页。</p>
+<h3 id="_11">内存分页</h3>
+<p>分页是把整个虚拟内存和物理内存空间切成一段段固定尺寸的大小。这样一个连续且尺寸固定的内存空间叫做页。</p>
+<p>虚拟地址空间与物理地址空间通过页表来映射。</p>
+<p>采用分页，释放的内存都是以页为单位的，就不会产生无法给进程使用的小内存。</p>
+<p>如果内存空间不够，操作系统会把其他进程中最近没有使用的内存页面释放掉，【换出】，需要时再加载进来，【换入】。一次性写入磁盘的也只有少数几个页，内存交换的效率就比较高。</p>
+<p><img alt="image-20210815232054510" src="../../../img/image-20210815232054510.png" /></p>
+<h4 id="_12">虚拟地址和物理地址是怎么映射的</h4>
+<p><img alt="image-20210815232153132" src="../../../img/image-20210815232153132.png" /></p>
+<p>虚拟地址分为两部分，页号和页偏移。页号作为页表的索引，页表包含物理页每页所在物理内存的基地址。基地址与页偏移组合形成物理地址。</p>
+<h3 id="_13">多级页表</h3>
+<p><img alt="image-20210815232702047" src="../../../img/image-20210815232702047.png" /></p>
+<p>如果某个一级页表的页表项没有被完全填满，那么就不需要创建这个页表项对应的二级页表了，即可以在需要的时候才创建二级页表。</p>
+<p>页表一定要覆盖全部虚拟地址空间，不分级的页表需要有100多万个页表项来映射，而二级分页只需要1024个（一级页表覆盖了全部虚拟地址空间，二级页表在需要时创建）。</p>
+<p><img alt="image-20210815233027662" src="../../../img/image-20210815233027662.png" /></p>
+<h3 id="_14">段页式内存管理</h3>
+<p>实现方式：</p>
+<ul>
+<li>先将程序划分为多个有逻辑意义的端，也就是分段机制；</li>
+<li>接着把每个段划分为多个页，也就是对分段划分出的连续空间，在划分固定大小的页；</li>
+</ul>
+<p><strong>段号 + 段内页号 + 页内位移</strong></p>
+<h3 id="linux">Linux的内存管理方式</h3>
+<p>页式内存管理。</p>
+<p>每个段都是从0地址开始的4G虚拟空间（32位），所有的代码面对的都是线性地址空间（虚拟地址），屏蔽了处理器中的逻辑地址概念，段只被用于访问控制和内存保护。</p>
+<h4 id="_15">虚拟地址空间分布</h4>
+<p><img alt="image-20210815234047143" src="../../../img/image-20210815234047143.png" /></p>
+<p><img alt="image-20210815234025168" src="../../../img/image-20210815234025168.png" /></p>
+<p><img alt="image-20210815234107670" src="../../../img/image-20210815234107670.png" /></p>
+<h2 id="_16">进程与线程</h2>
+<h3 id="_17">进程上下文切换</h3>
+<p>进程的上下文切换不仅包含虚拟内存、栈、全局变量等用户空间的资源，还包括内核堆栈、寄存器等内核空间的资源。</p>
+<p><img alt="image-20210816215009616" src="../../../img/image-20210816215009616.png" /></p>
+<h3 id="_18">线程！</h3>
+<p><strong>什么是线程？</strong></p>
+<p>线程是进程中的一条执行流程</p>
+<p>同一个进程内多个线程之间共享代码段、数据段、打开的文件等资源，但每个线程各自都有一套独立的寄存器和栈，这样可以确保线程的控制流是独立的。</p>
+<p><strong>线程的优点</strong></p>
+<ul>
+<li>一个进程中可以有多个线程</li>
+<li>各个线程之间并发执行</li>
+<li>各个线程之间可以共享地址空间和文件等资源</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>当进程中一个线程崩溃，会导致所有线程崩溃</li>
+</ul>
+<h3 id="_19">进程和线程的比较</h3>
+<p><img alt="image-20210816215912325" src="../../../img/image-20210816215912325.png" /></p>
+<h3 id="_20">线程的上下文切换</h3>
+<p>线程是调度的基本单位，进程是资源拥有的基本单位。</p>
+<p>操作系统的任务调度，实际调度对象是线程，而进程只是给线程提供了虚拟内存、全局变量等资源。</p>
+<p><strong>线程上下文切换的是什么？</strong></p>
+<ul>
+<li>当两个线程属于不同进程，则切换过程和进程一样。</li>
+<li>当两个线程属于一个进程，虚拟内存共享，只需切换线程的私有数据、寄存器等不共享的资源。</li>
+</ul>
+<h3 id="_21">线程的实现</h3>
+<p><img alt="image-20210816220621892" src="../../../img/image-20210816220621892.png" /></p>
+<p><strong>用户线程</strong></p>
+<p>用户线程是基于用户的线程管理库来实现的，那么线程控制块（TCB）也是在库里实现的，操作系统是看不到这个TCB的，只能看到整个进程的PCB。</p>
+<p>用户线程的整个线程管理和调度，操作系统不直接参与，而是由用户级线程库函数来完成线程的管理，包括线程的创建、终止、同步和调度等。</p>
+<p><img alt="image-20210816222113711" src="../../../img/image-20210816222113711.png" /></p>
+<p><strong>内核线程</strong></p>
+<p>内存线程是由操作系统管理的，线程对应的TCB放在内核中，线程的创建、终止和管理都由操作系统负责。</p>
+<p><img alt="image-20210816222337706" src="../../../img/image-20210816222337706.png" /></p>
+<p><strong>轻量级进程LWP</strong></p>
+<p>内核支持的用户线程，每个进程可以有一个或多个LWP，每个LWP跟内核线程是一对一映射的。</p>
+<p>LWP只能由内核管理并像普通进程一样被调度，Linux内核是支持LWP的典型例子。</p>
+<p>LWP与普通进程的区别在于它只有一个最小的执行上下文和调度程序所需的统计信息。</p>
+<p><img alt="image-20210816222740205" src="C:/Users/BINGCHEN/AppData/Roaming/Typora/typora-user-images/image-20210816222740205.png" /></p>
+<h3 id="_22">调度</h3>
+<h4 id="01">01先来先服务</h4>
+<p>每次从就绪队列中选择最先进入的进程，然后一直运行，直到进程退出或被阻塞，才会继续从队列中选择第一个进程接着运行。</p>
+<h4 id="02">02最短作业优先</h4>
+<p>优先选择运行实际最短的进程来运行。</p>
+<p>会导致长作业长期不会被运行。</p>
+<h4 id="03">03高响应比优先</h4>
+<p><img alt="image-20210816224011358" src="../../../img/image-20210816224011358.png" /></p>
+<p>计算响应比优先级，把【响应比优先级】最高的进程投入运行。</p>
+<h4 id="04">04时间片轮转</h4>
+<h4 id="05">05最高优先级调度</h4>
+<p><img alt="image-20210816224157373" src="../../../img/image-20210816224157373.png" /></p>
+<h4 id="06">06多级反馈队列</h4>
+<p><img alt="image-20210817120746755" src="../../../img/image-20210817120746755.png" /></p>
+<p>设置多个队列，优先级从高到低，优先级越高时间片越短。</p>
+<p>短作业可能在第一级队列很快处理完。对于长作业，如果第一级队列处理不完，可以移入下次队列继续等待被执行，虽然等待时间变长了，但运行时间也变得更长了。</p>
+<h3 id="_23">进程间通信</h3>
+<p>每个进程的用户空间是独立的，但内核空间是每个进程共享的，所以进程之间要通信必须通过内核。</p>
+<h4 id="_24">管道</h4>
+<p><strong>int pipe(int fd[2])</strong></p>
+<p>创建一个匿名管道，并返回两个描述符，一个是读端fd[0]，另一个是写端fd[1]。</p>
+<p>管道，就是内核里面的一串缓存。管道传输的数据是无格式的流且大小受限。</p>
+<p>匿名管道只能用于父子进程通信。</p>
+<p>命名管道在不相关的进程间也能通信，因为命名管道提前创建了一个类型为管道的设备文件，在进程里只要使用这个设备文件，就可以相互通信。</p>
+<p>不管是匿名还是命名管道，进程写入的数据都是缓存在内核中，另一个进程读取数据时也是从内核中获取，同时通信数据都遵循先进先出原则。</p>
+<h4 id="_25">消息队列</h4>
+<p><img alt="image-20210816225753665" src="../../../img/image-20210816225753665.png" /></p>
+<p><strong>消息队列不适合比较大数据的传输</strong>，因为内核中每个消息体都会有一个最大长度限制，同时所有队列所包含的全部消息体的总长度也有上限。</p>
+<p><strong>消息队列通信过程中，存在用户态和内核态之间数据拷贝开销</strong>。</p>
+<h4 id="_26">共享内存</h4>
+<p><strong>mmap</strong></p>
+<p>创建共享内存区域。调用shm_open函数（这是cyber中做法，实际上创建普通文件即可），创建内存文件（默认路径为Linux下sysv共享内存的默认挂载点/dev/shm），参数是文件名和读写权限等，返回一个int文件描述符。</p>
+<p>分配大小。调用ftruncate函数，给刚刚创建的文件设置大小即设置内存区域的大小。</p>
+<p>映射内存。调用mmap函数，将某块内存映射到刚刚的文件，接下去对该文件的操作都会反映到内存上，注意该函数使用时的参数，映射区域的特性flags需要像cyber中那样设置为MAP_SHARED，这样对映射区域的写入数据会复制回文件内，而且允许其他映射该文件的进程共享。如果设置为MAP_PRIVATE则对映射区域的写入操作会产生一个映射文件的复制，即私人的“写入时复制”（copy on write）对此区域作的任何修改都不会写回原来的文件内容。</p>
+<p>读写数据，之后就可以通过直接读写对应内存比如memcpy或cyber中的string*-&gt;assign/append函数等来进行操作和通信。</p>
+<p><strong>shm</strong></p>
+<pre><code class="language-c++">// 创建或打开共享内存
+int shmget(key_t key, size_t size, int shmflg);
+
+// 连接到进程地址空间
+ void *shmat(int shmid, const void *shmaddr, int shmflg);
+
+// 将共享内存和当前进程脱离
+int shmdt(const void *shmaddr);
+</code></pre>
+<p><strong>总结mmap和shm:</strong>
+1、mmap是在磁盘上建立一个文件，每个进程地址空间中开辟出一块空间进行磁盘文件映射。而对于shm而言，shm每个进程最终会映射到同一块物理内存。shm保存在物理内存，这样读写的速度要比磁盘要快，但是存储量不是特别大。</p>
+<p>2、另外mmap有一个好处是当机器重启，因为mmap把文件保存在磁盘上，这个文件还保存了操作系统同步的映像，所以mmap不会丢失，但是shmget就会丢失。</p>
+<h4 id="_27">信号量</h4>
+<p><img alt="image-20210816230744724" src="../../../img/image-20210816230744724.png" /></p>
+<h4 id="_28">信号</h4>
+<p>信号是进程间通信机制中唯一的异步通信机制，可以在任何时候发送信号给某一进程。</p>
+<ol>
+<li>执行默认操作</li>
+<li>捕捉信号，执行信号处理函数</li>
+<li>忽略信号</li>
+</ol>
+<h4 id="socket">Socket</h4>
+<p>跨网络与不同主机上的进程之间通信。也可以用于本机通信。</p>
+<p><strong>int Socket(int domain, int type, int protocal)</strong></p>
+<p><img alt="image-20210816231334319" src="../../../img/image-20210816231334319.png" /></p>
+<h3 id="_29">生产者消费者问题</h3>
+<p><img alt="image-20210816233534171" src="../../../img/image-20210816233534171.png" /></p>
+<h3 id="_30">死锁</h3>
+<p><strong>发生条件</strong></p>
+<ul>
+<li>互斥条件</li>
+<li>持有并等待条件</li>
+<li>不可剥夺条件</li>
+<li>环路等待条件</li>
+</ul>
+<p><strong>互斥条件</strong></p>
+<p>多线程不能同时使用同一资源。</p>
+<p><strong>持有并等待条件</strong></p>
+<p>线程A在等待资源2的同时并不会释放自己已经持有的资源1。</p>
+<p><strong>不可剥夺条件</strong></p>
+<p>当线程已经持有了资源，在自己使用完之前不能被其他线程获取。</p>
+<p><strong>环路等待条件</strong></p>
+<p>死锁发生的时候，线程获取资源的顺序构成的环形链。</p>
+<h4 id="_31">避免死锁发生</h4>
+<p><strong>预防</strong></p>
+<ol>
+<li>破坏互斥条件</li>
+</ol>
+<p>有些资源不能同时访问</p>
+<ol>
+<li>破坏请求等待条件</li>
+</ol>
+<p>预先分配，进程在运行前一次申请完所需要的全部资源。</p>
+<ol>
+<li>破坏不可剥夺条件</li>
+</ol>
+<p>当一个已经保存了某些不可剥夺资源的进程，请求新的资源而得不到满足时，它必须释放已经保持的所有资源。</p>
+<ol>
+<li>破环循环等待条件</li>
+</ol>
+<p>采用顺序资源分配法。给系统中的资源编号，必须按编号递增的顺序请求资源，同类资源一次申请完。</p>
+<h3 id="_32">悲观锁与乐观锁</h3>
+<p><strong>互斥锁、自旋锁、读写锁、乐观锁、悲观锁。</strong></p>
+<h4 id="_33">互斥和自旋锁</h4>
+<ul>
+<li>互斥锁加锁失败后，线程会释放CPU，给其他线程；</li>
+<li>自旋锁加锁失败后，线程会忙等待，直到它拿到锁；</li>
+</ul>
+<p>如果能确定被锁住的代码执行时间很短，就不该用互斥锁，而应该选用自旋锁，否则使用互斥锁。</p>
+<p>自旋锁和互斥锁使用层面比较相似，但实现层面不同：当加锁失败时，互斥锁用【线程切换】来应对，自旋锁用【忙等待】来应对。</p>
+<h4 id="_34">读写锁</h4>
+<p>读写锁适用于能明确区分读操作和写操作的场景。</p>
+<p>工作原理：</p>
+<ul>
+<li>当【写锁】没有被线程持有时，多个线程能并发的持有读锁。</li>
+<li>一旦【写锁】被线程持有后，读线程的获取读锁操作会被阻塞，而且其他写线程获取写锁的操作也会被阻塞。</li>
+</ul>
+<p>在读多写少的场景，能发挥出优势。</p>
+<p><strong>公平读写锁</strong>：用队列把获取锁的线程排队，不管是写线程还是读线程都按照先进先出的原则加锁即可，这样读线程仍然可以并发，也不会出现饥饿现象。</p>
+<h4 id="_35">悲观锁和乐观锁</h4>
+<p>互斥锁、自旋锁、读写锁都属于悲观锁。</p>
+<p>悲观锁认为多线程同时<strong>修改共享资源的概率比较高，于是很容易出现冲突，所以访问共享资源前，先要上锁。</strong></p>
+<p>如果多线程同时修改共享资源的概率比较低，就可以采用乐观锁。</p>
+<p>乐观锁假定冲突的概率很低，<strong>先修改完共享资源，在验证这段时间内有没有发生冲突，如果没有其他线程在修改资源，那么操作完成，如果发现有其他线程已经修改过这个资源，就放弃本次操作。</strong></p>
+<p>场景例子：在线文档、SVN、Git</p>
+<p>乐观锁虽然去除了加锁解锁的操作，但是一旦发生冲突，重试的成本非常高，所以只有在冲突概率非常低，且加锁成本非常高的场景时，才考虑使用乐观锁。</p>
+<h2 id="_36">调度算法</h2>
+<p><img alt="image-20210817114510277" src="../../../img/image-20210817114510277.png" /></p>
+<p>抢占式调度：进程正在运行时，可以被打断，使其把CPU让给其他进程。抢占的原则一般有：时间片原则、优先权原则、短作业优先原则。</p>
+<p>非抢占式调度：当进程正在运行时，它就会一直运行，直到该进程完成或发生某个事件而被阻塞时，才会把CPU让给其他进程。</p>
+<h4 id="_37">内存页面置换算法</h4>
+<p><strong>最佳页面置换算法</strong></p>
+<p>置换在未来最长时间不访问的页面。</p>
+<p><img alt="image-20210817132532161" src="../../../img/image-20210817132532161.png" /></p>
+<p>理想化的算法，实际系统中无法实现，因为程序访问页面时动态的，我们无法预知每个页面在下一次访问前的等待时间。</p>
+<p>所以，最佳页面置换算法是为了衡量你的算法效率，算法越接近该算法的效率，说明算法是高效的。</p>
+<p><strong>先进先出算法</strong></p>
+<p><strong>选择在内存中驻留时间很长的页面进行置换</strong>。</p>
+<p><strong>最近最久未使用的置换算法LRU</strong></p>
+<p><strong>选择最长时间没有被访问的页面进行置换</strong>。</p>
+<p>近似与最优置换算法，最优置换算法是通过未来的使用情况来推测要淘汰的页面，LRU是根据历史的使用情况来推测。</p>
+<p><img alt="image-20210817133158741" src="../../../img/image-20210817133158741.png" /></p>
+<p>虽然LRU在理论上是可以实现的，但是代价较高。为了完全实现LRU，需要在内存中维护一个所有页面的链表，最近最多使用的在表头，最近最少使用的在表尾。</p>
+<p>困难的是，每次访问内存都必须更新整个链表。在链表中找到一个页面，删除，然后移动到表头。</p>
+<p><strong>时钟页面置换算法</strong></p>
+<p><img alt="image-20210817133949999" src="../../../img/image-20210817133949999.png" /></p>
+<p>所有页面保存在一个类似钟面的【环形链表】中，一个表针指向最老的页面。</p>
+<p>发生缺页中断时，首先检查表针所指向的页面：</p>
+<ul>
+<li>如果它的访问位是0就淘汰该页面，并把新的页面插入这个位置，然后把表针前移一个位置；</li>
+<li>如果它的访问位是1就清除访问位，并把表针前移一个位置，重复这个过程直到找到了一个访问位是0的页面为止；</li>
+</ul>
+<p><strong>最不常用算法LFU</strong></p>
+<p><strong>发生缺页中断时，选择访问次数最少的那个页面，并将其淘汰。</strong></p>
+<p>每个页面设置一个访问计数器，每当一个页面被访问时，该页面的计数器就加一。发生缺页中断时，淘汰计数器值最小的那个页面。</p>
+<h4 id="_38">磁盘调度算法</h4>
+<p>假设有下列一个请求序列，每个数字代表磁道的位置：</p>
+<p>98，183，37，122，14，124，65，67</p>
+<p><strong>先来先服务</strong></p>
+<p><img alt="image-20210817135142825" src="../../../img/image-20210817135142825.png" /></p>
+<p><strong>最短寻道时间优先</strong></p>
+<p><img alt="image-20210817135226819" src="../../../img/image-20210817135226819.png" /></p>
+<p>可能存在某些请求的饥饿问题。</p>
+<p><strong>扫描算法</strong></p>
+<p>磁头在一个方向上移动，访问所有未完成的请求，直到磁头到达该方向上的最后磁道，才调换方向。</p>
+<p><img alt="image-20210817135349528" src="../../../img/image-20210817135349528.png" /></p>
+<p><strong>循环扫描算法</strong></p>
+<p>只有磁头操着某个特定方向移动时，才处理磁道访问请求，而返回时直接快速移动至最靠边缘的磁道，也就是复位，返回中途不处理任何请求。</p>
+<p><img alt="image-20210817135605767" src="../../../img/image-20210817135605767.png" /></p>
+<p><strong>LOOK与C-LOOK算法</strong></p>
+<p>扫描和循环扫描都是移动磁盘到最始端或最末端才开始调换方向。</p>
+<p>优化的思路就是磁头移动到【最远的请求】位置，然后立即反向移动。</p>
+<p>针对扫描算法的优化叫LOOK算法，<strong>反向移动的途中会响应请求</strong>。</p>
+<p>针对C-SCAN算法的优化叫C-LOOK。磁头在每个方向上仅仅移动到最远的请求位置，然后立即方向移动，<strong>反向移动的途中不会响应请求</strong>。</p>
+<h2 id="_39">文件系统</h2>
+<p><img alt="image-20210817144339859" src="../../../img/image-20210817144339859.png" /></p>
+<p>Linux：一切皆文件，不仅普通的文件和目录，块设备、管道、socket等也是统一交给文件系统管理的。</p>
+<p>Linux文件系统会为每个文件分配两个数据结构：索引节点（index node）和目录项（directory entry），它们用来记录文件的元信息和目录层次结构。</p>
+<ul>
+<li>索引节点，inode，用来记录文件元信息，比如inode编号、文件大小、访问权限、创建时间、修改时间、数据在磁盘的位置等。索引节点是文件的唯一标识，它们之间一一对应，也同样会被存储在磁盘中，所以<strong>索引节点同样占用磁盘空间。</strong></li>
+<li>目录项，也就是dentry，用来记录文件的名字、索引节点指针以及与其他目录项的层级关联关系。多个目录项关联起来，就会形成目录结构，但是和索引节点不同的是，<strong>目录项是由内核维护的一个数据结构，不存放在磁盘，而是缓存在内存。</strong></li>
+</ul>
+<h3 id="_40">目录项和目录是一个东西吗？</h3>
+<p>不是。目录是个文件，持久化存储在磁盘，而目录项是内核一个数据结构，缓存在内存。</p>
+<p>如果查询目录频繁从磁盘读，效率会很低，所以内核会把已经读过的目录用目录项这个数据结构缓存在内存，下次再读到同样的目录时，只需从内存中读就可以。</p>
+<h3 id="_41">虚拟文件系统</h3>
+<p>文件系统的种类众多，而操作系统希望对用户提供一个统一的接口，于是再用户层与文件系统中引入了中间层，虚拟文件系统（VFS）。</p>
+<p><strong>VFS定义了一组所有文件系统都支持的数据结构和标准接口</strong>，这样程序员不需要了解文件系统的个工作原理，只需要了解VFS提供的统一接口即可。</p>
+<p><img alt="image-20210817151121634" src="../../../img/image-20210817151121634.png" /></p>
+<p><img alt="image-20210817151411242" src="../../../img/image-20210817151411242.png" /></p>
+<h3 id="_42">文件的使用</h3>
+<p><img alt="image-20210817151915960" src="../../../img/image-20210817151915960.png" /></p>
+<h3 id="_43">硬链接和软链接</h3>
+<p><strong>硬链接</strong></p>
+<p>硬链接是多个目录项中的【索引节点】指向同一个文件，但是inode是不可能跨越文件系统的，每个文件系统都有各自的inode数据结构和链表，所以<strong>硬链接是不可以与跨文件系统的</strong>。<strong>只有删除文件的所有硬链接以及源文件时，系统才会彻底删除该文件。</strong></p>
+<p><img alt="image-20210817154917996" src="../../../img/image-20210817154917996.png" /></p>
+<p><strong>软链接</strong></p>
+<p>软链接相当于重新创建一个文件，这个文件有独立的inode，但是这个<strong>文件的内容是另一个文件的路径</strong>，所以访问软链接的时候，实际相当于访问到了另一个文件，所以软链接是可以跨文件系统的，<strong>甚至目标文件被删除了，链接文件还是在的，只不过指向的文件找不到了。</strong></p>
+<p><img alt="image-20210817155258908" src="../../../img/image-20210817155258908.png" /></p>
+<h3 id="io">文件IO</h3>
+<h4 id="io_1">缓冲与非缓冲IO</h4>
+<p>根据【是否利用标准库缓冲】，可以把文件IO分为缓冲IO和非缓冲IO。</p>
+<ul>
+<li>缓冲IO，利用的是标准库的缓存实现文件的加速访问，而标准库再通过系统调用访问文件。</li>
+<li>非缓冲IO，直接通过系统调用访问文件，不经过标准库缓存。</li>
+</ul>
+<p><img alt="image-20210817160627154" src="../../../img/image-20210817160627154.png" /></p>
+<h4 id="io_2">直接与非直接IO</h4>
+<p>根据是否利用操作系统的缓存，可以把文件分为直接IO和非直接IO。</p>
+<ul>
+<li>直接IO，不会发生内核缓存和用户程序之间数据复制，而是直接经过文件系统访问磁盘。</li>
+<li>非直接IO，读操作时，数据从内核缓存中拷贝给用户程序，写操作时，数据从用户程序拷贝给内核缓存，再由内核决定什么时候写入数据到磁盘。</li>
+</ul>
+<h4 id="io-io">阻塞与非阻塞IO 同步异步IO</h4>
+<p><strong>阻塞IO</strong>，阻塞等待的是【内核数据准备好】和【数据从内核态拷贝到用户态】两个过程。</p>
+<p><img alt="image-20210817161815545" src="../../../img/image-20210817161815545.png" /></p>
+<p><strong>非阻塞IO</strong>，非阻塞的read请求在数据未准备好的情况下立即返回，可以继续往下执行，此时应用程序不断轮询内核，直到数据准备好，内核将数据拷贝到应用程序缓冲区，read调用才可以获取结果。</p>
+<p><img alt="image-20210817161943231" src="../../../img/image-20210817161943231.png" /></p>
+<p>注意，访问管道或Socket时，如果设置了<strong>O_NONBLOCK</strong>标志，那么就表示使用的是非阻塞IO，默认是阻塞IO。</p>
+<p><strong>IO多路复用</strong>，如select、poll，通过IO事件分发，当内核数据准备好时，再以事件通知应用程序进行操作。</p>
+<p><img alt="image-20210817162234948" src="../../../img/image-20210817162234948.png" /></p>
+<p>无论是阻塞IO、非阻塞IO还是IO多路复用都是同步调用。它们在read调用时，内核将数据从内核空间拷贝到应用程序空间时，过程都是需要等待的，也就是说这个过程是同步的，如果内核的拷贝效率不高，read调用就会在这个同步过程中等待较长时间。</p>
+<p>真正的异步IO是【内核准备好数据】和【数据从内核态拷贝到用户态】这两个过程都不需要等待的。</p>
+<p>当我们发起<strong>aio_read</strong>后就立刻返回，内核自动将数据从内核空间拷贝到应用程序空间。</p>
+<p><img alt="image-20210817162534679" src="../../../img/image-20210817162534679.png" /></p>
+<h2 id="_44">网络系统</h2>
+<h3 id="io-selectpollepoll">I/O多路复用 select/poll/epoll</h3>
+<p>为每个请求分配一个进程/线程的方式不合适，有没有可能只使用一个进程来维护多个Socket呢？</p>
+<p>select/poll/epoll内核提供给用户态的多路复用系统调用，进程可以通过一个系统调用函数从内核获取多个事件，</p>
+<p>在获取事件时，先把所有连接（文件描述符）传给内核，再由内核返回产生了事件的连接，然后在用户态中处理这些连接对应的请求即可。</p>
+<h4 id="selectpoll">select/poll</h4>
+<p>select实现方式是，将已连接的Socket都放到一个<strong>文件描述符集合</strong>，然后调用select将文件描述符集合<strong>拷贝</strong>到内核里，内核遍历文件描述符集合，检查是否有事件发生，将此Socket标记为可读或可写。再把整个文件描述符<strong>拷贝</strong>回用户态里，用户态再<strong>遍历</strong>找到可读可写的Socket，然后处理。</p>
+<p>对于select，需要两次遍历文件描述符集合，还会发生两次拷贝文件描述符集合。</p>
+<p>select以固定长度的数组表示文件描述符集合，最大值1024.</p>
+<p>poll以链表的形式组织，突破了select文件描述符个数限制，当然还会收到系统文件描述符限制。</p>
+<p>但是poll和select本质上没有太大区别，都是使用线性结构存储进程关注的Socket集合，因此都需要遍历文件描述符集合找到可读可写的Socket，时间复杂度为O(n)，而且也需要在用户态与内核态之间拷贝文件描述符集合。</p>
+<h4 id="epoll">epoll</h4>
+<p>epoll在内核使用红黑树来跟踪进程所有待检测的文件描述符，把需要监控的socket，把需要监控的socket通过epoll_ctl()加入内核的红黑树里（红黑树增删查时间一般O(logn)），这样就不需要每次传入整个Socket集合，只需要传入一个待检测的socket，减少了内核和用户空间的拷贝。</p>
+<p>epoll使用事件驱动机制，内核里维护了一个链表来记录就绪事件，当某个socket有事件发生时，通过回调函数内核会将其加入到这个就绪事件列表中，当用户调用epoll_wait()时，只返回有事件发生的文件描述符个数，不需要轮询整个集合。</p>
+<h4 id="_45">边缘触发和水平触发</h4>
+<p>水平触发，当epoll_wait检测到其上有事件发生并通知应用程序时，应用程序可以不立即处理该事件。下一次调用epoll_wait时，还会向应用程序通知该一事件，直到该事件被处理。</p>
+<p>边缘触发，当epoll_wait检测到有事件发生并通知应用程序后，应用程序必须立刻处理该事件，后续不会再通知这一事件。</p>
+<p>ET模式降低了同一个epoll事件被重复触发的次数。</p>
+<h3 id="reactorproactor">Reactor和Proactor</h3>
+<p>Reactor模式</p>
+<p>IO多路复用监听事件，收到事件后，根据事件类型分配给某个进程/线程。</p>
+<p>主要由Reactor和处理资源池两个核心部分组成：</p>
+<ul>
+<li>Reactor负责监听和分发事件，事件类型包含连接事件、读写事件；</li>
+<li>处理资源池负责处理事件，如read — 业务逻辑 — send；</li>
+</ul>
+<p>Reactor的数量可以有一个或多个，处理资源池可以是单个进程/线程，也可以是多个进程/线程。</p>
+<h4 id="reactor">单Reactor 单进程/线程</h4>
+<p><img alt="image-20210817185155658" src="../../../img/image-20210817185155658.png" /></p>
+<ul>
+<li><strong>Reactor对象的作用是监听和分发事件；</strong></li>
+<li><strong>Acceptor对象的作用是获取连接；</strong></li>
+<li><strong>Handler对象的作用是处理业务；</strong></li>
+</ul>
+<p><img alt="image-20210817185328046" src="../../../img/image-20210817185328046.png" /></p>
+<p>缺点：</p>
+<ul>
+<li>只有一个进程，无法充分利用多核CPU的性能。</li>
+<li>Handle对象在业务处理时，整个进程无法处理其他连接事件的，如果业务处理耗时比较长，那么就造成响应的延迟。</li>
+</ul>
+<h4 id="reactor_1">单Reactor 多线程/进程</h4>
+<p><img alt="image-20210817185601475" src="../../../img/image-20210817185601475.png" /></p>
+<p>不一样的地方：</p>
+<ul>
+<li>Handler对象不再负责业务处理，只负责数据的接收和发送，Handler对象通过read读取到数据后，会将数据发给子线程里的Processor对象进行业务处理；</li>
+<li>子线程里的Processor对象就进行业务处理，处理完后，将结果发给主线程中的Handler对象，接着由Handler通过send方法将响应结果发给client；</li>
+</ul>
+<p>因为一个Reactor对象承担所有事件的监听和响应，而且只在主线程中运行，在面对瞬间高并发的场景时，容易成为性能瓶颈。</p>
+<h4 id="reactor_2">多Reactor 多进程/线程</h4>
+<p><img alt="image-20210818163708477" src="../../../img/image-20210818163708477.png" /></p>
+<p><img alt="image-20210818163754676" src="../../../img/image-20210818163754676.png" /></p>
+<h3 id="proactor">Proactor</h3>
+<p><strong>Reactor是非阻塞同步网络模式，感知的是就绪可读写事件。</strong>在每次感知到有事件发生后（如可读），就需要进程主动调用read方法完成数据的读取，也就是要应用进程主动将socket接收缓冲中的数据读到应用进程中，这个过程是同步的，读取完数据后应用进程才能处理数据。</p>
+<p><strong>而Proactor是异步网络模式，感知的是已完成的读写事件。</strong>在发起异步读写请求时，需要传入数据缓冲区的地址（用来存放结果数据）等信息，这样系统内核才能自动帮我们把数据的读写工作完成，这里的读写工作全部由操作系统来做，并不需要像Reactor那样还需要应用进程主动发起read/write来读写数据，操作系统完成读写工作后，就会通知应用进程直接处理数据。</p>
+<p><img alt="image-20210818165535512" src="../../../img/image-20210818165535512.png" /></p>
+<h2 id="linux_1">Linux命令</h2>
+<p><strong>网络配置如何查看？</strong></p>
+<p><strong>ifconfig和ip</strong></p>
+<p>这两个命令输出的格式不尽相同，但是输出内容基本相同，比如都包含了IP地址、子网掩码、MAC地址、网关地址、MTU大小、网口的状态以及网路包收发的统计信息。</p>
+<p>socket信息如何查看</p>
+<p><strong>netstat或者ss</strong></p>
+<p>查看socket、网络协议栈、网口以及路由表信息。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../C%2B%2B/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                C++
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../%E5%9B%BE%E8%A7%A3%E7%BD%91%E7%BB%9C/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                图解网络
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

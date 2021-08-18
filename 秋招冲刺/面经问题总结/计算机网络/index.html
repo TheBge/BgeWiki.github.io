@@ -433,8 +433,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/therad/join%20detach/" class="md-nav__link">
-        C++11多线程join()和detach()的理解
+      <a href="../../../C%2B%2B/therad/C%2B%2B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        C++多线程基础
       </a>
     </li>
   
@@ -445,8 +445,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/therad/%E9%94%81/" class="md-nav__link">
-        锁
+      <a href="../../../C%2B%2B/therad/join%20detach/" class="md-nav__link">
+        C++11多线程join()和detach()
       </a>
     </li>
   
@@ -2000,6 +2000,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E5%9B%BE%E8%A7%A3%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        图解系统
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9B%BE%E8%A7%A3%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        图解网络
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
         操作系统
       </a>
@@ -2261,6 +2285,27 @@
         <li class="md-nav__item">
   <a href="#29selectpollepoll" class="md-nav__link">
     29、select、poll、epoll的应用场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30cookiesession" class="md-nav__link">
+    30、cookie和session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    31、中间人攻击
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32dns" class="md-nav__link">
+    32、DNS劫持
   </a>
   
 </li>
@@ -2816,6 +2861,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#30cookiesession" class="md-nav__link">
+    30、cookie和session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    31、中间人攻击
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32dns" class="md-nav__link">
+    32、DNS劫持
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2833,11 +2899,25 @@
                 
                 <h3 id="1dns">1、DNS解析过程</h3>
 <ul>
-<li>浏览器先检查自身缓存中有没有被解析过的这个域名对应的IP地址，如果有，解析结束。</li>
-<li>如果浏览器中没有，浏览器会检查操作系统中有没有对应的已解析过的结果，而操作系统也有一个域名解析过程。在window下是一个hosts的文件。</li>
-<li>到现在还没有命中，则向本地域名服务器请求解析域名。</li>
-<li>如果本地DNS服务器本地区域文件与缓存解析都失效，则根据本地DNS服务器的设置，采用递归或者迭代查询，直至解析完成。</li>
+<li>
+<p>浏览器先检查自身缓存中有没有被解析过的这个域名对应的IP地址，如果有，解析结束。</p>
+</li>
+<li>
+<p>如果浏览器中没有，浏览器会检查操作系统中有没有对应的已解析过的结果，而操作系统也有一个域名解析过程。在window下是一个hosts的文件。</p>
+</li>
+<li>
+<p>到现在还没有命中，则向本地域名服务器请求解析域名。</p>
+</li>
+<li>
+<p>如果本地DNS服务器本地区域文件与缓存解析都失效，则根据本地DNS服务器的设置，采用递归或者迭代查询，直至解析完成。</p>
+</li>
 </ul>
+<p>本地服务器采用迭代查询，向一个根域名服务器查询；</p>
+<p>根域名服务器告诉本地服务器，下一个要查询的顶级域名服务器的IP地址；</p>
+<p>本地服务器向顶级域名服务器查询；</p>
+<p>顶级域名服务器告诉本地域名服务器，下一个要查询的权限域名服务器的IP地址；</p>
+<p>本地服务器向权限域名服务器查询；</p>
+<p>权限域名服务器返回IP地址。</p>
 <h3 id="2httphttpshttps">2、HTTP和HTTPS的区别，HTTPS握手的过程</h3>
 <p>端口 ：<strong>HTTP的URL由“http://”起始且默认使用端口80，而HTTPS的URL由“https://”起始且默认使用端口443</strong>。 </p>
 <p>安全性和资源消耗： <strong>HTTP协议运行在TCP之上，所有传输的内容都是明文</strong>，客户端和服务器端都无法验证对方的身份。<strong>HTTPS是运行在SSL/TLS之上的HTTP协议</strong>，SSL/TLS 运行在TCP之上。<strong>所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密</strong>。所以说，HTTP 安全性没有 HTTPS高，但是<strong>HTTPS 比HTTP耗费更多服务器资源</strong>。  </p>
@@ -2926,6 +3006,7 @@
 <h3 id="14">~~14、线程调度~~</h3>
 <h3 id="15httpsssl">15、https的SSL建连过程会导致效率下降要怎么优化</h3>
 <h3 id="16httpsrtt">16、https整个握手交互的过程总共花了多少rtt</h3>
+<p>2个RTT</p>
 <h3 id="17tsl">17、TSL握手过程</h3>
 <p><img alt="image-20210808185602023" src="../../../img/image-20210808185602023.png" /></p>
 <p>SSL 和 TLS 协议可以为通信双方提供识别和认证通道，从而保证通信的机密性和数据完整性。TLS 协议是从Netscape SSL 3.0协议演变而来的，不过这两种协议并不兼容，SSL 已经逐渐被 TLS 取代，所以下文就以 TLS 指代安全层。</p>
@@ -2972,7 +3053,7 @@
 <h3 id="23http11-http20">23、HTTP1.1 和 HTTP2.0 的区别</h3>
 <p><strong>HTTP1.1</strong></p>
 <ul>
-<li><strong>默认使用长连接</strong>（connection:<a href="https://www.nowcoder.com/jump/super-jump/word?word=keep">keep</a>-alive）。<strong>解决了TCP复用问题</strong>，可以减少TCP的三次握手开销。</li>
+<li><strong>默认使用长连接</strong>（connection:keep-alive）。<strong>解决了TCP复用问题</strong>，可以减少TCP的三次握手开销。</li>
 <li>HTTP 1.1开始支持获取文件的部分内容，这支持了<strong>并行下载</strong>和<strong>断点续传</strong>。</li>
 <li>HTTP/1.1 引入了更多的缓存控制策略</li>
 <li>HTTP 1.1开始有Host（域） 这个概念</li>
@@ -3040,6 +3121,40 @@
 <li>文件描述符数量比较少；</li>
 <li>每个连接的活跃度都比较高；</li>
 </ol>
+<h3 id="30cookiesession">30、cookie和session</h3>
+<p><strong>Cookie</strong></p>
+<ol>
+<li>浏览器第一次发送请求到服务器端。</li>
+<li>服务器端会创建cookie，该cookie中包含着用户的登录信息，再将cookie响应到客户端浏览器。</li>
+<li>当用户再次访问时，服务器端会将之前创建的cookie响应到客户端</li>
+<li>服务器端可以通过cookie来区分不同的用户</li>
+</ol>
+<p><strong>Session</strong></p>
+<ol>
+<li>当浏览器第一次发送请求到服务器端，服务器端会创建一个Session对象，Session对象会分配一个Jsessionld ，同时也会创建一个特殊的Cookie对象，会以set-Cookie的方式将id传回浏览器，浏览器保存起来。</li>
+<li>当浏览器再不关闭的情况下，浏览器端发送第二次及以上的请求到服务器端,浏览器端访问服务器端时就会携带该name为JSESSIONID的Cookie对象，服务器端会将ame为JSESSIONID的Cookie对象取服务器端查询，以便来区分用户。</li>
+</ol>
+<p><strong>Cookie和Session的区别是什么？</strong></p>
+<ol>
+<li>cookie是将数据信息保存在客户端或浏览器，session是将数据信息保存的服务端。</li>
+<li>session存储数据信息比cookie存储的信息容量大。</li>
+<li>session是将数据保存在服务器端，数据信息相对于cookie来说安全性更高。</li>
+</ol>
+<h3 id="31">31、中间人攻击</h3>
+<p><img alt="image-20210818093548606" src="../../../img/image-20210818093548606.png" /></p>
+<p><strong>为什么需要CA认证机构颁发证书？</strong></p>
+<p>HTTP协议被认为不安全是因为传输过程容易被监听者窃听、伪造服务器，而HTTPS协议主要解决的就是网络传输的安全性问题。假设不存在认证机构，任何人都可以伪造证书，这带来的安全风险便是中间人攻击问题。</p>
+<p><strong>服务端在发送浏览器的公钥中加入CA证书，浏览器可以验证CA证书的有效性</strong></p>
+<ul>
+<li>制作证书：作为服务端的A，首先把自己的公钥key1发给证书颁发机构，向证书颁发机构进行申请证书；证书颁发机构有一套自己的公私钥，CA通过自己的私钥来加密key1,并且通过服务端网址等信息生成一个证书签名，证书签名同样使用机构的私钥进行加密；制作完成后，机构将证书发给A；</li>
+<li>校验证书真伪：当B向服务端A发起请求通信的时候，A不再直接返回自己的公钥，而是返回一个证书；
+  说明：各大浏览器和操作系统已经维护了所有的权威证书机构的名称和公钥。B只需要知道是哪个权威机构发的证书，使用对应的机构公钥，就可以解密出证书签名；接下来，B使用同样的规则，生成自己的证书签名，如果两个签名是一致的，说明证书是有效的；
+  签名验证成功后，B就可以再次利用机构的公钥，解密出A的公钥key1;接下来的操作，就是和之前一样的流程了；</li>
+<li>中间人是否会拦截发送假证书到B呢？
+  因为证书的签名是由服务器端网址等信息生成的，并且通过第三方机构的私钥加密中间人无法篡改； 所以最关键的问题是证书签名的真伪；</li>
+</ul>
+<h3 id="32dns">32、DNS劫持</h3>
+<p>浏览器使用https协议在与XXXXX.com进行数据交互之前，需要获取域名对应证书，此时地址的服务器返回一个假的证书，接着向CA或者本地跟证书验证对应域名证书合法性，浏览器必然会显示证书安全有问题，此时用户如果点击信任该证书并且继续浏览，则便进入了被劫持的页面。但这个安全提示还是可以有效的抑制对https域名的dns劫持。</p>
                 
               
               
