@@ -1,4 +1,4 @@
-# C++11多线程join()和detach()的理解
+# C++11多线程join()和detach()
 
 ### 简介
 

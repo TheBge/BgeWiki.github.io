@@ -1,4 +1,4 @@
-#### C++中的const
+### C++中的const
 
 **<font color='red'>非类成员的const</font>**
 
@@ -61,7 +61,7 @@ private:
 
 
 
-#### **顶层const与底层const？**
+### **顶层const与底层const？**
 
 **指向常量的指针：**
 
@@ -99,7 +99,7 @@ const int *const p =&x; //指针是const p，指向cosnt int类型的x
 
 
 
-#### **函数传递中的const：**
+### **函数传递中的const：**
 
 **普通形参**加不加const限定符对实参没有影响，**引用形参和指针形参**前面没有const限定符时，实参必须是非const的，而前面有const限定符时对实参也没有什么影响。
 
@@ -107,7 +107,7 @@ const int *const p =&x; //指针是const p，指向cosnt int类型的x
 
 
 
-#### **const成员函数**
+### **const成员函数**
 
 在类的成员函数后面加上const，表明这个函数不会对这个类对象的数据成员作任何改变。
 

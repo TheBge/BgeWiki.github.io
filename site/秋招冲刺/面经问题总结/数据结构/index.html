@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#5vectorlist" class="md-skip">
+        <a href="#1c-vector" class="md-skip">
           Skip to content
         </a>
       
@@ -433,8 +433,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/therad/join%20detach/" class="md-nav__link">
-        C++11多线程join()和detach()的理解
+      <a href="../../../C%2B%2B/therad/C%2B%2B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        C++多线程基础
       </a>
     </li>
   
@@ -445,8 +445,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/therad/%E9%94%81/" class="md-nav__link">
-        锁
+      <a href="../../../C%2B%2B/therad/join%20detach/" class="md-nav__link">
+        C++11多线程join()和detach()
       </a>
     </li>
   
@@ -2000,6 +2000,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E5%9B%BE%E8%A7%A3%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        图解系统
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9B%BE%E8%A7%A3%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        图解网络
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
         操作系统
       </a>
@@ -2037,6 +2061,34 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1c-vector" class="md-nav__link">
+    1、C++ vector是如何实现扩容的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2priority_queue" class="md-nav__link">
+    2、priority_queue底层是怎么实现的？（堆）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3priority_queue" class="md-nav__link">
+    3、priority_queue插入一个元素，底层怎么做的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、容器底层实现
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#5vectorlist" class="md-nav__link">
@@ -2432,6 +2484,34 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1c-vector" class="md-nav__link">
+    1、C++ vector是如何实现扩容的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2priority_queue" class="md-nav__link">
+    2、priority_queue底层是怎么实现的？（堆）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3priority_queue" class="md-nav__link">
+    3、priority_queue插入一个元素，底层怎么做的？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、容器底层实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#5vectorlist" class="md-nav__link">
     5、Vector和List的区别
   </a>
@@ -2467,10 +2547,10 @@
                 
                   <h1>数据结构</h1>
                 
-                <p>1、C++ vector是如何实现扩容的？</p>
-<p>2、priority_queue底层是怎么实现的？（堆）</p>
-<p>3、priority_queue插入一个元素，底层怎么做的？</p>
-<p>4、容器底层实现</p>
+                <h3 id="1c-vector">1、C++ vector是如何实现扩容的？</h3>
+<h3 id="2priority_queue">2、priority_queue底层是怎么实现的？（堆）</h3>
+<h3 id="3priority_queue">3、priority_queue插入一个元素，底层怎么做的？</h3>
+<h3 id="4">4、容器底层实现</h3>
 <h3 id="5vectorlist">5、Vector和List的区别</h3>
 <p>数组插入和删除操作的时间复杂度是O(n)。而数组是有序的，可以直接通过下标访问元素，十分高效，访问时间复杂度是O(1)（常数时间复杂度）。</p>
 <p><strong>如果某些场景需要频繁插入和删除元素时，这时候不宜选用数组作为数据结构</strong>。</p>
