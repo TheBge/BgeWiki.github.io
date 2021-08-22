@@ -157,14 +157,23 @@ int _tmain(int argc, _TCHAR* argv[])
 
 
 **类中的const成员变量都要放在初始化列表之中进行**
+
 const数据成员
+
 引用数据成员
+
 对象数据成员（内置类）
 
+
+
 **const成员函数**
+
 void print() const => const 类名 * const this
+
 在其内部是不能修改数据成员
+
 也不能调用非const成员函数
+
 const对象只能调用const成员函数,必须要提供一个const版本的成员函数
 
 

@@ -632,5 +632,75 @@ int (*p2)[10]; // 数组指针
 
 
 
+### 35、C++在执行main()函数之前做了哪些操作？
 
+1. 设置栈指针
+2. 初始化静态和全局变量，即data段的内容
+3. 将未初始化部分的全局变量赋初值：数值型short，int，long等为0，bool为FALSE，指针为NULL，等等，即.bss段的内容
+4. 全局对象初始化，在main之前调用构造函数
+5. 将main函数的参数，argc，argv等传递给main函数，然后才真正运行main函数
+
+
+
+### 36、用C实现多态
+
+在 C 中没有类的概念，但有 struct，而且 C 中的 struct 是不允许有函数的，只允许存在变量，那是不是**函数变量**就允许存在了？！所以，**函数指针**可以给我们一些提示。
+
+```c
+struct Animal
+{
+     void (*move)();
+};
+
+struct Rabbit
+{
+     void (*move)();
+};
+
+void Animal_move()
+{
+     printf("Animal move.\n");
+}
+
+void Rabbit_move()
+{
+     printf("Rabbit move.\n");
+}
+
+// struct Animal 和 struct Rabbit 在内容上完全一致，而且变量对齐上也完全一致，可以通过将 struct Rabbit 类型的指针强制转换为 struct Animal 类型的指针，即：
+int main(void)
+{
+     Animal *panimal;
+ 
+     Rabbit rabbit;
+ 
+     rabbit.move=Rabbit_move;
+ 
+     panimal = (Animal*)&rabbit;
+ 
+     panimal->move();
+}
+```
+
+问题：
+
+结构体是根据变量在结构体的偏移量来读取或者修改变量的。如果struct Animal 中和 struct Rabbit 中的偏移量不同，panimal->move();
+
+可以被形象的转化为：( * (panimal+sizeof(age)) ) ();
+
+但发现 panimal 是指向 struct Rabbit 实体的，panimal+sizeof(age) 已经指向了非法地址。
+
+因此需要模拟多态，必须**保持函数指针变量对齐**。
+
+
+
+### 37、可重入函数
+
+在多任务系统下，中断可能在任务执行的任何时间发生，同时也可能在任务执行过程中发生系统调度而将执行转向另一个线程，如果一个函数的执行期间被中断后，到重新恢复到断点进行执行的过程中，函数所依赖的环境没有发生改变，那么这个函数就是可重入的，否则就不可重入。
+
+不可重入的：
+
+- 使用了静态数据结构；
+- 调用了malloc或free；
+- 调用了标准I/O函数；
 

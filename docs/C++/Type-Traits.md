@@ -1,114 +1,47 @@
 ### C++ Traits
 
-traits，又被叫做特性萃取技术，说得简单点就是提取“被传进的对象”对应的返回类型，**让同一个接口实现对应的功能**。因为STL的算法和容器是分离的，两者通过迭代器链接。算法的实现并不知道自己被传进来什么。萃取器相当于在接口和实现之间加一层**封装**，来隐藏一些细节并协助调用合适的方法，这需要一些技巧（例如，偏特化）。最后附带一个小小的例子，应该能更好地理解 特性萃取。
+​		C++模板中的类型参数T是抽象的，我们并不能在模板内部直接获得它的具体特征。**类型萃取（抽取）技术就是要抽取类型的一些具体特征(trait)，比如它是哪种具体类型，它是引用类型，内建类型，还是类类型等。**可见，类型萃取技术其实就是trait模板技术的具体体现。获取类型的具体特征在Java、C#等语言中也称为反射(reflection)，C++中通过模板技术也可以实现一定的反射行为。
+
+​		类型信息是编译期的实体，现在要针对类型来进行编程，这其实就是模板元编程的一个方面。我们平常使用的if/else，while，for等基本的逻辑结构都是运行期的行为，在面向类型的编程中并不能使用，这就需要用到一些特殊的模板技术。实现类型萃取要用到的基本思想一个是特化，一个就是用typedef来携带类型信息。实际上，我们在用模板做设计时，一般建议在模板定义内部，为模板的每个类型参数提供typedef定义，这样在泛型代码中可以很容易地访问或抽取这些类型。
 
 
 
-具体的来说，traits就是通过定义一些结构体或类，并利用模板类特化和偏特化的能力，给类型赋予一些特性，这些特性根据类型的不同而异。在程序设计中可以使用这些traits来判断一个类型的一些特性，引发C++的函数重载机制，实现同一种操作因类型不同而异的效果。
+​		迭代器有常见有五种类型: value_type, difference_type, reference_type, pointer_type都比较容易在 traits 和 相应偏特化中提取。但是，iterator_category一般也有5个，这个相应型别会引发较大规模的写代码工程。
 
+​		例如，我们实现了 func_II, func_BI, func_RAI 分别代表迭代器类型是Input Iterator，Bidirectional Iterator和Random Access Iterator的对应实现。
 
-
-例：
-
-现在定义一个type_traits可以获得类型的如下属性：
-
-1.是否存在non-trivial default constructor
-
-2.是否存在non-trivial copy constructor 
-
-3.是否存在non-trivial assignment operator
-
-4.是否存在non-trivial destructor
-
-``` c
-struct __true_type {
-};
-struct __false_type {
-};
-
-template <class _Tp>
-struct __type_traits {
-
-   typedef __false_type    has_trivial_default_constructor;
-   typedef __false_type    has_trivial_copy_constructor;
-   typedef __false_type    has_trivial_assignment_operator;
-   typedef __false_type    has_trivial_destructor;
-};
-```
+​		现在，当客户调用func()的时候，我们可能需要做一个判断：
 
 ```c++
-template <>
-struct __type_traits<int> {
-   typedef __true_type    has_trivial_default_constructor;
-   typedef __true_type    has_trivial_copy_constructor;
-   typedef __true_type    has_trivial_assignment_operator;
-   typedef __true_type    has_trivial_destructor;
-};
-
-template <>
-struct __type_traits<char> {
-   typedef __true_type    has_trivial_default_constructor;
-   typedef __true_type    has_trivial_copy_constructor;
-   typedef __true_type    has_trivial_assignment_operator;
-   typedef __true_type    has_trivial_destructor;
-};
-```
-
-偏特化版本 
-``` c++
-template <class _Tp>
-struct __type_traits<_Tp*> {
-   typedef __true_type    has_trivial_default_constructor;
-   typedef __true_type    has_trivial_copy_constructor;
-   typedef __true_type    has_trivial_assignment_operator;
-   typedef __true_type    has_trivial_destructor;
-   typedef __true_type    is_POD_type;
-};
-```
-
-特化版本，比如自定义类型  
-``` c++
-struct __type_traits<Shape> {
-   typedef __false_type    has_trivial_default_constructor;
-   typedef __true_type    has_trivial_copy_constructor;
-   typedef __true_type    has_trivial_assignment_operator;
-   typedef __true_type    has_trivial_destructor;
-   typedef __true_type    is_POD_type;
-};
-```
-
-假设现在用个模板函数fun需要根据类型T是否有non-trivial constructor来进行不同的操作，可以这样来实现：  
-``` c++
-template<class T>
-void fun()
-{
-     typedef typename __type_traits<T>::has_trivial_constructor _Trivial_constructor
-    __fun(_Trivial_constructor()); // 根据得到的_Trivial_constructor来调用相应的函数
-}
-
-// 两个重载的函数
-void _fun(_true_type)
-{
-	cout<<"fun(_true_type)called"<<endl;
-}
-void _fun(_false_type)
-{
-	cout<<"fun(_false_type) called"<<endl;
-}
-
-//测试代码
-
-int main()
-{
-    fun<char>();
-    fun<int>();
-    fun<char *>();
-    fun<double>();
+template<class Iterator>
+void func(Iterator& i) {
+    if (is_random_access_iterator(i))
+        func_RAI(i);
+    if (is_bidirectional_iterator(i))
+        func_BI(i);
+    else
+        func_II(i);
 }
 ```
+
+​		但这样在执行时期才决定使用哪一个版本，会**影响程序效率**。最好能够在编译期就选择正确的版本。
+
+```c++
+1 template<class Iterator>
+2 inline void func(Iterator& i)
+3 {
+4     typedef typename Iterator_traits<Iterator>::iterator_category category;
+5     __func(i, category()); // 各型别的重载
+6 }
+```
+
+
+
+traits一方面，在面对不同的输入类时，能找到合适的返回型别；另一方面，当型别对应有不同的实现函数的时候，能起到一个提取型别然后分流的作用。
 
 
 
 ### Reference
 
 https://www.cnblogs.com/mangoyuan/p/6446046.html
+
