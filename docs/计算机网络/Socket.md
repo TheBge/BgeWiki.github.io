@@ -34,33 +34,78 @@ socket 的诞生是为了应用程序能够更方便的将数据经由传输层�
 
 ### Socket编程中服务器和客户端主要用到的函数
 
-1）基于TCP的socket：
+套接字( socket ) ： 套接口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同机器间的进程通信。
 
-1、服务器端程序：
+#### 命名socket
 
-1创建一个socket，用函数**socket()**
+SOCK_STREAM 式本地套接字的通信双方均需要具有本地地址，其中服务器端的本地地址需要明确指定，指定方法是使用 struct sockaddr_un 类型的变量。
 
-2绑定IP地址、端口等信息到socket上，用函数**bind()**
 
-3设置允许的最大连接数，用函数**listen()**
 
-4接收客户端上来的连接，用函数**accept()**
+#### 绑定
 
-5收发数据，用函数send()和recv()，或者read()和write()
+SOCK_STREAM 式本地套接字的通信双方均需要具有本地地址，其中服务器端的本地地址需要明确指定，指定方法是使用 struct sockaddr_un 类型的变量，将相应字段赋值，再将其绑定在创建的服务器套接字上，绑定要使用 bind 系统调用，其原形如下：
 
-6关闭网络连接
+```c++
+int bind(int socket, const struct sockaddr *address, size_t address_len);
+```
 
-2、客户端程序：
+其中 socket表示服务器端的套接字描述符，address 表示需要绑定的本地地址，是一个 struct sockaddr_un 类型的变量，address_len 表示该本地地址的字节长度。
 
-1创建一个socket，用函数**socket()**
 
-2设置要连接的对方的IP地址和端口等属性
 
-3连接服务器，用函数**connect()**
+#### 监听
 
-4收发数据，用函数send()和recv()，或read()和write()
+服务器端套接字创建完毕并赋予本地地址值（名称，本例中为Server Socket）后，需要进行监听，等待客户端连接并处理请求，**监听使用 listen 系统调用，接受客户端连接使用accept系统调用**，它们的原形如下：
 
-5关闭网络连接
+```c++
+int listen(int socket, int backlog);
 
-![image-20210626220909517](../img/image-20210626220909517.png)
+int accept(int socket, struct sockaddr *address, size_t *address_len);
+```
+
+其中 socket 表示服务器端的套接字描述符；backlog 表示排队连接队列的长度（若有多个客户端同时连接，则需要进行排队）；address 表示当前连接客户端的本地地址，该参数为输出参数，是客户端传递过来的关于自身的信息；address_len 表示当前连接客户端本地地址的字节长度，这个参数既是输入参数，又是输出参数。
+
+
+
+#### 连接服务器
+
+客户端套接字创建完毕并赋予本地地址值后，需要连接到服务器端进行通信，让服务器端为其提供处理服务。
+
+对于SOCK_STREAM类型的流式套接字，需要客户端与服务器之间进行连接方可使用。连接要使用 connect 系统调用，其原形为
+
+```c++
+int connect(int socket, const struct sockaddr *address, size_t address_len);
+```
+
+其中socket为客户端的套接字描述符，address表示当前客户端的本地地址，是一个 struct sockaddr_un 类型的变量，address_len 表示本地地址的字节长度。
+
+
+
+#### 相互发送接收数据
+
+无论客户端还是服务器，都要和对方进行数据上的交互，这种交互也正是我们进程通信的主题。一个进程扮演客户端的角色，另外一个进程扮演服务器的角色，两个进程之间相互发送接收数据，这就是基于本地套接字的进程通信。发送和接收数据要使用 write 和 read 系统调用，它们的原形为：
+
+```c++
+int read(int socket, char *buffer, size_t len);
+int write(int socket, char *buffer, size_t len);
+```
+
+其中 socket 为套接字描述符；len 为需要发送或需要接收的数据长度；
+
+对于 read 系统调用，buffer 是用来存放接收数据的缓冲区，即接收来的数据存入其中，是一个输出参数；
+
+对于 write 系统调用，buffer 用来存放需要发送出去的数据，即 buffer 内的数据被发送出去，是一个输入参数；返回值为已经发送或接收的数据长度。
+
+
+
+#### 断开连接
+
+交互完成后，需要将连接断开以节省资源，使用close系统调用，其原形为：
+
+```c++
+int close(int socket);
+```
+
+
 

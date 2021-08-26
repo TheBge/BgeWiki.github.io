@@ -113,38 +113,23 @@ static Singleton* GetInstance()
 
 **线程安全的单例模式**
 
-```c++
-Singleton* Singleton::GetInstance() 
-{
-    lock();        //上锁
-    if (NULL == instance) 
-    {
-        instance = new Singleton();
-    }
-    unlock();
-    return instance;
-}
-```
+双重校验锁
 
-每次获取实例的时候都要先上锁，之后在解锁，如果有很多线程的话，可能会造成大量线程阻塞。
-
-```c++
-Singleton* Singleton::GetInstance() 
-{
-    if (NULL == instance) 
-    {
-        lock();        //上锁
-        if (NULL == instance) 
-        {
-            instance = new Singleton();
-        }
-        unlock();
-    }
-    return instance;
-}
-```
-
-改进后，绝大多数情况下都是直接返回实例，只有在没有实例的时候，才会上锁、解锁。
+	static SingleTon *getInstance(){
+	 
+		if(m_instance == nullptr){
+	 
+			mt.lock();
+			if(m_instance == nullptr){
+	 
+				m_instance = new SingleTon;
+				mt.unlock();
+				return m_instance;
+			}
+		}
+		mt.unlock();
+		return m_instance;
+	}
 
 **How should it be used**
 
