@@ -2242,15 +2242,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4selectpollepoll" class="md-nav__link">
-    4、select，poll，epoll
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#575" class="md-nav__link">
-    5、7层和5层模型
+  <a href="#475" class="md-nav__link">
+    4、7层和5层模型
   </a>
   
 </li>
@@ -2752,15 +2745,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4selectpollepoll" class="md-nav__link">
-    4、select，poll，epoll
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#575" class="md-nav__link">
-    5、7层和5层模型
+  <a href="#475" class="md-nav__link">
+    4、7层和5层模型
   </a>
   
 </li>
@@ -2813,8 +2799,7 @@
 <li><a href="#1dns">1、DNS解析过程</a></li>
 <li><a href="#2reactorproactor">2、reactor是什么?跟proactor的区别?</a></li>
 <li><a href="#3io">3、IO多路复用解决了什么问题</a></li>
-<li><a href="#4selectpollepoll">4、select，poll，epoll</a></li>
-<li><a href="#575">5、7层和5层模型</a></li>
+<li><a href="#475">4、7层和5层模型</a></li>
 </ul>
 </li>
 </ul>
@@ -3099,21 +3084,7 @@
 <p>​       当多个客户与服务器通信时当多个客户与服务器通信时,若服务器阻塞于其中一个客户sockfd1，当另一个客户的数据到达套接字sockfd2时，服务器不能处理，仍然阻塞在read(sockfd1,...)上。</p>
 <p><strong>IO多路复用：</strong></p>
 <p>​       同时监听多个客户连接，socket1、socket2...当其中有一个发来消息就从select阻塞中返回，然后调用read读取，再回到select循环，这样就不会阻塞在其中一个上而不能处理其他客户消息。该模型的优势并不是对于单个连接能处理得更快，而是在于能处理更多的连接。</p>
-<h3 id="4selectpollepoll">4、select，poll，epoll</h3>
-<p><strong>select</strong></p>
-<p>在一段时间内，监听用户感兴趣的文件描述符上的可读、可写和异常等事件，成功时返回就绪文件描述符的总数。</p>
-<p><strong>poll</strong></p>
-<p>和select类似，只是描述fd集合的方式不同，poll使用pollfd结构而不是select的fd_set结构。没有最大连接数的限制。</p>
-<p><strong>epoll</strong></p>
-<p>使用一组函数来完成任务，而不是单个函数，epoll把用户关心的文件描述符上的事件放在内核的一个事件表里，无须像select和poll每次调用都要重复传入文件描述符集或事件集。</p>
-<p><strong>区别</strong></p>
-<p>（1）select：时间复杂度 O(n)</p>
-<p>select 仅仅知道有 I/O 事件发生，但并不知道是哪几个流，所以只能无差别轮询所有流，找出能读出数据或者写入数据的流，并对其进行操作。所以 select 具有 O(n) 的无差别轮询复杂度，同时处理的流越多，无差别轮询时间就越长。</p>
-<p>（2）poll：时间复杂度 O(n)</p>
-<p>poll 本质上和 select 没有区别，它将用户传入的数组拷贝到内核空间，然后查询每个 fd 对应的设备状态， 但是它没有最大连接数的限制，原因是它是基于链表来存储的。</p>
-<p>（3）epoll：时间复杂度 O(1)</p>
-<p>epoll 可以理解为 event poll，不同于忙轮询和无差别轮询，epoll 会把哪个流发生了怎样的 I/O 事件通知我们。所以说 epoll 实际上是事件驱动（每个事件关联上 fd）的。</p>
-<h3 id="575">5、7层和5层模型</h3>
+<h3 id="475">4、7层和5层模型</h3>
 <p><img alt="image-20210808214924992" src="../../../img/image-20210808214924992.png" /></p>
 <p>应用层：<strong>为应用程序提供交互服务</strong>。在互联网中的应用层协议很多，如域名系统DNS，支持万维网应用的HTTP协议，支持电子邮件的SMTP协议等。</p>
 <p>表示层：主要负责数据格式的转换，如加密解密、转换翻译、压缩解压缩等。</p>
