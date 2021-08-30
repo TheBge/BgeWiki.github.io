@@ -1287,18 +1287,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" class="md-nav__link">
-        优先队列
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E7%BA%A2%E9%BB%91%E6%A0%91/" class="md-nav__link">
         红黑树
       </a>
@@ -1314,14 +1302,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-7" type="checkbox" id="nav-6-7" >
       
-      <label class="md-nav__link" for="nav-6-8">
+      <label class="md-nav__link" for="nav-6-7">
         排序算法
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="排序算法" data-md-level="2">
-        <label class="md-nav__title" for="nav-6-8">
+        <label class="md-nav__title" for="nav-6-7">
           <span class="md-nav__icon md-icon"></span>
           排序算法
         </label>
@@ -2252,6 +2240,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    6、内核如何为进程分配内存
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2887,6 +2882,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    6、内核如何为进程分配内存
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3054,6 +3056,7 @@
 <li><a href="#3_1">3、什么是分段？</a></li>
 <li><a href="#4_1">4、分页和分段有什区别？</a></li>
 <li><a href="#5_1">5、什么是交换空间？</a></li>
+<li><a href="#6_1">6、内核如何为进程分配内存</a></li>
 </ul>
 </li>
 <li><a href="#_3">网络编程</a><ul>
@@ -3300,6 +3303,12 @@
 <li>物理内存不足时一些不常用的页可以被交换出去，腾给系统。</li>
 <li>程序启动时很多内存页被用来初始化，之后便不再需要，可以交换出去。</li>
 </ul>
+<h3 id="6_1">6、内核如何为进程分配内存</h3>
+<ol>
+<li>初始化进程控制块（PCB），例如分配pid、进程名、建立基本的文件描述符（基本输入输出）</li>
+<li>PE/ELF文件头的格式，标记了程序各个分段的用途（例如text、data、bss、stack段等，他们对应的内存地址范围及权限flag）</li>
+<li>内核建立一个用户进程页表，根据PE/ELF的布局对内存进行分配，复制相关内容，建立虚拟地址到物理地址的映射，并设置相应的标志位</li>
+</ol>
 <h2 id="_3">网络编程</h2>
 <h3 id="1io">1、常见的IO模型：</h3>
 <p>对于一次IO访问（以read举例），数据会先被拷贝到操作系统内核的缓冲区中，然后才会从操作系统内核的缓冲区拷贝到应用程序的地址空间。所以说，当一个read操作发生时，它会经历两个阶段：</p>

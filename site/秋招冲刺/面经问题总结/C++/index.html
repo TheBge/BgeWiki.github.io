@@ -1287,18 +1287,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" class="md-nav__link">
-        优先队列
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/%E7%BA%A2%E9%BB%91%E6%A0%91/" class="md-nav__link">
         红黑树
       </a>
@@ -1314,14 +1302,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-8" type="checkbox" id="nav-6-8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-7" type="checkbox" id="nav-6-7" >
       
-      <label class="md-nav__link" for="nav-6-8">
+      <label class="md-nav__link" for="nav-6-7">
         排序算法
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="排序算法" data-md-level="2">
-        <label class="md-nav__title" for="nav-6-8">
+        <label class="md-nav__title" for="nav-6-7">
           <span class="md-nav__icon md-icon"></span>
           排序算法
         </label>
@@ -2332,6 +2320,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    42、空类默认产生哪些函数
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3039,6 +3034,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    42、空类默认产生哪些函数
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3097,6 +3099,7 @@
 <li><a href="#39">39、限制类对象只能在堆或者栈上建立</a></li>
 <li><a href="#40constconstexpr">40、const和constexpr</a></li>
 <li><a href="#41">41、栈的效率为什么比堆高</a></li>
+<li><a href="#42">42、空类默认产生哪些函数</a></li>
 </ul>
 </div>
 <h3 id="1vs">1、面向过程VS面向对象</h3>
@@ -3612,6 +3615,25 @@ private:
 <p>堆是一个运行时数据区,类的(对象从中分配空间。由于要在运行时动态分配内存，存取速度较慢。 存在栈中的数据可以共享。</p>
 <p>栈是编译时分配空间，而堆是动态分配（运行时分配空间），所以栈的速度快</p>
 <p>cpu有专门的寄存器（esp，ebp）来操作栈，堆都是使用间接寻址的。栈快点</p>
+<h3 id="42">42、空类默认产生哪些函数</h3>
+<pre><code>class Empty
+{
+    public:
+
+      Empty(); // 缺省构造函数
+
+      Empty( const Empty&amp; ); // 拷贝构造函数
+
+      ~Empty(); // 析构函数
+
+       Empty&amp; operator=( const Empty&amp; ); // 赋值运算符
+
+       Empty* operator&amp;(); // 取址运算符
+
+       const Empty* operator&amp;() const; // 取址运算符 const
+
+};
+</code></pre>
                 
               
               

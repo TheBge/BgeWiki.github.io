@@ -763,3 +763,28 @@ constexpr修饰的函数，简单的来说，如果其传入的参数可以在�
 栈是编译时分配空间，而堆是动态分配（运行时分配空间），所以栈的速度快
 
 cpu有专门的寄存器（esp，ebp）来操作栈，堆都是使用间接寻址的。栈快点
+
+
+
+### 42、空类默认产生哪些函数
+
+```
+class Empty
+{
+   	public:
+  
+      Empty(); // 缺省构造函数
+  
+      Empty( const Empty& ); // 拷贝构造函数
+ 
+      ~Empty(); // 析构函数
+  
+       Empty& operator=( const Empty& ); // 赋值运算符
+  
+       Empty* operator&(); // 取址运算符
+ 
+       const Empty* operator&() const; // 取址运算符 const
+ 
+};
+```
+
