@@ -842,6 +842,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/%E5%89%91%E6%8C%87Offer/" class="md-nav__link">
+        剑指Offer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E5%8A%9B%E6%89%A3%E5%8A%9B%E6%89%A3/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
         链表
       </a>
@@ -1063,44 +1075,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B/" class="md-nav__link">
-        僵尸进程
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E5%8D%8F%E7%A8%8B/" class="md-nav__link">
-        协程
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="md-nav__link">
         线程池
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/" class="md-nav__link">
-        进程同步
       </a>
     </li>
   
@@ -1614,6 +1590,26 @@
   <a href="#35" class="md-nav__link">
     剑指35 复杂链表的复制
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    去除字符串中相同的字符
+  </a>
+  
+    <nav class="md-nav" aria-label="去除字符串中相同的字符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ii" class="md-nav__link">
+    反转链表II
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2543,6 +2539,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    去除字符串中相同的字符
+  </a>
+  
+    <nav class="md-nav" aria-label="去除字符串中相同的字符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ii" class="md-nav__link">
+    反转链表II
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2558,7 +2574,19 @@
                 
                   <h1>刷题</h1>
                 
-                <p>21/8/24</p>
+                <div class="toc">
+<ul>
+<li><a href="#offer-09">剑指offer 09 两个栈实现队列</a></li>
+<li><a href="#offer-30-min">剑指offer 30 包含min函数的栈</a></li>
+<li><a href="#24">剑指24 反转链表</a></li>
+<li><a href="#35">剑指35 复杂链表的复制</a></li>
+<li><a href="#_1">去除字符串中相同的字符</a><ul>
+<li><a href="#ii">反转链表II</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>21/8/24</p>
 <h3 id="offer-09">剑指offer 09 两个栈实现队列</h3>
 <p><img alt="fig1" src="https://assets.leetcode-cn.com/solution-static/jianzhi_09/jianzhi_9.gif" /></p>
 <pre><code class="language-c++">class CQueue 
@@ -2701,6 +2729,30 @@ public:
     }
 };
 </code></pre>
+<p>9/2</p>
+<p>英特尔笔试</p>
+<h3 id="_1">去除字符串中相同的字符</h3>
+<p>如”xzhhchhvhh“变为"xzhcv"</p>
+<pre><code class="language-c++">void deleteDuplicatedChar(char* str, )
+{
+    int num = strlen(str);
+    for(int i = 0; i &lt; num; i++)
+    {
+        for(int j = i+1; j &lt; num; j++)
+        {
+            if(str[i] == str[j])
+            {
+                for(int l = j; l &lt; strlen(str); l++)
+                {
+                    str[l] = str[l+1];
+                }
+                j--;
+            }
+        }
+    }
+}
+</code></pre>
+<h4 id="ii">反转链表II</h4>
                 
               
               
