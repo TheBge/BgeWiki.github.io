@@ -2294,6 +2294,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    28、无序数组中比左边大比右边小的元素
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2819,6 +2826,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    28、无序数组中比左边大比右边小的元素
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2863,6 +2877,7 @@
 <li><a href="#25lc-76">25、最小覆盖字串（lc 76）</a></li>
 <li><a href="#26">26、字符串转数字</a></li>
 <li><a href="#27rand5rand7">27、rand5生成rand7</a></li>
+<li><a href="#28">28、无序数组中比左边大比右边小的元素</a></li>
 </ul>
 </div>
 <h3 id="12">1、求根号2</h3>
@@ -3708,6 +3723,34 @@ int myAtoi(string str)
                 }  
          }  
 }  
+</code></pre>
+<h3 id="28">28、无序数组中比左边大比右边小的元素</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+void printPivotElements(int data[], int len) {
+    // 从右往左，寻找每个位置及其之后的最小数
+    int* rightMin = new int[len];
+    int rMin = data[len - 1];
+    for (int i = len - 1; i &gt;= 0; --i) {
+        if (data[i]&lt;rMin) rMin = data[i];
+        rightMin[i] = rMin;
+    }
+
+    // 从左往右，寻找比左边大且比右边小的数
+    int max = data[0];
+    for (int i = 1; i &lt; len - 1; ++i) {
+        if (data[i] &gt; max) {
+            max = data[i];
+            if (data[i] &lt; rightMin[i+1]) cout &lt;&lt; data[i] &lt;&lt; endl;
+        }
+    }
+}
+
+int main() {
+    int iTestArray[] = { 1,8,6,9,10,15,12,20 };
+    printPivotElements(iTestArray, sizeof(iTestArray) / sizeof(iTestArray[0]));
+}
 </code></pre>
                 
               
