@@ -26,7 +26,7 @@ MVC、MTV、[MVP](https://baike.baidu.com/item/MVP/3714550)、CBD、[ORM](https:
 
 
 
-### Model-View-Controller(模型-视图-控制器模式)
+### MVC框架（Model-View-Controller）
 
 ![image-20210514182228203](../img/image-20210514182228203.png)
 
@@ -49,3 +49,74 @@ MVC、MTV、[MVP](https://baike.baidu.com/item/MVP/3714550)、CBD、[ORM](https:
 　　优点：耦合性低；重用性高；生命周期成本低；部署块；可维护性高；有利软件工程化管理。
 
 　　缺点：没有明确的定义；不适合小型，中等规模的应用程序；增加系统结构和实现的复用性；视图与控制器间的过于紧密的连接；视图对模型数据的低效率访问；一般高级的界面工具或构造器不支持模式。
+
+
+
+![image-20210912115112973](../img/image-20210912115112973.png)
+
+**MVC的缺点**
+
+​		在MVC里，View是可以直接访问Model的！从而，View里会包含Model信息，不可避免的还要包括一些业务逻辑。 在MVC模型里，更关注的Model的不变，而同时有多个对Model的不同显示，及View。所以，在MVC模型里，Model不依赖于View，但是View是依赖于Model的。不仅如此，因为有一些业务逻辑在View里实现了，导致要更改View也是比较困难的，至少那些业务逻辑是无法重用的。
+
+​		在Android开发中，Activity并不是一个标准的MVC模式中的Controller，它的首要职责是加载应用的布局和初始化用户界面，并接受并处理来自用户的操作请求，进而作出响应。随着界面及其逻辑的复杂度不断提升，Activity类的职责不断增加，以致变得庞大臃肿。
+
+
+
+
+
+### MVP框架（Model-View-Presenter）
+
+![image-20210912120835105](../img/image-20210912120835105.png)
+
+​		在 MVC 框架中，View 层可以通过访问 Model 层来更新，但在 MVP 框架中，View 层不能再直接访问 Model 层，必须通过 Presenter 层提供的接口，然后 Presenter 层再去访问 Model 层。
+
+这看起来有点多此一举，但用处着实不小，主要有两点：
+
+- 首先是因为 Model 层和 View 层都必须通过 Presenter 层来传递信息，所以完全分离了 View 层和 Model 层，也就是说，View 层与 Model 层一点关系也没有，双方是不知道彼此存在的，在它们眼里，只有 Presenter 层。
+- 其次，因为 View 层与 Model 层没有关系，所以 View 层可以抽离出来做成组件，在复用性上比 MVC 模型好很多。
+
+![image-20210912120912816](../img/image-20210912120912816.png)
+
+​		View 层与 Model 层确实互不干涉，View 层也自由了很多。但还是有问题，因为 View 层和 Model 层都需经过 Presenter 层，致使 Presenter 层比较复杂，维护起来会有一定的问题。而且因为没有绑定数据，所有数据都需要 Presenter 层进行“手动同步”，代码量比较大，虽然比 MVC 模型好很多，但也是有比较多的冗余部分。
+
+​		为了让 View 层和 Model 的数据始终保持一致，避免同步，MVVM 框架出现了。
+
+
+
+
+
+### MVVM框架
+
+![image-20210912121133665](../img/image-20210912121133665.png)
+
+​		MVVM 最早是由微软在使用 Windows Presentation Foundation 和 SilverLight 时定义的，2005 年微软正式宣布 MVVM 的存在。VM 是 ViewModel 层，ViewModel 层把 Model 层和 View 层的数据同步自动化了，解决了 MVP 框架中数据同步比较麻烦的问题，不仅减轻了 ViewModel 层的压力，同时使得数据处理更加方便——只需告诉 View 层展示的数据是 Model 层中的哪一部分即可。
+
+![image-20210912121240333](../img/image-20210912121240333.png)
+
+​		读者可能感觉 MVVM 的框架图与 MVP 的框架图相似，确实如此，两者都是从 View 层开始触发用户的操作，之后经过第三层，最后到达 Model 层。但是关键问题是这第三层的内容， ViewModel 层双向绑定了 View 层和 Model 层，因此，随着 View 层的数据变化，系统会自动修改 Model 层的数据，反之同理。而 Presenter 层是采用手动写方法来调用或者修改 View 层和 Model 层，两者孰优孰劣不言而喻。
+
+
+
+至于双向数据绑定，可以这样理解：双向数据绑定是一个模板引擎，它会根据数据的变化实时渲染。这种说法可能不是很恰当，但是很好理解，如图8所示。
+
+![image-20210912121403809](../img/image-20210912121403809.png)
+
+MVVM 模型中数据绑定方法一般有以下3种：
+
+- 数据劫持
+- 发布-订阅模式
+- 脏值检查
+
+
+Vue.js 使用的是数据劫持和发布-订阅模式两种方法。
+
+首先来了解三个概念：
+
+- Observer：数据监听器
+- Compiler：指定解析器
+- Watcher：订阅者
+
+
+​        Observer 用于监听数据变化，如果数据发生改变，不论是在 View 层还是 Model 层， Oberver 都会知道，然后告诉 Watcher。Compiler 的作用是对数据进行解析，之后绑定指定的事件，在这里主要用于更新视图。
+
+​        Vue.js 数据绑定的流程：首先将需要绑定的数据用数据劫持方法找出来，之后用 Observer 监听这堆数据，如果数据发生变化，Observer 就会告诉 Watcher，然后 Watcher 会决定让哪个 Compiler 去做出相应的操作，这样就完成了数据的双向绑定。

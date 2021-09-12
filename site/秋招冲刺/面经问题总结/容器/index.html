@@ -2102,15 +2102,15 @@
     unordered_map
   </a>
   
-    <nav class="md-nav" aria-label="unordered_map">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#b" class="md-nav__link">
     B树
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="B树">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#b_1" class="md-nav__link">
@@ -2536,15 +2536,15 @@
     unordered_map
   </a>
   
-    <nav class="md-nav" aria-label="unordered_map">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#b" class="md-nav__link">
     B树
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="B树">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#b_1" class="md-nav__link">
@@ -2586,8 +2586,8 @@
 <li><a href="#deque">deque</a></li>
 <li><a href="#setmultiset">set和multiset</a></li>
 <li><a href="#mapmultimap">map和multimap</a></li>
-<li><a href="#unordered_map">unordered_map</a><ul>
-<li><a href="#b">B树</a></li>
+<li><a href="#unordered_map">unordered_map</a></li>
+<li><a href="#b">B树</a><ul>
 <li><a href="#b_1">B+树</a></li>
 <li><a href="#bb">B树与B+树对比</a></li>
 </ul>
@@ -2707,7 +2707,7 @@ public:
 <p>另红黑树是一种二叉查找树，二叉查找树一个重要的性质是有序，且中序遍历时取出的元素是有序的。对于一些需要用到有序性的应用场景，应使用map。</p>
 <p><strong>unordered_map</strong></p>
 <p>unordered_map是基于hash_table实现，一般是由一个大vector，vector元素节点可挂接链表来解决冲突来实现。hash_table最大的优点，就是把数据的存储和查找消耗的时间大大降低，几乎可以看成是常数时间；而代价仅仅是消耗比较多的内存。然而在当前可利用内存越来越多的情况下，用空间换时间的做法是值得的。</p>
-<h3 id="b">B树</h3>
+<h2 id="b">B树</h2>
 <p>众所周知，ＩＯ操作的效率很低，那么，当在大量数据存储中，查询时我们不能一下子将所有数据加载到内存中，只能逐一加载磁盘页，每个磁盘页对应树的节点。造成大量磁盘ＩＯ操作（最坏情况下为树的高度）。平衡二叉树由于树深度过大而造成磁盘IO读写过于频繁，进而导致效率低下。</p>
 <p>所以，我们为了减少磁盘ＩＯ的次数，就你必须降低树的深度，将“瘦高”的树变得“矮胖”，一个基本的想法就是：</p>
 <ul>
