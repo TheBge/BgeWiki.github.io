@@ -339,6 +339,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../C%2B%2B/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+        线程池实现
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../C%2B%2B/%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8/" class="md-nav__link">
         虚函数表
       </a>
@@ -366,14 +378,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-14" type="checkbox" id="nav-2-14" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15" >
       
-      <label class="md-nav__link" for="nav-2-14">
+      <label class="md-nav__link" for="nav-2-15">
         Therad
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Therad" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-14">
+        <label class="md-nav__title" for="nav-2-15">
           <span class="md-nav__icon md-icon"></span>
           Therad
         </label>
@@ -430,14 +442,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-16" type="checkbox" id="nav-2-16" >
       
-      <label class="md-nav__link" for="nav-2-15">
+      <label class="md-nav__link" for="nav-2-16">
         基础
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="基础" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-15">
+        <label class="md-nav__title" for="nav-2-16">
           <span class="md-nav__icon md-icon"></span>
           基础
         </label>
@@ -584,14 +596,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15-12" type="checkbox" id="nav-2-15-12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-16-12" type="checkbox" id="nav-2-16-12" >
       
-      <label class="md-nav__link" for="nav-2-15-12">
+      <label class="md-nav__link" for="nav-2-16-12">
         智能指针
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="智能指针" data-md-level="3">
-        <label class="md-nav__title" for="nav-2-15-12">
+        <label class="md-nav__title" for="nav-2-16-12">
           <span class="md-nav__icon md-icon"></span>
           智能指针
         </label>
@@ -678,14 +690,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-16" type="checkbox" id="nav-2-16" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-17" type="checkbox" id="nav-2-17" >
       
-      <label class="md-nav__link" for="nav-2-16">
+      <label class="md-nav__link" for="nav-2-17">
         网课总结
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="网课总结" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-16">
+        <label class="md-nav__title" for="nav-2-17">
           <span class="md-nav__icon md-icon"></span>
           网课总结
         </label>
@@ -2227,6 +2239,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    31、判断一棵树是否为搜索二叉树和完全二叉树
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2797,6 +2816,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    31、判断一棵树是否为搜索二叉树和完全二叉树
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2844,6 +2870,7 @@
 <li><a href="#28">28、无序数组中比左边大比右边小的元素</a></li>
 <li><a href="#29">29、约瑟夫环</a></li>
 <li><a href="#30strcpy">30、字符串实现，Strcpy</a></li>
+<li><a href="#31">31、判断一棵树是否为搜索二叉树和完全二叉树</a></li>
 </ul>
 </div>
 <h3 id="12">1、求根号2</h3>
@@ -3793,6 +3820,51 @@ String&amp; String::operator=(const String &amp;str)
     }
     dest[i] = '\0';
     return dest;
+}
+</code></pre>
+<h3 id="31">31、判断一棵树是否为搜索二叉树和完全二叉树</h3>
+<pre><code class="language-c++">class Solution {
+public:
+    /**
+     *
+     * @param root TreeNode类 the root
+     * @return bool布尔型vector
+     */
+    vector&lt;int&gt; LNR;
+    void inOrder(TreeNode* node){
+        if(!node) return;
+        inOrder(node-&gt;left);
+        LNR.push_back(node-&gt;val);
+        inOrder(node-&gt;right);
+    }
+    bool isFullTree(TreeNode* node){
+        if(!node) return true;
+        queue&lt;TreeNode*&gt; que;
+        que.push(node);
+        TreeNode* tmp;
+        bool hasChild = true;
+        while(que.size()){
+            tmp = que.front();
+            que.pop();
+            if(!tmp) {
+                hasChild = false;
+                continue;
+            }
+            if(!hasChild) return false;
+            que.push(tmp-&gt;left);
+            que.push(tmp-&gt;right);
+        }
+        return true;
+    }
+    vector&lt;bool&gt; judgeIt(TreeNode* root) {
+        // 判断搜索二叉树
+        bool isSearchTree = true;
+        inOrder(root);
+        for(int i = 1; i &lt; LNR.size() &amp;&amp; isSearchTree ; ++i){
+            if(LNR[i-1]&gt;LNR[i] ) isSearchTree = false;
+        }
+        return {isSearchTree, isFullTree(root)};
+    }
 }
 </code></pre>
                 
