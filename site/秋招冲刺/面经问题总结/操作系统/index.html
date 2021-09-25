@@ -545,18 +545,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E4%BA%94%E5%A4%A7%E5%87%BD%E6%95%B0/" class="md-nav__link">
-        五大函数
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../C%2B%2B/%E5%9F%BA%E7%A1%80/%E4%BB%BF%E5%87%BD%E6%95%B0/" class="md-nav__link">
         仿函数
       </a>
@@ -572,14 +560,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15-11" type="checkbox" id="nav-2-15-11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15-10" type="checkbox" id="nav-2-15-10" >
       
-      <label class="md-nav__link" for="nav-2-15-11">
+      <label class="md-nav__link" for="nav-2-15-10">
         智能指针
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="智能指针" data-md-level="3">
-        <label class="md-nav__title" for="nav-2-15-11">
+        <label class="md-nav__title" for="nav-2-15-10">
           <span class="md-nav__icon md-icon"></span>
           智能指针
         </label>
@@ -2868,8 +2856,8 @@
 <p>​       将虚拟地址空间分成若干个块，每个块都有固定的大小，物理地址空间也被划分成若干个块，每个块也都有固定的大小，物理地址空间的块和虚拟地址空间的块大小相等，虚拟地址空间这些块就被称为<strong>页面</strong>，物理地址空间这些块被称为<strong>帧</strong>。</p>
 <p>​       MMU通过<strong>页表</strong>这个工具将虚拟地址转换为物理地址。32位的虚拟地址分成两部分（虚拟页号和偏移量），MMU通过页表找到了虚拟页号对应的物理页号，物理页号+偏移量就是实际的物理地址。</p>
 <p><strong>分段机制</strong></p>
-<p>将内存分成一段一段的（段大小不固定），为程序被分配某个段之后，程序便只能访问固定的段，无法访问其他地址。</p>
-<p>而且代码中不再使用绝对地址，而是使用相对地址。当程序加载到内存中运行的时候，操作系统为程序分配合适的段。并记录段的起始地址，及界限。当程序需要访问内存中某个变量时，用段起始地址+相对地址（段内偏移地址）得到真实的物理地址。</p>
+<p>作业的地址空间被划分为若干个段，每个段定义了一组逻辑信息。例程序段、数据段等。每个段都从0开始编址，并采用一段连续的地址空间。段的长度由相应的逻辑信息组的长度决定，因而各段长度不等。整个作业的地址空间是二维的。</p>
+<p>在段式虚拟存储系统中，虚拟地址由段号和段内地址组成，虚拟地址到实存地址的变换通过段表来实现。每个程序设置一个段表，段表的每一个表项对应一个段，每个表项至少包括三个字段：有效位（指明该段是否已经调入主存）、段起址(该段在实存中的首地址)和段长（记录该段的实际长度）。</p>
 <p><strong>分页和分段有什区别？</strong></p>
 <ul>
 <li>分页对程序员是透明的，但是分段需要程序员显式划分每个段。 </li>
