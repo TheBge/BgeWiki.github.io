@@ -26,6 +26,18 @@ MVC、MTV、[MVP](https://baike.baidu.com/item/MVP/3714550)、CBD、[ORM](https:
 
 
 
+### MVC，MVP，MVVM诞生的需求
+
+软件中最核心的，最基本的东西是什么? 是的，是数据。我们写的所有代码，都是围绕数据的。
+
+围绕着数据的产生、修改等变化，出现了业务逻辑。
+
+围绕着数据的显示，出现了不同的界面技术。
+
+没有很好设计的代码，常常就会出现数据层(持久层)和业务逻辑层还有界面代码耦合的情况。
+
+
+
 ### MVC框架（Model-View-Controller）
 
 ![image-20210514182228203](../img/image-20210514182228203.png)
@@ -89,7 +101,7 @@ MVC、MTV、[MVP](https://baike.baidu.com/item/MVP/3714550)、CBD、[ORM](https:
 
 ![image-20210912121133665](../img/image-20210912121133665.png)
 
-​		MVVM 最早是由微软在使用 Windows Presentation Foundation 和 SilverLight 时定义的，2005 年微软正式宣布 MVVM 的存在。VM 是 ViewModel 层，ViewModel 层把 Model 层和 View 层的数据同步自动化了，解决了 MVP 框架中数据同步比较麻烦的问题，不仅减轻了 ViewModel 层的压力，同时使得数据处理更加方便——只需告诉 View 层展示的数据是 Model 层中的哪一部分即可。
+​		VM 是 ViewModel 层，ViewModel 层把 Model 层和 View 层的数据同步自动化了，解决了 MVP 框架中数据同步比较麻烦的问题，不仅减轻了 ViewModel 层的压力，同时使得数据处理更加方便——只需告诉 View 层展示的数据是 Model 层中的哪一部分即可。
 
 ![image-20210912121240333](../img/image-20210912121240333.png)
 
